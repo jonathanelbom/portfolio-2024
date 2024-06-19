@@ -4,24 +4,24 @@ const images = ['mentalmodeler_web.jpg', 'mm_scenario_1.jpg', 'mm_scenario_3.jpg
 
 const titles = ['Homepage', 'Mental Modeler - Map', 'Mental Modeler - Scenario', 'Mental Modeler Compare', 'UMass Lab'];
 
-const source = images.map((image, i) => {
-    const title = titles[i];
-    const id = title.split(' ').join('').toLowerCase();
-    return transformProject({
-        ...template,
-        title,
-        id,
-        assets: [
-            {
-                label: '',
-                id,
-                type: 'image',
-                uri: `${image}`,
-            },
-        ],
-        tags: ['mentalmodeler'],
-    });
-});
+// const source = images.map((image, i) => {
+//     const title = titles[i];
+//     const id = title.split(' ').join('').toLowerCase();
+//     return transformProject({
+//         ...template,
+//         title,
+//         id,
+//         assets: [
+//             {
+//                 label: '',
+//                 id,
+//                 type: 'image',
+//                 uri: `${image}`,
+//             },
+//         ],
+//         tags: ['mentalmodeler'],
+//     });
+// });
 
 export const _mm = [
     {
@@ -32,8 +32,10 @@ export const _mm = [
             uri: 'mentalmodeler_web.jpg',
         },
         title: 'Website',
+        id: 'homepage',
         description: '',
         tags: ['mentalmodeler'],
+        sizes: ['mobile', 'desktop'],
     },
     {
         image: {
@@ -42,9 +44,11 @@ export const _mm = [
             type: 'image',
             uri: 'mm_scenario_1.jpg',
         },
+        id: 'mentalmodeler-map',
         title: 'Mental Modeler App - Map',
         description: '',
         tags: ['mentalmodeler'],
+        sizes: ['desktop'],
     },
     {
         image: {
@@ -56,6 +60,8 @@ export const _mm = [
         title: 'Mental Modeler App - Scenario',
         description: '',
         tags: ['mentalmodeler'],
+        id: 'mentalmodeler-scenario',
+        sizes: ['desktop'],
     },
     {
         image: {
@@ -67,6 +73,8 @@ export const _mm = [
         title: 'Mental Modeler Compare App',
         description: '',
         tags: ['mentalmodeler'],
+        id: 'mentalmodelercompare',
+        sizes: ['mobile', 'desktop'],
     },
     {
         image: {
@@ -78,10 +86,9 @@ export const _mm = [
         title: 'UMass Lab Website',
         description: '',
         tags: ['mentalmodeler'],
+        id: 'umasslab',
+        sizes: ['mobile', 'desktop'],
     },
 ];
 
 export const mm = filterAndSort(_mm);
-
-// export const vrbo_proto = vrbo.filter(({ tags }) => tags.includes('proto')).map((project) => transformProject(project));
-// export const vrbo_prod = vrbo.filter(({ tags }) => tags.includes('prod')).map((project) => transformProject(project));

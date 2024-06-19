@@ -8,6 +8,15 @@ const _theme = createTheme({
             primary: '#292929',
         },
     },
+    // breakpoints: {
+    //     values: {
+    //         xs: 0,
+    //         sm: 480,
+    //         md: 800,
+    //         lg: 1020,
+    //         xl: 1400,
+    //     },
+    // },
 });
 
 export const theme = createTheme(_theme, {
@@ -25,7 +34,7 @@ export const theme = createTheme(_theme, {
             color: _theme.palette.primary.main,
         },
         sectionHeadline: {
-            fontSize: '1.75rem',
+            fontSize: '2rem',
             fontWeight: '700',
             fontFamily: 'Roboto Condensed',
             color: _theme.palette.primary.main,
@@ -40,6 +49,12 @@ export const theme = createTheme(_theme, {
             fontFamily: 'Roboto Condensed',
             fontWeight: '600',
             fontSize: '1.25rem',
+        },
+        projectSizes: {
+            fontFamily: 'Roboto',
+            fontWeight: '300',
+            fontSize: '1.125rem',
+            textTransform: 'uppercase',
         },
         workTitle: {
             fontFamily: 'Roboto Condensed',
@@ -79,6 +94,7 @@ export const theme = createTheme(_theme, {
                 root: {
                     // Some CSS
                     borderRadius: '2rem',
+                    // boxShadow: 'none',
                     // '&:focus': {
                     //     outline: '1px solid #8a1b12',
                     // },
@@ -96,6 +112,12 @@ export const theme = createTheme(_theme, {
                         minWidth: 'unset',
                         marginInlineEnd: '16px',
                         textTransform: 'none',
+                    },
+                },
+                {
+                    props: { variant: 'contained' },
+                    style: {
+                        boxShadow: 'none',
                     },
                 },
             ],

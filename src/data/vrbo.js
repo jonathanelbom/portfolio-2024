@@ -37,7 +37,7 @@ const titles = [
     'image-carousel.png',
     'Inline Message',
     'Modal Enhancements',
-    'Northstar experience',
+    '',
     'Personalized Homepage',
     'Photo Manager',
     // 'placeholder.png',
@@ -90,9 +90,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-card-carousel/slide-motion/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -113,7 +114,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-card-carousel/docs/',
             },
         ],
     },
@@ -136,7 +137,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-drawers/#',
             },
         ],
     },
@@ -159,7 +160,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-guest-picker/',
             },
         ],
     },
@@ -182,9 +183,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/hcom-pdp/',
             },
         ],
+        sizes: ['desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -205,7 +207,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-image-carousel/',
             },
         ],
     },
@@ -218,7 +220,7 @@ export const vrbo = [
         format: [],
         assets: [
             {
-                label: '',
+                label: 'https://portfolio.jonnybomb.com/work/vrbo/react-inline-message/docs/',
                 id: 'inlinemessage',
                 type: 'image',
                 uri: 'vrbo/inline-message.png',
@@ -251,7 +253,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-modal/docs/',
             },
         ],
     },
@@ -274,9 +276,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/northstar/#init',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -297,14 +300,15 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/personlized-hp/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
         id: 'photomanager',
-        title: 'Photo Manager',
+        title: 'Partner Photo Manager',
         role: '',
         descr: '',
         format: [],
@@ -320,9 +324,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/prototype-mobilephotos/#/reorder',
             },
         ],
+        sizes: ['mobile'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
@@ -343,9 +348,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/all-flows/?brand=vrbo',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
@@ -366,14 +372,15 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-groupcollab-polling-study/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
+        tags: ['vrbo', 'proto', 'ds'],
         id: 'tbpolling-prods',
-        title: 'Polling - Production',
+        title: 'Polling - Production Demo',
         role: '',
         descr: '',
         format: [],
@@ -389,12 +396,13 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/?brand=vrbo',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'proto', 'ds'],
+        tags: ['vrbo', 'prod', 'ds'],
         id: 'proddemos',
         title: 'Production demos',
         role: '',
@@ -412,7 +420,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-demos/docs/',
             },
         ],
     },
@@ -435,9 +443,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/mobile-filters/',
             },
         ],
+        sizes: ['mobile'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -458,7 +467,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-single-image-carousel/docs/',
             },
         ],
     },
@@ -481,7 +490,7 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-swipable-carousel/docs/',
             },
         ],
     },
@@ -504,9 +513,10 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -527,15 +537,121 @@ export const vrbo = [
             {
                 label: '',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-vertical-image-carousel/docs/',
             },
         ],
+    },
+    {
+        tags: ['vrbo', 'video'],
+        id: 'tripboardspollingvideo',
+        title: 'Trip Boards Polling',
+        role: '',
+        descr: 'Highlights how my prototyping skills, specifically around mobile web touch interactions and motion design, aided in UX Lab tests, design iterations, and ultimately the final production build.<br/><br/><i>These demos can be viewed using the links below or from the projects listed in the Vrbo/EG prototypes section.</i>.',
+        sizes: ['mobile', 'desktop'],
+        assets: [],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=Y84gWdJdeWk',
+            },
+        ],
+        links: [
+            {
+                label: 'UX Lab',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-groupcollab-polling-study/',
+            },
+            {
+                label: 'Iterations',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/all-flows/?brand=vrbo',
+            },
+            {
+                label: 'Production Demos',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/?brand=vrbo',
+            },
+        ],
+    },
+    {
+        tags: ['vrbo', 'video'],
+        id: 'tripboardsvideo',
+        title: 'Trip Boards Prototype',
+        role: '',
+        descr: 'The Desktop and mobile Trip Boards experience evergreen prototype, where I can collaborate with design as we ideate on new features or improvements. <br/><br/><i>This demos can be viewed using the link below or from the project listed in the Vrbo/EG prototypes section.</i>.',
+        sizes: ['mobile', 'desktop'],
+        assets: [],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=rjR34Ua8YT0',
+            },
+        ],
+        links: [
+            {
+                label: '',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab/',
+            },
+        ],
+    },
+    {
+        tags: ['vrbo', 'video'],
+        id: 'northstarexperiencevideo',
+        title: 'Homeaway Northstar Experience',
+        role: '',
+        descr: 'A vision demo for the  Homeaway Northstar experience, including Immersive Search, Search Results, Property Details, and Scratchpad (to become Trip Boards).  <br/><br/><i>This demos can be viewed using the link below or from the project listed in the Vrbo/EG prototypes section.</i>.',
+        sizes: ['mobile', 'desktop'],
+        assets: [],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=oUXfuAj7_cw',
+            },
+        ],
+        links: [
+            {
+                label: '',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/northstar/#init',
+            },
+        ],
+    },
+    {
+        tags: ['vrbo', 'video'],
+        id: 'egxpvideo',
+        title: 'EG Experience Platfrom',
+        role: '',
+        descr: 'A Walk-through of how to use the templates and layouts of the EG experience platform to create the different pages in the Supply Partner Unified Onboarding App (UFO).',
+        sizes: ['desktop'],
+        assets: [],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=79cAIdAb9Tc',
+            },
+        ],
+        links: [],
+    },
+    {
+        tags: ['vrbo', 'video'],
+        id: 'egconsolevideo',
+        title: 'EG Console UX transformation',
+        role: '',
+        descr: 'Demo of how I transformed the UX for the EG console experience. Shows the old version of the EG Console, and then the version where I systematically applied UX updates, including the introduction of the Left Nav and updates to page layouts and styles.',
+        sizes: ['desktop'],
+        assets: [],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=ZN3KnsVjkBs',
+            },
+        ],
+        links: [],
     },
 ];
 
 export const vrbo_proto = filterAndSort(
-    vrbo.filter(({ tags }) => tags.includes('proto')).map((project) => transformProject(project)),
+    vrbo.filter(({ tags }) => tags.includes('proto')).map((p) => transformProject(p)),
 );
 export const vrbo_prod = filterAndSort(
-    vrbo.filter(({ tags }) => tags.includes('prod')).map((project) => transformProject(project)),
+    vrbo.filter(({ tags }) => tags.includes('prod')).map((p) => transformProject(p)),
 );
+export const vrbo_videos = filterAndSort(
+    vrbo.filter(({ tags }) => tags.includes('video')).map((p) => transformProject(p)),
+    false,
+);
+
+export const vrbo_all = [...vrbo_proto, ...vrbo_prod];

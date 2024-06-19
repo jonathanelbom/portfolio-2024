@@ -1,16 +1,83 @@
 import { Box, Button, Typography } from '@mui/material';
-import { aspectRatio_4_3, hit_area } from '../../constants/styles';
+import { gridItemHoverTransDur, hit_area } from '../../constants/styles';
 import { useMemo } from 'react';
 import { Flex } from '../IFL/ifl';
-import { Launch, ReadMoreOutlined, Slideshow } from '@mui/icons-material';
+import { Launch /* ReadMoreOutlined, Slideshow */, ReadMoreOutlined, Slideshow } from '@mui/icons-material';
+import { ACTION_TYPE, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
+import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
+import { GridMediaContainer } from './GridMediaContainer';
+
+const iconProps = {
+    fontSize: 'small',
+};
+
+const Details = ({ Icon }) => {
+    return (
+        <Flex
+            justify="center"
+            aling="center"
+            sx={{
+                backgroundColor: 'grey.300',
+                borderRadius: '100%',
+                padding: 0.5,
+            }}
+        >
+            <Icon {...iconProps} sx={{ transform: 'scale(.8)' }} />
+        </Flex>
+    );
+};
+
+const LinkActionOverlay = ({ item }) => {
+    const { link } = item;
+
+    return (
+        <>
+            <Box as="a" href={link.uri || link.url} target="_blank" sx={{ ...hit_area, zIndex: 1 }} />
+            <Button
+                role="presentation"
+                id={item.title}
+                variant="contained"
+                sx={{
+                    transition: `transform ${gridItemHoverTransDur} ease`,
+                    transform: 'scale(.5)',
+                }}
+            >
+                Launch
+            </Button>
+        </>
+    );
+};
+
+const DetailsModalActionOverlay = ({ item }) => {
+    const dispatch = useAppDispatch();
+    return (
+        <>
+            <Box as="label" htmlFor={item.title} sx={{ ...hit_area }} />
+            <Button
+                id={item.title}
+                onClick={() =>
+                    dispatch({
+                        type: ACTION_TYPE.SELECT_PROJECT,
+                        value: { ...item },
+                    })
+                }
+                variant="contained"
+                sx={{
+                    transition: `transform ${gridItemHoverTransDur} ease`,
+                    transform: 'scale(.75)',
+                    boxShadow: 'none',
+                }}
+            >
+                View Details
+            </Button>
+        </>
+    );
+};
 
 const GridItem = ({ item }) => {
-    const { links, title, description, image } = item;
-    const link = links?.[0];
-    const iconProps = {
-        color: 'primary',
-        // fontSize: 'small',
-    };
+    const { link, title, description, image, sizes, video } = item;
+    const hasAction = link || video || description;
+    const ActionOverlayComponent = video || description ? DetailsModalActionOverlay : LinkActionOverlay;
     return (
         <Box
             as="li"
@@ -18,24 +85,24 @@ const GridItem = ({ item }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
+                // justifyContent: 'space-between',
                 gap: 3,
                 padding: 4,
                 position: 'relative',
-                backgroundColor: 'grey.50', //  '#f9f7f6',
+                backgroundColor: 'grey.50',
                 boxShadow: '0 0 0 1px #d5d3d2',
-                // '&:nth-child(odd)': {
-                //     background: '#f5f3f2',
-                // },
-                ...(link && {
-                    '&:hover': {
-                        '.project-link': {
-                            opacity: 1,
-                        },
-                        '.image-container': {
-                            transform: 'scale(.9)',
-                        },
-                        button: {
-                            transform: 'scale(1)',
+                ...(hasAction && {
+                    '@media (hover:hover)': {
+                        '&:hover': {
+                            '.project-link': {
+                                opacity: 1,
+                            },
+                            '.image-container': {
+                                transform: 'scale(.925)',
+                            },
+                            button: {
+                                transform: 'scale(1)',
+                            },
                         },
                     },
                 }),
@@ -45,38 +112,31 @@ const GridItem = ({ item }) => {
                 justify="flex-end"
                 sx={{ padding: 1, gap: 1, position: 'absolute', top: 0, left: 0, right: 0, pointerEvents: 'none' }}
             >
-                {link && <Launch {...iconProps} />}
-                {/* <ReadMoreOutlined {...iconProps} />
-                <Slideshow {...iconProps} /> */}
+                {description && <Details Icon={ReadMoreOutlined} />}
+                {video && <Details Icon={Slideshow} />}
+                {link && <Details Icon={Launch} />}
             </Flex>
 
-            <Typography variant="projectTitle">{title}</Typography>
+            <Flex direction="column" gap={0.5}>
+                <Typography variant="projectTitle">{title}</Typography>
+                {sizes && <Typography variant="projectSizes">{sizes.join('/')}</Typography>}
+            </Flex>
 
-            <Box
-                className="image-container"
-                sx={{
-                    display: 'flex',
-                    flexGrow: 0,
-                    backgroundColor: '#f5f3f2',
-                    ...aspectRatio_4_3,
-                    width: '100%',
-                    overflow: 'hidden',
-                    ...(link && { boxShadow: '0 5px 20px rgba(0 ,0 , 0, .05), 0 2px 6px rgba(0 ,0 , 0, .05)' }),
-                    border: '1px solid #e5e3e2',
-                    transition: 'transform 300ms ease',
-                }}
-            >
-                <Box
-                    as="img"
-                    sx={{
-                        width: '100%',
-                        objectFit: 'cover',
-                        objectPosition: 'center left',
-                        display: 'block',
-                    }}
-                    src={`../images/${image?.uri}`}
-                />
-            </Box>
+            <GridMediaContainer item={item}>
+                {video && <VideoPlayer url={video.url} />}
+                {!video && image && (
+                    <Box
+                        as="img"
+                        sx={{
+                            width: '100%',
+                            objectFit: 'cover',
+                            objectPosition: 'center left',
+                            display: 'block',
+                        }}
+                        src={`../images/${image?.uri}`}
+                    />
+                )}
+            </GridMediaContainer>
             {false && (
                 <Typography
                     sx={{
@@ -89,7 +149,9 @@ const GridItem = ({ item }) => {
                     dangerouslySetInnerHTML={{ __html: description }}
                 />
             )}
-            {link && (
+
+            {/* action overlay and action */}
+            {hasAction && (
                 <Flex
                     className="project-link"
                     justify="center"
@@ -99,20 +161,18 @@ const GridItem = ({ item }) => {
                         position: 'absolute',
                         inset: 0,
                         opacity: 0,
-                        transition: 'opacity 300ms ease',
+                        transition: `opacity ${gridItemHoverTransDur} ease`,
                         '&::before': {
                             content: '""',
                             position: 'absolute',
                             inset: 0,
-                            backgroundColor: '#8a1b121a',
+                            backgroundColor: 'primary.main',
+                            opacity: 0.125,
                             pointerEvents: 'none',
                         },
                     }}
                 >
-                    <Box as="a" href={link.uri} target="_blank" sx={{ ...hit_area, zIndex: 10 }} />
-                    <Button variant="contained" sx={{ transition: 'transform 300ms ease', transform: 'scale(.5)' }}>
-                        View
-                    </Button>
+                    <ActionOverlayComponent item={item} />
                 </Flex>
             )}
         </Box>
@@ -120,6 +180,14 @@ const GridItem = ({ item }) => {
 };
 
 export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 3, 4] }) => {
+    const { condensed } = useAppState();
+    const hasVideos = useMemo(() => items.some(({ tags }) => tags.includes('video')), [items.length]);
+    if (hasVideos) {
+        sizing = [1, 2, 2, 3];
+    }
+    if (condensed) {
+        sizing = [1, 2];
+    }
     const gridTemplateColumns = useMemo(() => sizing.map((size) => `repeat(${size}, 1fr)`), [sizing]);
     return (
         <Box

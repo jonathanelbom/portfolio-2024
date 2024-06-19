@@ -1,9 +1,19 @@
-export const transformProject = (value = {}) => ({
-    image: value.assets?.[0],
-    title: value.title,
-    description: value.descr,
-    tags: value.tags,
-});
+export const transformProject = (value = {}) => {
+    const images = value.assets || value.images || [];
+    const links = value.links || [];
+    const videos = value.videos || [];
+    return {
+        image: images?.[0] || '',
+        link: links?.[0] || '',
+        video: videos?.[0] || '',
+        images,
+        title: value.title,
+        description: value.descr,
+        tags: value.tags,
+        links,
+        sizes: value.sizes,
+    };
+};
 
 export const filterAndSort = (_a, sort = true) => {
     let list = _a.filter(({ tags }) => !tags.includes('exclude'));

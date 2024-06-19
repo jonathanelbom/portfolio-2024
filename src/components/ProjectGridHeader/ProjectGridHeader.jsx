@@ -33,9 +33,8 @@ export const ProjecGridHeader = ({ company, dates, role, expanded, toggleExpande
                     },
                 }}
             >
-                <Box
+                {/* <Box
                     as="label"
-                    onMouseEnter={() => {}}
                     sx={{
                         cursor: 'pointer',
                         paddingBlock: 4,
@@ -48,46 +47,62 @@ export const ProjecGridHeader = ({ company, dates, role, expanded, toggleExpande
                         },
                     }}
                     htmlFor={`toggle-expand-${company}`}
-                >
-                    <Box sx={{ ...maxWidthContent }}>
-                        <Flex justify="space-between" align="center" gap={2}>
-                            <Flex
-                                className="work-title"
-                                direction="column"
-                                gap={0.5}
-                                sx={{
-                                    paddingInlineStart: 2,
-                                    position: 'relative',
-                                    ...work_decoration,
-                                    transition: 'transform 250ms ease',
-                                }}
-                            >
-                                <Flex columnGap={1} align="baseline" wrap="wrap">
-                                    <Typography variant="workTitle">{company}</Typography>
-                                    <Typography variant="workDate">{dates}</Typography>
-                                </Flex>
-                                <Typography variant="workRole">{role}</Typography>
+                > */}
+                <Box sx={{ ...maxWidthContent }}>
+                    <Flex
+                        justify="space-between"
+                        align="center"
+                        gap={2}
+                        as="label"
+                        sx={{
+                            cursor: 'pointer',
+                            paddingBlock: 4,
+                            background: '#fff',
+                            '@media (hover:hover)': {
+                                '&:hover .work-title': {
+                                    transform: 'translateX(8px)',
+                                },
+                            },
+                        }}
+                        htmlFor={`toggle-expand-${company}`}
+                    >
+                        <Flex
+                            className="work-title"
+                            direction="column"
+                            gap={0.5}
+                            sx={{
+                                paddingInlineStart: 2,
+                                position: 'relative',
+                                ...work_decoration,
+                                transition: 'transform 250ms ease',
+                            }}
+                        >
+                            <Flex columnGap={1} align="baseline" wrap="wrap">
+                                <Typography variant="workTitle">{company}</Typography>
+                                <Typography variant="workDate">{dates}</Typography>
                             </Flex>
-                            <Button
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    toggleExpanded();
-                                }}
-                                id={`toggle-expand-${company}`}
-                                variant="text" // "outlined"
-                                sx={{
-                                    marginInlineEnd: '0',
-                                    padding: '8px',
-                                    minWidth: 'unset',
-                                    borderRadius: '24px',
-                                }}
-                            >
-                                {expanded ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
-                            </Button>
+                            <Typography variant="workRole">{role}</Typography>
                         </Flex>
-                    </Box>
+                        <Button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                toggleExpanded();
+                            }}
+                            id={`toggle-expand-${company}`}
+                            variant="text" // "outlined"
+                            sx={{
+                                marginInlineEnd: '0',
+                                padding: '8px',
+                                minWidth: 'unset',
+                                borderRadius: '24px',
+                            }}
+                        >
+                            {expanded ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
+                        </Button>
+                    </Flex>
                 </Box>
             </Box>
+            {/* </Box> */}
         </>
     );
 };

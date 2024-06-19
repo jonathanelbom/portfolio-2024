@@ -25,38 +25,47 @@ const source = images.map((image, i) => {
 
 const _pearson = [
     {
-        image: {
-            label: '',
-            id: 'homepage',
-            type: 'image',
-            uri: 'abbi_1.jpg',
-        },
+        images: [
+            {
+                label: '',
+                id: 'homepage',
+                type: 'image',
+                uri: 'abbi_1.jpg',
+            },
+        ],
         title: 'Homepage',
         description: '',
         tags: ['pearson', 'abbi'],
     },
     {
-        image: {
-            label: '',
-            id: 'createitem',
-            type: 'image',
-            uri: 'abbi_2.jpg',
-        },
+        images: [
+            {
+                label: '',
+                id: 'createitem',
+                type: 'image',
+                uri: 'abbi_2.jpg',
+            },
+        ],
         title: 'Create Item',
         description: '',
         tags: ['pearson', 'abbi'],
     },
     {
-        image: {
-            label: '',
-            id: 'expertmode',
-            type: 'image',
-            uri: 'abbi_3.jpg',
-        },
+        images: [
+            {
+                label: '',
+                id: 'expertmode',
+                type: 'image',
+                uri: 'abbi_3.jpg',
+            },
+        ],
         title: 'Expert Mode',
         description: '',
         tags: ['pearson', 'abbi'],
     },
 ];
 
-export const pearson = filterAndSort(_pearson, false);
+export const pearson = filterAndSort(
+    _pearson.map((p) => transformProject(p)),
+    false,
+);

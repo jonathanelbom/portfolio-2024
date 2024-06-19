@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { contentMaxWidth, header_bg, max_width } from '../../constants/styles';
 import { Flex } from '../Flex/Flex';
 import avatar from '../../assets/images/jonathan-avatar.png';
@@ -10,8 +10,10 @@ import { DescriptionOutlined } from '@mui/icons-material';
 export const PageHeader = () => {
     const headerRef = useRef(null);
     const [scrollTop, setScrollTop] = useState(0);
-    const { isIntersecting, scrollPct, Sentinel } = useIntersctionSentinel();
+    const { isIntersecting, Sentinel /*, scrollPct */ } = useIntersctionSentinel();
     const { height } = useResize(headerRef, 100);
+    const theme = useTheme();
+    const useScrollEffect = useMediaQuery(theme.breakpoints.up('md'));
 
     const onScroll = useCallback(() => {
         setScrollTop(document.scrollingElement.scrollTop);
@@ -37,15 +39,7 @@ export const PageHeader = () => {
                 sx={{
                     top: 0,
                     position: 'sticky',
-                    // position: 'fixed',
-                    // left: 0,
-                    // right: 0,
-                    // height: '300px',
                     backgroundColor: '#f5f4f3',
-                    // transform: 'translateZ(100px)',
-                    // position: 'absolute',
-                    // inset: 0,
-
                     '&:before': {
                         content: "''",
                         ...header_bg,
@@ -62,13 +56,17 @@ export const PageHeader = () => {
                         top: 0,
                     }}
                 >
-                    <Button variant="resume" sx={{ marginBlockStart: 2 }}>
+                    <Button
+                        variant="resume"
+                        sx={{ marginBlockStart: 2 }}
+                        href="https://portfolio.jonnybomb.com/JonathanElbom_Resume.pdf"
+                        target="_blank"
+                    >
                         <DescriptionOutlined fontSize="small" />
                         <Box
                             as="span"
                             sx={{
                                 overflow: 'hidden',
-                                // maxWidth: 0,
                                 paddingInlineStart: 1,
                                 transition: 'max-width 300ms ease',
                             }}
@@ -81,13 +79,12 @@ export const PageHeader = () => {
                     sx={{
                         ...max_width,
                         paddingBlock: 8,
-                        // transform: `translateY(-${scrollTop * 0.35}px)`,
-                        willChange: 'transform',
-                        transformOrigin: 'center',
-                        // transform: `scale(${0.5 + (1 - scrollPct) * 0.5}) translateY(-${height * scrollPct * 0.5}px)`,
-                        // opacity: 1 - scrollPct * 0.5,
-                        // transition: 'transform 40ms linear',
-                        // transform: `translateY(-${height * scrollPct * 0.35}px)`,
+                        ...(useScrollEffect && {
+                            transform: `translateY(-${scrollTop * 0.35}px)`,
+                            willChange: 'transform',
+                            transformOrigin: 'center',
+                            // transform: `translateY(-${height * scrollPct * 0.35}px)`,
+                        }),
                     }}
                 >
                     <Flex align="center" justify="center" colGap={2} sx={{ position: 'relative' }}>

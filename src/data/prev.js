@@ -292,11 +292,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/springbox/interactiverfp/',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/springbox/interactiverfp/',
+                // },
             ],
         },
         swagball: {
@@ -314,11 +314,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/dell/swagarcade/',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/dell/swagarcade/',
+                // },
             ],
         },
         nascar: {
@@ -336,11 +336,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/nascar',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/nascar',
+                // },
             ],
         },
         steameffect: {
@@ -358,11 +358,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Prototype (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/lg/steameffect',
-                },
+                // {
+                //     label: 'View Prototype (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/lg/steameffect',
+                // },
             ],
         },
         san: {
@@ -380,11 +380,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://lungbooks.com/suddenlyalmostnearly/',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://lungbooks.com/suddenlyalmostnearly/',
+                // },
             ],
         },
         wayfinder: {
@@ -402,11 +402,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://wayfinder.jonnybomb.com/hub_flash.htm',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://wayfinder.jonnybomb.com/hub_flash.htm',
+                // },
             ],
         },
         jonnybomb: {
@@ -424,11 +424,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Site (Flash Player required)',
-                    id: '',
-                    url: 'http://www.jonnybomb.com',
-                },
+                // {
+                //     label: 'View Site (Flash Player required)',
+                //     id: '',
+                //     url: 'http://www.jonnybomb.com',
+                // },
             ],
         },
         texasweather: {
@@ -446,11 +446,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://bancvue.jonnybomb.com',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://bancvue.jonnybomb.com',
+                // },
             ],
         },
         wedding: {
@@ -468,11 +468,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Site (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/billiejoandjonathan',
-                },
+                // {
+                //     label: 'View Site (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/billiejoandjonathan',
+                // },
             ],
         },
         rapidric: {
@@ -490,11 +490,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Site (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/rapidric',
-                },
+                // {
+                //     label: 'View Site (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/rapidric',
+                // },
             ],
         },
         fcfado: {
@@ -512,11 +512,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://www.fcfado.com/inprogress',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://www.fcfado.com/inprogress',
+                // },
             ],
         },
         scion: {
@@ -534,16 +534,16 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Demo 1 (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/springbox/scion1',
-                },
-                {
-                    label: 'View Demo 2 (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/springbox/scion2',
-                },
+                // {
+                //     label: 'View Demo 1 (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/springbox/scion1',
+                // },
+                // {
+                //     label: 'View Demo 2 (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/springbox/scion2',
+                // },
             ],
         },
         screensaver: {
@@ -561,11 +561,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/springbox/screensaver',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/springbox/screensaver',
+                // },
             ],
         },
         magicaldash: {
@@ -583,11 +583,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/disney',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/disney',
+                // },
             ],
         },
         superview: {
@@ -605,11 +605,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Prototype (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/springbox/superview',
-                },
+                // {
+                //     label: 'View Prototype (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/springbox/superview',
+                // },
             ],
         },
         imageviewer: {
@@ -627,11 +627,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/laf/imageviewer/',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/laf/imageviewer/',
+                // },
             ],
         },
         aor: {
@@ -649,11 +649,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/paypal/agencyofrecord',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/paypal/agencyofrecord',
+                // },
             ],
         },
         transposer: {
@@ -671,11 +671,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/dell/transposer',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/dell/transposer',
+                // },
             ],
         },
         safetytraining: {
@@ -693,11 +693,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/paypal/safetytraining',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/paypal/safetytraining',
+                // },
             ],
         },
         homepagerotator: {
@@ -715,11 +715,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/laf/homepagerotator/',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/laf/homepagerotator/',
+                // },
             ],
         },
         experian: {
@@ -737,11 +737,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/experian',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/experian',
+                // },
             ],
         },
         steamlaundry: {
@@ -759,11 +759,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/lg/steamlaundrymicrosite',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/lg/steamlaundrymicrosite',
+                // },
             ],
         },
         callaway: {
@@ -781,11 +781,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/callaway',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/callaway',
+                // },
             ],
         },
         hometabmap: {
@@ -803,11 +803,11 @@ export const prev = {
                 },
             ],
             links: [
-                {
-                    label: 'View Project (Flash Player required)',
-                    id: '',
-                    url: 'http://portfolio.jonnybomb.com/work/dell/hometabmap',
-                },
+                // {
+                //     label: 'View Project (Flash Player required)',
+                //     id: '',
+                //     url: 'http://portfolio.jonnybomb.com/work/dell/hometabmap',
+                // },
             ],
         },
         k12: {
@@ -1014,3 +1014,7 @@ export const _prev_projects = Object.entries(prev.projects).map(([key, value]) =
     ...transformProject(value),
 }));
 export const prev_projects = filterAndSort(_prev_projects);
+
+export const springbox = prev_projects.filter((project) => project.tags.includes('springbox'));
+export const enspire = prev_projects.filter((project) => project.tags.includes('enspire'));
+export const jonnybomb = prev_projects.filter((project) => project.tags.includes('freelance'));

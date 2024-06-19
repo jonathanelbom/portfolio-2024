@@ -8,6 +8,7 @@ import { Box /*Button, Typography*/ } from '@mui/material';
 import { Content } from './components/Content/Content';
 import { PageHeader } from './components/PageHeader/PageHeader';
 import { BrandStripe } from './components/BrandStripe/BrandStripe';
+import { ProjectDialog } from './components/ProjectDialog/ProjectDialog';
 
 // import { ChevronRight } from '@mui/icons-material';
 
@@ -135,15 +136,18 @@ const App = () => {
     }, [pathname]);
 
     return (
-        <Box
-            sx={{
-                minBlockSize: '100vh',
-            }}
-        >
-            <BrandStripe />
-            <PageHeader />
-            <Content />
-        </Box>
+        <>
+            <Box
+                sx={{
+                    minBlockSize: '100vh',
+                }}
+            >
+                <BrandStripe />
+                <PageHeader />
+                <Content />
+            </Box>
+            <ProjectDialog />
+        </>
     );
 };
 

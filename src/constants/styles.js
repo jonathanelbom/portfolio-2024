@@ -8,6 +8,7 @@ export const maxWidthContent = {
     paddingInline: 2,
 };
 export const outerMaxWidth = '70rem';
+export const gridItemHoverTransDur = '300ms';
 
 export const colors = {
     primary: {
@@ -61,7 +62,7 @@ export const sticky_header = {
     backgroundColor: '#fff',
     position: 'sticky',
     top: 0,
-    zIndex: 1,
+    zIndex: 2,
     paddingBlock: 2,
 };
 
@@ -124,10 +125,27 @@ export const aspectRatio_4_3 = {
     },
 };
 
+export const aspectRatio_16_9 = {
+    aspectRatio: '16/9',
+    '@supports not (aspect-ratio: 16 / 9)': {
+        '&::before': {
+            float: 'left',
+            paddingTop: '56.25%',
+            content: "''",
+        },
+        '&::after': {
+            display: 'block',
+            content: "''",
+            clear: 'both',
+        },
+    },
+};
+
 export const hit_area = {
-    '&::before': {
+    '&::after': {
         content: '""',
         position: 'absolute',
         inset: 0,
+        cursor: 'pointer',
     },
 };

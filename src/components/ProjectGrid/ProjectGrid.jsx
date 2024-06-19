@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ExpandableTransition } from '../ExpandableTransition';
 import { ProjecGridHeader } from '../ProjectGridHeader/ProjectGridHeader';
 import { Grid } from '../Grid/Grid';
+import { useAppState } from '../../context/AppContext/AppContext';
 // import { useAccordian } from '../AccordianContext/AccordianContext';
 
 export const ProjectGrid = ({
@@ -12,18 +13,12 @@ export const ProjectGrid = ({
     role = 'Role',
     sx = {},
     children,
-    allExpanded,
 }) => {
     const ref = useRef(null);
     const rootRef = useRef(null);
-    // const { state, dispatch } = useAccordian();
+    const { allExpanded } = useAppState();
     const [isExpanded, setIsExpanded] = useState(allExpanded);
-    // const isExpanded = company === state.open;
     const toggleExpanded = () => {
-        // dispatch({
-        //     type: isExpanded ? 'close' : 'open',
-        //     value: company,
-        // });
         setIsExpanded((prev) => !prev);
         if (isExpanded && ref.current) {
             const { y } = rootRef.current.getBoundingClientRect();
@@ -32,16 +27,6 @@ export const ProjectGrid = ({
             }
         }
     };
-
-    // useEffect(() => {
-    //     if (isExpanded && ref.current) {
-    //         console.log('rootRef.current:', rootRef?.current?.offsetTop);
-    //         const { y } = ref.current.getBoundingClientRect();
-    //         if (y <= 0) {
-    //             ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    //         }
-    //     }
-    // }, [isExpanded]);
 
     useEffect(() => setIsExpanded(allExpanded), [allExpanded]);
 

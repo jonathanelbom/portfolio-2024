@@ -1,17 +1,16 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
-import { prev_projects } from '../../data/prev';
-import { vrbo_prod, vrbo_proto } from '../../data/vrbo';
+import { enspire, jonnybomb, springbox } from '../../data/prev';
+import { vrbo_all, vrbo_prod, vrbo_proto, vrbo_videos } from '../../data/vrbo';
 import { mm } from '../../data/mentalmodeler';
 import { pearson } from '../../data/pearson';
 import { indeed } from '../../data/indeed';
-import { maxWidthContent, subwork_decoration } from '../../constants/styles';
+import { contentMaxWidth, maxWidthContent, subwork_decoration } from '../../constants/styles';
 import { Compress, Expand, WavingHandOutlined, WebOutlined } from '@mui/icons-material';
-import { useState } from 'react';
 import { ProjectGrid } from '../ProjectGrid/ProjectGrid';
 import { Grid } from '../Grid/Grid';
-import { AccordianProvider } from '../AccordianContext/AccordianContext';
 import { Flex } from '../IFL/ifl';
+import { ACTION_TYPE, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
 
 const MinWidthSection = ({ children, sx = {} }) => (
     <Box
@@ -53,8 +52,8 @@ export const Section = ({ children, sx, title, Icon, padding = 'header', altCont
                 >
                     <Flex justify="space-between">
                         <Typography component="h2" variant="sectionHeadline">
-                            <Flex gap={1} align="center">
-                                {Icon && <Icon />}
+                            <Flex gap={1.5} align="center">
+                                {Icon && <Icon sx={{ transform: 'scale(1.25)' }} />}
                                 {title}
                             </Flex>
                         </Typography>
@@ -70,28 +69,34 @@ export const Section = ({ children, sx, title, Icon, padding = 'header', altCont
 
 export const Content = ({ children }) => {
     const { isIntersecting, Sentinel } = useIntersctionSentinel({ threshold: 1 });
-    const springbox = prev_projects.filter((project) => project.tags.includes('springbox'));
-    const enspire = prev_projects.filter((project) => project.tags.includes('enspire'));
-    const jonnybomb = prev_projects.filter((project) => project.tags.includes('freelance'));
-    const [allExpanded, setAllExpanded] = useState(false);
-    const [compressed, setCompressed] = useState(false);
-    const iconStyle = { transform: 'rotate(90deg)' };
+    const { condensed } = useAppState();
+    const dispatch = useAppDispatch();
+    const { allExpanded } = useAppState();
+    const showExpandContract = useMediaQuery(`(min-width: calc(${contentMaxWidth} + 32px))`);
+    const ExpandIcon = condensed ? Expand : Compress;
     return (
         <>
-            <Button
-                onClick={() => setCompressed((prev) => !prev)}
-                variant="contained"
-                sx={{
-                    position: 'fixed',
-                    bottom: '16px',
-                    right: '16px',
-                    zIndex: 2,
-                    minWidth: 'unset',
-                    padding: 1,
-                }}
-            >
-                {compressed ? <Expand sx={{ ...iconStyle }} /> : <Compress sx={{ ...iconStyle }} />}
-            </Button>
+            {showExpandContract && (
+                <Button
+                    onClick={() =>
+                        dispatch({
+                            type: ACTION_TYPE.TOGGLE_CONDENSED,
+                            value: !condensed,
+                        })
+                    }
+                    variant="contained"
+                    sx={{
+                        position: 'fixed',
+                        bottom: '16px',
+                        right: '16px',
+                        zIndex: 2,
+                        minWidth: 'unset',
+                        padding: 1,
+                    }}
+                >
+                    <ExpandIcon sx={{ transform: 'rotate(90deg)' }} />
+                </Button>
+            )}
             <Sentinel sx={{ opacity: 0, height: '10px' }} />
             <Flex
                 as="main"
@@ -99,8 +104,8 @@ export const Content = ({ children }) => {
                 direction="column"
                 gap={8}
                 sx={{
-                    // maxWidth: '50rem',
-                    ...(compressed && { maxWidth: 'var(--max-content-width)' }),
+                    maxWidth: condensed ? `calc(${contentMaxWidth} + 48px)` : '100vw',
+                    transition: 'max-width 500ms ease',
                     marginInline: 'auto',
                     paddingBlockStart: [2, 2, 3],
                     paddingBlockEnd: 10,
@@ -137,112 +142,110 @@ export const Content = ({ children }) => {
                         }
                     </Typography>
                 </Section>
-                <AccordianProvider>
-                    <Section
-                        title="Work"
-                        Icon={WebOutlined}
-                        altControl={
-                            // <Box as="label" sx={{ display: 'flex', alignItems: 'center', gap: 1.5, cursor: 'pointer' }}>
-                            <Button
-                                variant="text"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setAllExpanded((prev) => !prev);
-                                }}
-                                // id={`toggle-expand-${company}`}
-                                sx={{
-                                    marginInlineEnd: '0',
-                                    // padding: '4px',
-                                    // minWidth: 'unset',
-                                    //  borderRadius: '24px',
-                                }}
-                            >
-                                {allExpanded ? 'HIDE ALL' : 'SHOW ALL'}
-                            </Button>
-                            // </Box>
-                        }
-                    >
-                        <MinWidthSection>
-                            <Typography>
-                                {
-                                    'Welcome to my work. I have recently updated this section and will be continually improving it, adding more descriptions, videos, and links to prototypes and demos. Click each row to expand or collapse it or use the show/hide all to toggle all rows at once.'
-                                }
-                            </Typography>
-                        </MinWidthSection>
-                        <ProjectGrid
-                            items={indeed}
-                            company="Indeed"
-                            dates="Sept 2022 - May 2024"
-                            role="Lead UX Developer"
-                            allExpanded={allExpanded}
-                        ></ProjectGrid>
-                        <ProjectGrid
-                            items={vrbo_proto.concat(vrbo_prod)}
-                            company="Vrbo/EG"
-                            dates="July 2016 - Sept 2022"
-                            role="Sr. Design Technologist | UX Engineer"
-                            allExpanded={allExpanded}
-                            // sx={{ paddingBlockEnd: 12 }}
+                <Section
+                    title="Work"
+                    Icon={WebOutlined}
+                    altControl={
+                        <Button
+                            variant="text"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                dispatch({
+                                    type: ACTION_TYPE.TOGGLE_ALL_EXPANDED,
+                                    value: !allExpanded,
+                                });
+                            }}
+                            sx={{ marginInlineEnd: '0' }}
                         >
-                            <Box sx={{ paddingBlock: 3 }}>
-                                <WorkInfo
-                                    title="Prototypes: The Lab and Beyond"
-                                    content="At Vrbo, I started with high-fidelity prototypes for user labs but soon expanded
+                            {allExpanded ? 'HIDE ALL' : 'SHOW ALL'}
+                        </Button>
+                    }
+                >
+                    <MinWidthSection>
+                        <Typography>
+                            {
+                                'Welcome to my work. This section is in-progress and I am continually improving it, adding more descriptions, videos, and links to prototypes and demos.'
+                            }
+                            <br />
+                            <br />
+                            <i>
+                                Click each row to expand or collapse it or use the show/hide all to toggle all rows at
+                                once.
+                            </i>
+                        </Typography>
+                    </MinWidthSection>
+                    <ProjectGrid
+                        items={indeed}
+                        company="Indeed"
+                        dates="Sept 2022 - May 2024"
+                        role="Lead UX Developer"
+                    ></ProjectGrid>
+                    <ProjectGrid
+                        items={vrbo_all}
+                        company="Vrbo/EG"
+                        dates="July 2016 - Sept 2022"
+                        role="Sr. Design Technologist | UX Engineer"
+                    >
+                        <Box sx={{ paddingBlock: 3 }}>
+                            <WorkInfo
+                                title="Videos: Case Studies and Demos"
+                                content="Videos I created to walk through demos and case studies of the work I did at Vrbo/Expedia Group"
+                            />
+                            <Grid items={vrbo_videos} topBorder />
+                        </Box>
+                        <Box sx={{ paddingBlock: 3 }}>
+                            <WorkInfo
+                                title="Prototypes: The Lab and Beyond"
+                                content="At Vrbo, I started with high-fidelity prototypes for user labs but soon expanded
                                         to impactful workflows like production prototypes and demos. These parallel
                                         experiences allow collaboration with designers to create interaction-rich
                                         features, providing blueprints and usable UI code for production engineering"
-                                />
-                                <Grid items={vrbo_proto} topBorder />
-                            </Box>
-                            <Box sx={{ paddingBlock: 3, marginBlockEnd: 9 }}>
-                                <WorkInfo
-                                    title="Design System and Shared Components"
-                                    content="The production components, which I initially prototyped with other designers,
+                            />
+                            <Grid items={vrbo_proto} topBorder />
+                        </Box>
+                        <Box sx={{ paddingBlock: 3, marginBlockEnd: 9 }}>
+                            <WorkInfo
+                                title="Design System and Shared Components"
+                                content="The production components, which I initially prototyped with other designers,
                                         are shared design system web components on Vrbo (www.vrbo.com). Built in React,
                                         often in collaboration with the UI-Toolkit team, these components are maintained
                                         and improved for both desktop and mobile web. The demos are static builds of the
                                         component dev harnesses."
-                                />
-                                <Grid items={vrbo_prod} topBorder />
-                            </Box>
-                        </ProjectGrid>
-                        <ProjectGrid
-                            items={mm}
-                            company="Mental Modeler"
-                            dates="Jan 2011 -  Present"
-                            role="Co-Creator | Designer | Developer"
-                            allExpanded={allExpanded}
-                        ></ProjectGrid>
-                        <ProjectGrid
-                            items={pearson}
-                            company="Pearson"
-                            dates="Nov 2010 - July 2016"
-                            role="Sr. Frontend Developer | UX Lead"
-                            allExpanded={allExpanded}
-                        ></ProjectGrid>
-                        <ProjectGrid
-                            items={springbox}
-                            company="Springbox"
-                            dates="Oct 2007 - Nov 2010"
-                            role="Sr. Rich Media Designer|Developer"
-                            allExpanded={allExpanded}
-                        ></ProjectGrid>
-                        <ProjectGrid
-                            items={enspire}
-                            company="Enspire Learning"
-                            dates="Nov 2001 - Oct 2007"
-                            role="Rich Media Designer|Developer"
-                            allExpanded={allExpanded}
-                        ></ProjectGrid>
-                        <ProjectGrid
-                            items={jonnybomb}
-                            company="Jonnybomb"
-                            dates="Nov 2001 - Nov 2010"
-                            role="Designer | Developer"
-                            allExpanded={allExpanded}
-                        ></ProjectGrid>
-                    </Section>
-                </AccordianProvider>
+                            />
+                            <Grid items={vrbo_prod} topBorder />
+                        </Box>
+                    </ProjectGrid>
+                    <ProjectGrid
+                        items={mm}
+                        company="Mental Modeler"
+                        dates="Jan 2011 -  Present"
+                        role="Co-Creator | Designer | Developer"
+                    ></ProjectGrid>
+                    <ProjectGrid
+                        items={pearson}
+                        company="Pearson"
+                        dates="Nov 2010 - July 2016"
+                        role="Sr. Frontend Developer | UX Lead"
+                    ></ProjectGrid>
+                    <ProjectGrid
+                        items={springbox}
+                        company="Springbox"
+                        dates="Oct 2007 - Nov 2010"
+                        role="Sr. Rich Media Designer|Developer"
+                    ></ProjectGrid>
+                    <ProjectGrid
+                        items={enspire}
+                        company="Enspire Learning"
+                        dates="Nov 2001 - Oct 2007"
+                        role="Rich Media Designer|Developer"
+                    ></ProjectGrid>
+                    <ProjectGrid
+                        items={jonnybomb}
+                        company="Jonnybomb"
+                        dates="Nov 2001 - Nov 2010"
+                        role="Designer | Developer"
+                    ></ProjectGrid>
+                </Section>
             </Flex>
         </>
     );
