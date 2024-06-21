@@ -11,7 +11,8 @@ import { Flex } from '../IFL/ifl';
 import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
 import { GridMediaContainer } from '../Grid';
 import { Close, Launch } from '@mui/icons-material';
-import { maxWidthContent } from '../../constants/styles';
+import { dialog_footer_scroll_signifier, maxWidthContent, sticky_header_before } from '../../constants/styles';
+import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
 
 const timeout = {
     enter: 400,
@@ -58,12 +59,16 @@ export const ProjectDialog = () => {
     const { modalOpen, selectedProject } = useAppState();
     const dispatch = useAppDispatch();
     const { title, sizes, image, video, links, description } = selectedProject || {};
+
     const handleClose = () => {
         dispatch({
             type: ACTION_TYPE.TOGGLE_MODAL,
             value: false,
         });
     };
+
+    const { isIntersecting: isIntersectingTop, Sentinel: SentinelTop } = useIntersctionSentinel({ threshold: 1 });
+    const { isIntersecting: isIntersectingBottom, Sentinel: SentinelBottom } = useIntersctionSentinel({ threshold: 1 });
 
     return (
         <CustomizedDialog
@@ -76,7 +81,17 @@ export const ProjectDialog = () => {
             aria-describedby="alert-dialog-slide-description"
             // scroll="body"
         >
-            <DialogTitle>
+            <DialogTitle
+                sx={{
+                    position: 'relative',
+                    zIndex: 1,
+                    ...(!isIntersectingTop && { borderBlockEnd: '1px solid #e5e3e2' }),
+                    '&::before': {
+                        ...sticky_header_before,
+                        opacity: !isIntersectingTop ? 1 : 0,
+                    },
+                }}
+            >
                 <Flex direction="column" gap={0}>
                     <Typography variant="projectTitle">{title}</Typography>
                     {sizes && (
@@ -91,6 +106,7 @@ export const ProjectDialog = () => {
                 onClick={handleClose}
                 sx={{
                     position: 'absolute',
+                    zIndex: 1,
                     right: 8,
                     top: 8,
                     color: (theme) => theme.palette.grey[500],
@@ -98,35 +114,66 @@ export const ProjectDialog = () => {
             >
                 <Close />
             </IconButton>
-            <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                <GridMediaContainer item={selectedProject} inDialog={!video}>
-                    {video && <VideoPlayer url={video.url} />}
-                    {!video && image && (
-                        <Box
-                            as="img"
-                            sx={{
-                                width: '100%',
-                                height: '400px',
-                                objectFit: 'contain',
-                                objectPosition: 'center',
-                                display: 'block',
-                            }}
-                            src={`../images/${image?.uri}`}
+            <DialogContent>
+                <SentinelTop
+                    sx={{
+                        // backgroundColor: 'green',
+                        // width: '50px',
+                        height: ' 2px',
+                        top: 'unset',
+                        position: 'relative',
+                    }}
+                />
+                <Flex direction="column" gap={3}>
+                    <GridMediaContainer item={selectedProject} inDialog={!video}>
+                        {video && <VideoPlayer url={video.url} />}
+                        {!video && image && (
+                            <Box
+                                as="img"
+                                sx={{
+                                    width: '100%',
+                                    height: '400px',
+                                    objectFit: 'contain',
+                                    objectPosition: 'center',
+                                    display: 'block',
+                                }}
+                                src={`../images/${image?.uri}`}
+                            />
+                        )}
+                    </GridMediaContainer>
+                    {description && (
+                        <Typography
+                            as="span"
+                            variant="body1"
+                            dangerouslySetInnerHTML={{ __html: description }}
+                            sx={{ ...maxWidthContent }}
                         />
                     )}
-                </GridMediaContainer>
-                {description && (
-                    // <DialogContentText>
-                    <Typography
-                        as="span"
-                        variant="body1"
-                        dangerouslySetInnerHTML={{ __html: description }}
-                        sx={{ ...maxWidthContent }}
-                    />
-                    // </DialogContentText>
-                )}
+                </Flex>
+                <SentinelBottom
+                    sx={{
+                        // backgroundColor: 'red',
+                        // width: '50px',
+                        height: ' 2px',
+                        top: 'unset',
+                        position: 'relative',
+                    }}
+                />
             </DialogContent>
-            <DialogActions sx={{ flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
+            <DialogActions
+                sx={{
+                    flexWrap: 'wrap',
+                    gap: 1,
+                    justifyContent: 'center',
+                    zIndex: 1,
+                    position: 'relative',
+                    ...(!isIntersectingBottom && { borderBlockStart: '1px solid #e5e3e2' }),
+                    '&::before': {
+                        ...dialog_footer_scroll_signifier,
+                        opacity: !isIntersectingBottom ? 1 : 0,
+                    },
+                }}
+            >
                 {links &&
                     links.map((link, i) => {
                         const _url = link.uri || link.url;

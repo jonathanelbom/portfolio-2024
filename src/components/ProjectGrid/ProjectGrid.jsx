@@ -4,6 +4,7 @@ import { ExpandableTransition } from '../ExpandableTransition';
 import { ProjecGridHeader } from '../ProjectGridHeader/ProjectGridHeader';
 import { Grid } from '../Grid/Grid';
 import { useAppState } from '../../context/AppContext/AppContext';
+import { WorkInfo } from '../WorkInfo/WorkInfo';
 // import { useAccordian } from '../AccordianContext/AccordianContext';
 
 export const ProjectGrid = ({
@@ -14,6 +15,8 @@ export const ProjectGrid = ({
     sx = {},
     section = '',
     children,
+    title,
+    content,
 }) => {
     const ref = useRef(null);
     const rootRef = useRef(null);
@@ -64,6 +67,13 @@ export const ProjectGrid = ({
                 <Box ref={ref}>
                     {/* childern */}
                     {!!children && children}
+
+                    {/* workInfo  */}
+                    {!children && title && content && (
+                        <Box sx={{ paddingBlock: 3 }}>
+                            <WorkInfo title={title} content={content} />
+                        </Box>
+                    )}
 
                     {/* grid  */}
                     {!children && (

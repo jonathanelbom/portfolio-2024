@@ -19,7 +19,7 @@ export const SECTION = {
 
 const appReducer = (state, action) => {
     const { type, value } = action;
-    console.log('appReducer, type:', type, ', value:', value);
+    // console.log('appReducer, type:', type, ', value:', value);
     switch (type) {
         case ACTION_TYPE.TOGGLE_MODAL: {
             return { ...state, modalOpen: value };

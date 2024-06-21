@@ -10,11 +10,19 @@ export const _dropparty = [
                 uri: 'drop_party.png',
             },
         ],
-        title: 'Instagram Experience',
+        title: 'Instagram Drop Demo',
         id: 'dropparty-homepage',
-        description: '',
+        description:
+            'This is a mobile, touch-first experience composed of the different UI components I built. This expereince demonstates the user flow of landing on and registering for the initial instagram drop.',
         tags: ['dropparty'],
         sizes: ['mobile'],
+        links: [
+            {
+                label: '',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/drop-party/',
+            },
+        ],
     },
     {
         images: [
@@ -26,10 +34,18 @@ export const _dropparty = [
             },
         ],
         id: 'dropparty-components',
-        title: 'Component Set',
-        description: '',
+        title: 'Drop UI Components',
+        description:
+            'I worked with the Drop Party lead designer and lead engineer to build out these controlled React components. This work invovled building a custom swipable carousel, as well as a host of form elements.',
         tags: ['dropparty'],
         sizes: ['mobile'],
+        links: [
+            {
+                label: '',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/drop-party/components.html',
+            },
+        ],
     },
 ];
 

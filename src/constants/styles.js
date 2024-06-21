@@ -82,6 +82,21 @@ export const sticky_header_before = {
     pointerEvents: 'none',
 };
 
+export const dialog_footer_scroll_signifier = {
+    content: '""',
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: '-32px',
+    height: '32px',
+    background: `linear-gradient(to top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .05) 25%, rgba(0, 0, 0, .025) 50% , rgba(0, 0, 0, 0) 100%)`,
+    // inset: 0,
+    // boxShadow: '0 0 32px rgba(0, 0, 0, .2), 0 0 8px rgba(0, 0, 0, .1)',
+    opacity: 0,
+    transition: 'opacity 350ms ease',
+    pointerEvents: 'none',
+};
+
 export const work_decoration = {
     '&::before': {
         content: '""',

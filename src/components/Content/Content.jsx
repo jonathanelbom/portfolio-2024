@@ -1,13 +1,13 @@
 import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
-import { jonnybomb, springbox } from '../../data/prev';
+import { springbox } from '../../data/prev';
 import { enspire } from '../../data/enspire';
 import { dropparty } from '../../data/dropparty';
 import { vrbo_all, vrbo_prod, vrbo_proto, vrbo_videos } from '../../data/vrbo';
 import { mm } from '../../data/mentalmodeler';
 import { pearson } from '../../data/pearson';
 import { indeed } from '../../data/indeed';
-import { contentMaxWidth, maxWidthContent, subwork_decoration } from '../../constants/styles';
+import { contentMaxWidth, maxWidthContent } from '../../constants/styles';
 import {
     CelebrationOutlined,
     Compress,
@@ -15,6 +15,7 @@ import {
     SupervisorAccountOutlined,
     WavingHandOutlined,
     WebOutlined,
+    // BrokenImageOutlined,
 } from '@mui/icons-material';
 import { ProjectGrid } from '../ProjectGrid/ProjectGrid';
 import { Grid } from '../Grid/Grid';
@@ -22,6 +23,7 @@ import { Flex } from '../IFL/ifl';
 import { ACTION_TYPE, SECTION, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
 import { jonnybomb_js } from '../../data/jonnybomb_js';
 import { jonnybomb_as } from '../../data/jonnybomb_as';
+import { WorkInfo } from '../WorkInfo/WorkInfo';
 
 const MinWidthSection = ({ children, sx = {} }) => (
     <Box
@@ -33,24 +35,6 @@ const MinWidthSection = ({ children, sx = {} }) => (
         {children}
     </Box>
 );
-
-const WorkInfo = ({ title, content }) => {
-    return (
-        <Box sx={{ ...maxWidthContent, marginBlockStart: 3, marginBlockEnd: 3 }}>
-            <Flex direction="column" gap={1}>
-                {title && (
-                    <Typography
-                        variant="subWorkTitle"
-                        sx={{ position: 'relative', paddingInline: 2, ...subwork_decoration }}
-                    >
-                        {title}
-                    </Typography>
-                )}
-                {content && <Typography variant="body1" dangerouslySetInnerHTML={{ __html: content }} />}
-            </Flex>
-        </Box>
-    );
-};
 
 export const Section = ({ children, sx, title, Icon, padding = 'header', altControl }) => {
     return (
@@ -185,6 +169,8 @@ export const Content = ({ children }) => {
                         dates="Sept 2022 - May 2024"
                         role="Lead UX Developer"
                         section={SECTION.WORK}
+                        title="Polished Experiences: Prototypes to Production"
+                        content="Much of this work demonstrates my collaborative process with designers and engineers as I iterated on experiences and took them from prototypes to production."
                     ></ProjectGrid>
                     <ProjectGrid
                         items={vrbo_all}
@@ -217,7 +203,7 @@ export const Content = ({ children }) => {
                                         are shared design system web components. Built in React,
                                         often in collaboration with the UI-Toolkit team, these components are maintained
                                         and improved for both desktop and mobile web. The demos are static builds of the
-                                        component dev harnesses.<br/><br/><i>The media URLs originally used for these have changed. I am in the process of updaing these demos, but until that is complete, many photos might not load.</i>"
+                                        component dev harnesses.<br/><br/><BrokenImageOutlined/><i>The media URLs originally used for these have changed. I am in the process of updaing these demos, but until that is complete, many photos might not load.</i>"
                             />
                             <Grid items={vrbo_prod} topBorder />
                         </Box>
@@ -228,12 +214,16 @@ export const Content = ({ children }) => {
                         dates="Nov 2010 - July 2016"
                         role="Sr. Frontend Developer | UX Lead"
                         section={SECTION.WORK}
+                        title="ABBI - Assessment Banking and Building for Interoperable solutions"
+                        content="ABBI is Pearson's flag-ship content authoring, banking, and form building tool used to create QTI compliant interoperable assessments."
                     ></ProjectGrid>
                     <ProjectGrid
                         items={springbox}
                         company="Springbox"
                         dates="Oct 2007 - Nov 2010"
                         role="Sr. Rich Media Designer | Developer"
+                        title="Digital Ad Agency Moments of Delight"
+                        content="This collection of ActionScript 3 work showcases my interaction and motion design and implementation skills, as I colloborated with content, design, and technology to deliver delightful micro-sites, touch kiosks, and mini-games to big name clients."
                         section={SECTION.WORK}
                     ></ProjectGrid>
                     <ProjectGrid
@@ -242,6 +232,8 @@ export const Content = ({ children }) => {
                         dates="Nov 2001 - Oct 2007"
                         role="Rich Media Designer | Developer"
                         section={SECTION.WORK}
+                        title="E-Learning Experiences to Remember"
+                        content="Enspire Learning is where I spent the formative years of my digital career, honing my visual design skills and beganing my foray into scripting and interactive development."
                     ></ProjectGrid>
                 </Section>
                 <Section
@@ -255,6 +247,8 @@ export const Content = ({ children }) => {
                         dates="Jan 2011 -  Present"
                         role="Co-Creator | Designer | Developer"
                         section={SECTION.CONSULTING}
+                        title="Fun Project to Mainstay in Academia"
+                        content="What began as a fun challenge to create an intuitive node graphing application for my professor friend's Fuzzy Logic Cognitive mapping software has turned into a mainstay in the world of academia. This project has received over a million dollars in grant funding since 2012 and attracts 50,000 users annually. It has supported the publication of over 40 academic papers each year since 2018 and has attracted collaborators such as the Nation Science Foundation, Mitre, DARPA, and the World Wildlife Foundation"
                     ></ProjectGrid>
                     <ProjectGrid
                         items={dropparty}

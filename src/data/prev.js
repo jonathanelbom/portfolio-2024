@@ -148,9 +148,9 @@ export const prev = {
         screensaver: {
             tags: ['springbox'],
             id: 'screensaver',
-            title: 'Springbox Sixth Anniversary Screensaver',
+            title: 'Springbox 6th Anniversary Screensaver',
             role: 'Lead Developer',
-            descr: "For Springbox's sixth anniversary, I created a screensaver that pulls images from Flickr and transitions them them in a flipping, 3D manner. The final screensaver had options to let the user control the amount of image overlap, base piece size, flipping speed, and even allows users to customize the feed to their own Flickr account.",
+            descr: "For Springbox's 6th anniversary, I created a screensaver that pulls images from Flickr and transitions them them in a flipping, 3D manner. The final screensaver had options to let the user control the amount of image overlap, base piece size, flipping speed, and even allows users to customize the feed to their own Flickr account.",
             assets: [
                 {
                     label: '',

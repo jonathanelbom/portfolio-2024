@@ -4,8 +4,6 @@ const images = [
     'card-carousel-motion.png',
     'card-carousel.png',
     'drawer.png',
-    // 'drop-party-ui.png',
-    // 'drop-party.png',
     'guest-picker.png',
     'hcom.png',
     'image-carousel.png',
@@ -14,7 +12,6 @@ const images = [
     'northstar.png',
     'personalized-hp.png',
     'photos.png',
-    // 'placeholder.png',
     'polling-explore.png',
     'polling-lab.png',
     'polling.png',
@@ -30,8 +27,6 @@ const titles = [
     'Carousel Motion Study',
     'Card Carousel',
     'Drawer',
-    // 'drop-party-ui.png',
-    // 'drop-party.png',
     'Guest Piker',
     'Hcom Property Details',
     'image-carousel.png',
@@ -40,7 +35,6 @@ const titles = [
     '',
     'Personalized Homepage',
     'Photo Manager',
-    // 'placeholder.png',
     'TB Polling - Iterations',
     'TB Polling - UX Lab',
     'TB Polling - Prods',
@@ -76,8 +70,7 @@ export const vrbo = [
         id: 'carouselmotionstudy',
         title: 'Carousel Motion Study',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'A slide motion study with controls to explore the motion options around the single and paging transitions of the Card Carousel.',
         assets: [
             {
                 label: '',
@@ -100,8 +93,7 @@ export const vrbo = [
         id: 'cardcarousel',
         title: 'Card Carousel',
         role: '',
-        descr: '',
-        format: [],
+        descr: "A click and scrolling mode supporting single and multi-card paging carousel with an accompanying extensible aspect-ratio based child card component. This component is littered throughout our experience and I have done several exploration around the extension of it's child cards",
         assets: [
             {
                 label: '',
@@ -124,8 +116,7 @@ export const vrbo = [
         id: 'drawer',
         title: 'Drawer',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'A panel and modal drawer implementation with header controls and a native-like experience for stepping through screens.',
         assets: [
             {
                 label: '',
@@ -148,7 +139,7 @@ export const vrbo = [
         id: 'guestpicker',
         title: 'Guest Picker',
         role: '',
-        descr: '',
+        descr: 'During a multi-month project to improve the usability of our Guest Picker feature, I partnered with our Design Systems UX Lead to create an improved prodcution implementation of our Guest Picker component. I also created a sample implementation in our Properties Detail Page.',
         format: [],
         assets: [
             {
@@ -172,7 +163,7 @@ export const vrbo = [
         id: 'hcompropertydetails',
         title: 'Hcom Property Details',
         role: '',
-        descr: '',
+        descr: 'This is a UX Lab demo done for Hotels.com to explore user sentiment as they work to add vacation rental inventory to their site. After Figma was unable to provide the intended sticky behavior, I created this prototype, that is a combination of live production data that power the images and availability calendar as well as static images for section that do not require user interaction.',
         format: [],
         assets: [
             {
@@ -196,7 +187,7 @@ export const vrbo = [
         id: 'image-carousel.png',
         title: 'Image Carousel',
         role: '',
-        descr: '',
+        descr: "This component was built during my 6-month stint working on Property Details Page team as we worked to transition their code-base to React. The continually looping carousel supports stills, captions, and videos, has responsive touch gesture support, and supports inline and full-screen usage. Multiple carousel can be composed to create an inline experience that translate to full-screen. Use your phone or browser's mobile emulator to check out the swipe geture handling.",
         format: [],
         assets: [
             {
@@ -220,7 +211,7 @@ export const vrbo = [
         id: 'inlinemessage',
         title: 'Inline Message',
         role: '',
-        descr: '',
+        descr: 'An inline message component with baked-in transition for showing, hiding, changing icons, and changing messaging. The component was created during my work with the Design Systems team on improving the Traveler Guest Picker component.',
         format: [],
         assets: [
             {
@@ -244,7 +235,7 @@ export const vrbo = [
         id: 'modalenhancements',
         title: 'Modal Enhancements',
         role: '',
-        descr: '',
+        descr: 'These enhancements involved adding a scrolling body modal, complete with built in scroll signifying shadows, and a swipe-dismissable bottom sheet modal, used to create a native-like experience on mobile web.',
         format: [],
         assets: [
             {
@@ -268,8 +259,7 @@ export const vrbo = [
         id: 'northstarexperience',
         title: 'Northstar experience',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'Though technically never used for production, I spent my first year at Vrbo building this prototype of the entire Traveler experience. This prototype did consume our production APIs, but for the sake of stability, it now just uses a scraped, static version of this data. It is a responsive experience that works for both desktop and mobile web. Try it out for a trip to "Chamonix".',
         assets: [
             {
                 label: '',
@@ -292,8 +282,7 @@ export const vrbo = [
         id: 'personalizedhomepage',
         title: 'Personalized Homepage',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'This served as a UX Lab and production demo for an initiative to re-imagine what a personalized landing experience could be like. I built numerous configurable modules used to compose mobile, tablet, and desktop experiences.                                            ',
         assets: [
             {
                 label: '',
@@ -316,8 +305,7 @@ export const vrbo = [
         id: 'photomanager',
         title: 'Partner Photo Manager',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'A mobile study to explore the photo onboarding process for new partners. I used my extensive knowlege of mobile web gestures to build out the photo "re-arranging" portion of this prototype.',
         assets: [
             {
                 label: '',
@@ -340,8 +328,7 @@ export const vrbo = [
         id: 'tbpolling-iterations',
         title: 'Polling - Iterations',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'This prototype if a continuation of the Trip Boards polling work. With learnings for the UX study, the design team moved ahead and I iterated on the multiple different modes in which we could present this polling experience.',
         assets: [
             {
                 label: '',
@@ -364,8 +351,7 @@ export const vrbo = [
         id: 'tbpolling-uxlab',
         title: 'Polling - UX Lab',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'The first polling prototype, this is a mobile viewport sized study (on desktop and mobile) used to gain insight around our evolving group polling feature for Trip Boards. This study contained a combination of invision prototypes as well as the high-fidelity prototype (featured here) which focuses on the nuances of the drag-and-drop interactions for ranking your top properties.',
         assets: [
             {
                 label: '',
@@ -388,8 +374,7 @@ export const vrbo = [
         id: 'tbpolling-prods',
         title: 'Polling - Production Demo',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'After deciding upon the best user flow from our polling explorations, I built a production demo prototyoe that covered both the poll creation and poll taking experiences. For this work, I adopted a modified drag and drop experience to better match our native experiences, which were concurrently being developed.',
         assets: [
             {
                 label: '',
@@ -412,8 +397,7 @@ export const vrbo = [
         id: 'proddemos',
         title: 'Production demos',
         role: '',
-        descr: '',
-        format: [],
+        descr: 'This is a collection of production demos created by composing and modifying the existing set of Vrbo Design System web components, focusing mainly on calendar implementations, web animations, and modal patterns. These demos serve to help UX designers understand what is possible in our tech stack, iterate and refine their ideas by seeing them come to life, accelerate our production engineering team by completing a chunk of the front-end work before it gets to them, and ensure our production experience has the craft and polish our users deserve.',
         assets: [
             {
                 label: '',
@@ -436,8 +420,7 @@ export const vrbo = [
         id: 'searchfiltersstudy',
         title: 'Search Filters Study',
         role: '',
-        descr: '',
-        format: [],
+        descr: "A mobile exploration around the filters options on our Search page. The most interesting part of this prototype is the iOS tumbler pattern I created for the price filters. Check it out on mobile, or at least in a your browser's mobile emulator, because the buttons relies on touch events in order to give a responsive feel.",
         assets: [
             {
                 label: '',
@@ -460,7 +443,7 @@ export const vrbo = [
         id: 'singleimagecarousel',
         title: 'Single Image Carousel',
         role: '',
-        descr: '',
+        descr: "When the Search Results Page team needed a simplfied version of the Image Carousel for use in Google Maps, the Single Image Carousel was born. It supports showing only one still at a time, but has the same transition and responsive touch gesture support of its older sibling. Use your phone or browser's mobile emulator to check out the swipe geture handling.",
         format: [],
         assets: [
             {
@@ -483,8 +466,7 @@ export const vrbo = [
         tags: ['vrbo', 'prod', 'ds'],
         id: 'swiepablecarousel',
         title: 'Swiepable Carousel',
-        role: '',
-        descr: '',
+        descr: 'This is a native-like, touch-first swipable carousel with snap to and peaking functionality. It also supports pointer devices.',
         format: [],
         assets: [
             {
@@ -508,8 +490,7 @@ export const vrbo = [
         id: 'tripboards',
         title: 'Trip Boards',
         role: '',
-        descr: '',
-        format: [],
+        descr: "This is a responsive desktop and mobile web production prototype for the Vrbo Tripboards app, where users can create curated collections of properties and invite collaborators to comment and vote. Click on the user in top left for settings to add or remove people, change who you are, and change the owner of the board. Click the invite link to invite others to the board (emails in the settings control). Click on the 'Learn more' link to see a localizable css driven animation promoting the chat feature.",
         assets: [
             {
                 label: '',
@@ -532,7 +513,7 @@ export const vrbo = [
         id: 'verticalimagecarousel',
         title: 'Vertical Image Carousel',
         role: '',
-        descr: '',
+        descr: 'This vertically scrolling versions of the Image Carousel was created for a variant of the Property Details Page. It supports lazy loading images, captions, and video, and can be used in combinatino with a full-screen Image Carousel.',
         format: [],
         assets: [
             {
