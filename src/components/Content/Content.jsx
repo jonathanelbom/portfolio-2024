@@ -1,16 +1,27 @@
 import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
-import { enspire, jonnybomb, springbox } from '../../data/prev';
+import { jonnybomb, springbox } from '../../data/prev';
+import { enspire } from '../../data/enspire';
+import { dropparty } from '../../data/dropparty';
 import { vrbo_all, vrbo_prod, vrbo_proto, vrbo_videos } from '../../data/vrbo';
 import { mm } from '../../data/mentalmodeler';
 import { pearson } from '../../data/pearson';
 import { indeed } from '../../data/indeed';
 import { contentMaxWidth, maxWidthContent, subwork_decoration } from '../../constants/styles';
-import { Compress, Expand, WavingHandOutlined, WebOutlined } from '@mui/icons-material';
+import {
+    CelebrationOutlined,
+    Compress,
+    Expand,
+    SupervisorAccountOutlined,
+    WavingHandOutlined,
+    WebOutlined,
+} from '@mui/icons-material';
 import { ProjectGrid } from '../ProjectGrid/ProjectGrid';
 import { Grid } from '../Grid/Grid';
 import { Flex } from '../IFL/ifl';
-import { ACTION_TYPE, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
+import { ACTION_TYPE, SECTION, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
+import { jonnybomb_js } from '../../data/jonnybomb_js';
+import { jonnybomb_as } from '../../data/jonnybomb_as';
 
 const MinWidthSection = ({ children, sx = {} }) => (
     <Box
@@ -35,7 +46,7 @@ const WorkInfo = ({ title, content }) => {
                         {title}
                     </Typography>
                 )}
-                {content && <Typography variant="body1">{content}</Typography>}
+                {content && <Typography variant="body1" dangerouslySetInnerHTML={{ __html: content }} />}
             </Flex>
         </Box>
     );
@@ -43,27 +54,53 @@ const WorkInfo = ({ title, content }) => {
 
 export const Section = ({ children, sx, title, Icon, padding = 'header', altControl }) => {
     return (
-        <Flex direction="column" sx={{ ...sx, position: 'relative' }}>
-            <Box sx={{ paddingBlock: 2 }}>
-                <Box
-                    sx={{
-                        ...maxWidthContent,
-                    }}
-                >
-                    <Flex justify="space-between">
-                        <Typography component="h2" variant="sectionHeadline">
-                            <Flex gap={1.5} align="center">
-                                {Icon && <Icon sx={{ transform: 'scale(1.25)' }} />}
-                                {title}
-                            </Flex>
-                        </Typography>
-                        {!!altControl && altControl}
-                    </Flex>
+        <>
+            <Flex direction="column" sx={{ ...sx, position: 'relative' }}>
+                <Box sx={{ paddingBlock: 2 }}>
+                    <Box
+                        sx={{
+                            ...maxWidthContent,
+                        }}
+                    >
+                        <Flex justify="space-between">
+                            <Typography component="h2" variant="sectionHeadline">
+                                <Flex gap={1.5} align="center">
+                                    {Icon && <Icon sx={{ transform: 'scale(1.25)' }} />}
+                                    {title}
+                                </Flex>
+                            </Typography>
+                            {!!altControl && altControl}
+                        </Flex>
+                    </Box>
                 </Box>
-            </Box>
-            {padding === 'full' && <Box sx={{ ...maxWidthContent }}>{children}</Box>}
-            {padding !== 'full' && children}
-        </Flex>
+                {padding === 'full' && <Box sx={{ ...maxWidthContent }}>{children}</Box>}
+                {padding !== 'full' && children}
+            </Flex>
+        </>
+    );
+};
+
+const ToggleExpandedButton = ({ section }) => {
+    const dispatch = useAppDispatch();
+    const state = useAppState();
+    const allExpanded = state[`allExpanded${section}`];
+    return (
+        <Button
+            sx={{ marginInlineEnd: '0', position: 'sticky', top: 0 }}
+            variant="text"
+            onClick={(e) => {
+                e.preventDefault();
+                dispatch({
+                    type: ACTION_TYPE.TOGGLE_SECTION_ALL_EXPANDED,
+                    value: {
+                        expanded: !allExpanded,
+                        section,
+                    },
+                });
+            }}
+        >
+            {allExpanded ? 'HIDE ALL' : 'SHOW ALL'}
+        </Button>
     );
 };
 
@@ -71,7 +108,6 @@ export const Content = ({ children }) => {
     const { isIntersecting, Sentinel } = useIntersctionSentinel({ threshold: 1 });
     const { condensed } = useAppState();
     const dispatch = useAppDispatch();
-    const { allExpanded } = useAppState();
     const showExpandContract = useMediaQuery(`(min-width: calc(${contentMaxWidth} + 32px))`);
     const ExpandIcon = condensed ? Expand : Compress;
     return (
@@ -124,67 +160,38 @@ export const Content = ({ children }) => {
             >
                 {children}
                 <Section title="Hello" Icon={WavingHandOutlined} padding="full">
-                    <Typography as="p">
-                        {'My name is Jonathan and my passion is to bring extraordinary user experiences to life.'}
-                        <br />
-                        <br />
-                    </Typography>
-                    <Typography as="p">
-                        {
-                            'I live at the intersection of technology and design, blending frontend web engineering and UX design and into a single progressive discipline. I utilize my understanding of technical capabilities and design intent to transform concepts and mockups into delightful, accessible, and performant experiences.'
-                        }
-                        <br />
-                        <br />
-                    </Typography>
-                    <Typography>
-                        {
-                            'I approach my work with empathy and compassion, championing cross-functional collaboration to deliver crafted solutions.'
-                        }
-                    </Typography>
+                    <Typography
+                        as="p"
+                        dangerouslySetInnerHTML={{
+                            __html: 'My name is Jonathan and my passion is to bring extraordinary user experiences to life.<br/><br/>I live at the intersection of technology and design, blending frontend web engineering and UX design and into a single progressive discipline. I utilize my understanding of technical capabilities and design intent to transform concepts and mockups into delightful, accessible, and performant experiences.<br/><br/>I approach my work with empathy and compassion, championing cross-functional collaboration to deliver crafted solutions.',
+                        }}
+                    />
                 </Section>
                 <Section
-                    title="Work"
+                    title="Full Time Work"
                     Icon={WebOutlined}
-                    altControl={
-                        <Button
-                            variant="text"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                dispatch({
-                                    type: ACTION_TYPE.TOGGLE_ALL_EXPANDED,
-                                    value: !allExpanded,
-                                });
-                            }}
-                            sx={{ marginInlineEnd: '0' }}
-                        >
-                            {allExpanded ? 'HIDE ALL' : 'SHOW ALL'}
-                        </Button>
-                    }
+                    altControl={<ToggleExpandedButton section={SECTION.WORK} />}
                 >
                     <MinWidthSection>
-                        <Typography>
-                            {
-                                'Welcome to my work. This section is in-progress and I am continually improving it, adding more descriptions, videos, and links to prototypes and demos.'
-                            }
-                            <br />
-                            <br />
-                            <i>
-                                Click each row to expand or collapse it or use the show/hide all to toggle all rows at
-                                once.
-                            </i>
-                        </Typography>
+                        <Typography
+                            dangerouslySetInnerHTML={{
+                                __html: 'Welcome to my work. This section is in-progress and I am continually improving it, adding more descriptions, videos, and links to prototypes and demos.<br/><br/> <i>Click each row to expand or collapse it or use the show/hide all to toggle all rows at once.',
+                            }}
+                        />
                     </MinWidthSection>
                     <ProjectGrid
                         items={indeed}
                         company="Indeed"
                         dates="Sept 2022 - May 2024"
                         role="Lead UX Developer"
+                        section={SECTION.WORK}
                     ></ProjectGrid>
                     <ProjectGrid
                         items={vrbo_all}
                         company="Vrbo/EG"
                         dates="July 2016 - Sept 2022"
                         role="Sr. Design Technologist | UX Engineer"
+                        section={SECTION.WORK}
                     >
                         <Box sx={{ paddingBlock: 3 }}>
                             <WorkInfo
@@ -206,44 +213,75 @@ export const Content = ({ children }) => {
                         <Box sx={{ paddingBlock: 3, marginBlockEnd: 9 }}>
                             <WorkInfo
                                 title="Design System and Shared Components"
-                                content="The production components, which I initially prototyped with other designers,
-                                        are shared design system web components on Vrbo (www.vrbo.com). Built in React,
+                                content="These production components, which I initially prototyped with other designers,
+                                        are shared design system web components. Built in React,
                                         often in collaboration with the UI-Toolkit team, these components are maintained
                                         and improved for both desktop and mobile web. The demos are static builds of the
-                                        component dev harnesses."
+                                        component dev harnesses.<br/><br/><i>The media URLs originally used for these have changed. I am in the process of updaing these demos, but until that is complete, many photos might not load.</i>"
                             />
                             <Grid items={vrbo_prod} topBorder />
                         </Box>
                     </ProjectGrid>
                     <ProjectGrid
-                        items={mm}
-                        company="Mental Modeler"
-                        dates="Jan 2011 -  Present"
-                        role="Co-Creator | Designer | Developer"
-                    ></ProjectGrid>
-                    <ProjectGrid
                         items={pearson}
                         company="Pearson"
                         dates="Nov 2010 - July 2016"
                         role="Sr. Frontend Developer | UX Lead"
+                        section={SECTION.WORK}
                     ></ProjectGrid>
                     <ProjectGrid
                         items={springbox}
                         company="Springbox"
                         dates="Oct 2007 - Nov 2010"
-                        role="Sr. Rich Media Designer|Developer"
+                        role="Sr. Rich Media Designer | Developer"
+                        section={SECTION.WORK}
                     ></ProjectGrid>
                     <ProjectGrid
                         items={enspire}
                         company="Enspire Learning"
                         dates="Nov 2001 - Oct 2007"
-                        role="Rich Media Designer|Developer"
+                        role="Rich Media Designer | Developer"
+                        section={SECTION.WORK}
+                    ></ProjectGrid>
+                </Section>
+                <Section
+                    title="Consulting Work"
+                    Icon={SupervisorAccountOutlined}
+                    altControl={<ToggleExpandedButton section={SECTION.CONSULTING} />}
+                >
+                    <ProjectGrid
+                        items={mm}
+                        company="Mental Modeler"
+                        dates="Jan 2011 -  Present"
+                        role="Co-Creator | Designer | Developer"
+                        section={SECTION.CONSULTING}
                     ></ProjectGrid>
                     <ProjectGrid
-                        items={jonnybomb}
-                        company="Jonnybomb"
-                        dates="Nov 2001 - Nov 2010"
+                        items={dropparty}
+                        company="Drop Party"
+                        dates="July 2019 - Sept 2019"
+                        role="Developer"
+                        section={SECTION.CONSULTING}
+                    ></ProjectGrid>
+                </Section>
+                <Section
+                    title="Personal Projects"
+                    Icon={CelebrationOutlined}
+                    altControl={<ToggleExpandedButton section={SECTION.PERSONAL} />}
+                >
+                    <ProjectGrid
+                        items={jonnybomb_js}
+                        company="JavaScript / HTML / CSS"
+                        dates="Jan 2011 - Present"
                         role="Designer | Developer"
+                        section={SECTION.PERSONAL}
+                    ></ProjectGrid>
+                    <ProjectGrid
+                        items={jonnybomb_as}
+                        company="Flash / ActionScript / Flex"
+                        dates="Nov 2001 - Dec 2010"
+                        role="Designer | Developer"
+                        section={SECTION.PERSONAL}
                     ></ProjectGrid>
                 </Section>
             </Flex>

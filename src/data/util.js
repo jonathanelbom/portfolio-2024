@@ -1,5 +1,6 @@
 export const transformProject = (value = {}) => {
     const images = value.assets || value.images || [];
+
     const links = value.links || [];
     const videos = value.videos || [];
     return {
@@ -8,7 +9,7 @@ export const transformProject = (value = {}) => {
         video: videos?.[0] || '',
         images,
         title: value.title,
-        description: value.descr,
+        description: value.descr || value.description,
         tags: value.tags,
         links,
         sizes: value.sizes,

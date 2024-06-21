@@ -8,11 +8,18 @@ export const ACTION_TYPE = {
     SELECT_PROJECT: 'SELECT_PROJECT',
     TOGGLE_CONDENSED: 'TOGGLE_CONDENSED',
     TOGGLE_ALL_EXPANDED: 'TOGGLE_ALL_EXPANDED',
+    TOGGLE_SECTION_ALL_EXPANDED: 'TOGGLE_SECTION_ALL_EXPANDED',
+};
+
+export const SECTION = {
+    WORK: 'Work',
+    CONSULTING: 'Consulting',
+    PERSONAL: 'Personal',
 };
 
 const appReducer = (state, action) => {
     const { type, value } = action;
-    // console.log('appReducer, type:', type, ', value:', value);
+    console.log('appReducer, type:', type, ', value:', value);
     switch (type) {
         case ACTION_TYPE.TOGGLE_MODAL: {
             return { ...state, modalOpen: value };
@@ -26,6 +33,9 @@ const appReducer = (state, action) => {
         case ACTION_TYPE.TOGGLE_ALL_EXPANDED: {
             return { ...state, allExpanded: value };
         }
+        case ACTION_TYPE.TOGGLE_SECTION_ALL_EXPANDED: {
+            return { ...state, [`allExpanded${value.section}`]: value.expanded };
+        }
         default: {
             return { ...state };
         }
@@ -37,6 +47,9 @@ const initialState = {
     selectedProject: null,
     condensed: false,
     allExpanded: false,
+    allExpandedWork: false,
+    allExpandedConsulting: false,
+    allExpandedPersonal: false,
 };
 
 const AppProvider = ({ children }) => {

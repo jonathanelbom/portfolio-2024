@@ -117,6 +117,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-card-carousel/docs/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -140,6 +141,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-drawers/#',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -163,6 +165,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-guest-picker/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
@@ -210,6 +213,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-image-carousel/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -233,6 +237,7 @@ export const vrbo = [
                 url: '',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -256,6 +261,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-modal/docs/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
@@ -423,6 +429,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-demos/docs/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
@@ -470,6 +477,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-single-image-carousel/docs/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
@@ -493,6 +501,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-swipable-carousel/docs/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'proto', 'ds'],
@@ -540,6 +549,7 @@ export const vrbo = [
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-vertical-image-carousel/docs/',
             },
         ],
+        sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'video'],

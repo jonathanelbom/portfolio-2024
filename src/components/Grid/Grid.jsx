@@ -130,7 +130,7 @@ const GridItem = ({ item }) => {
                         sx={{
                             width: '100%',
                             objectFit: 'cover',
-                            objectPosition: 'center left',
+                            objectPosition: 'top left',
                             display: 'block',
                         }}
                         src={`../images/${image?.uri}`}
@@ -179,7 +179,7 @@ const GridItem = ({ item }) => {
     );
 };
 
-export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 3, 4] }) => {
+export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 4, 5] }) => {
     const { condensed } = useAppState();
     const hasVideos = useMemo(() => items.some(({ tags }) => tags.includes('video')), [items.length]);
     if (hasVideos) {

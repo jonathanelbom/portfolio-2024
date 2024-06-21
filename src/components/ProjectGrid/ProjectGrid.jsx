@@ -12,11 +12,14 @@ export const ProjectGrid = ({
     dates = 'From - To',
     role = 'Role',
     sx = {},
+    section = '',
     children,
 }) => {
     const ref = useRef(null);
     const rootRef = useRef(null);
-    const { allExpanded } = useAppState();
+    const state = useAppState();
+    const allExpanded = state[`allExpanded${section}`];
+
     const [isExpanded, setIsExpanded] = useState(allExpanded);
     const toggleExpanded = () => {
         setIsExpanded((prev) => !prev);

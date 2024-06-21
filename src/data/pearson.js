@@ -36,6 +36,7 @@ const _pearson = [
         title: 'Homepage',
         description: '',
         tags: ['pearson', 'abbi'],
+        sizes: ['desktop'],
     },
     {
         images: [
@@ -49,6 +50,7 @@ const _pearson = [
         title: 'Create Item',
         description: '',
         tags: ['pearson', 'abbi'],
+        sizes: ['desktop'],
     },
     {
         images: [
@@ -62,6 +64,7 @@ const _pearson = [
         title: 'Expert Mode',
         description: '',
         tags: ['pearson', 'abbi'],
+        sizes: ['desktop'],
     },
 ];
 

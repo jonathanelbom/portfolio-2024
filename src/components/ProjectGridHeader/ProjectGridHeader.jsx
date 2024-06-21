@@ -29,7 +29,7 @@ export const ProjecGridHeader = ({ company, dates, role, expanded, toggleExpande
                     borderBlockEnd: '1px solid #d5d3d2',
                     '&::before': {
                         ...sticky_header_before,
-                        opacity: showScrollShadow ? 1 : 0,
+                        opacity: expanded && showScrollShadow ? 1 : 0,
                     },
                 }}
             >

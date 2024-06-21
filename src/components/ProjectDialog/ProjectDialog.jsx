@@ -19,8 +19,6 @@ const timeout = {
 };
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-    // return <Slide direction="up" ref={ref} {...props} />;
-    // console.log('props:', props);
     const onExited = () => {
         // deselect project here
         props.onExited();
@@ -35,7 +33,7 @@ const CustomizedDialog = styled(Dialog)(({ theme }) => ({
     '&.MuiDialog-root': {
         '&.has-video': {
             '& .MuiDialog-paper': {
-                maxWidth: ['100%'], //['600px', '1000px', '1000px'],
+                maxWidth: ['600px', '1000px'],
                 width: '100%', //['600px', '1000px', '1000px'],
             },
         },
@@ -128,7 +126,7 @@ export const ProjectDialog = () => {
                     // </DialogContentText>
                 )}
             </DialogContent>
-            <DialogActions sx={{ flexWrap: 'wrap', gap: 1 }}>
+            <DialogActions sx={{ flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
                 {links &&
                     links.map((link, i) => {
                         const _url = link.uri || link.url;
