@@ -13,6 +13,7 @@ export const transformProject = (value = {}) => {
         tags: value.tags,
         links,
         sizes: value.sizes,
+        ...(value?.imageBgColor && { imageBgColor: value?.imageBgColor }),
     };
 };
 

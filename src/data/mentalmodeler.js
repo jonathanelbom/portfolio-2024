@@ -148,6 +148,7 @@ export const _mm = [
                 uri: 'focos_models.png',
             },
         ],
+        imageBgColor: '#F5FBFF',
         title: 'FOCOS - Portland State University',
         description:
             'UX consulting and interface prototyping for Portland State University FOCOS project, that looks at using the scenario outcomes form Mental Modeler to improve business efficiency and safety.',

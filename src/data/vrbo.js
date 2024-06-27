@@ -539,7 +539,14 @@ export const vrbo = [
         role: '',
         descr: 'Highlights how my prototyping skills, specifically around mobile web touch interactions and motion design, aided in UX Lab tests, design iterations, and ultimately the final production build.<br/><br/><i>These demos can be viewed using the links below or from the projects listed in the Vrbo/EG prototypes section.</i>.',
         sizes: ['mobile', 'desktop'],
-        assets: [],
+        assets: [
+            {
+                label: '',
+                id: 'video-tripboards-polling',
+                type: 'image',
+                uri: 'vrbo/video-tripboards-polling.png',
+            },
+        ],
         videos: [
             {
                 url: 'https://www.youtube.com/watch?v=Y84gWdJdeWk',
@@ -567,7 +574,14 @@ export const vrbo = [
         role: '',
         descr: 'The Desktop and mobile Trip Boards experience evergreen prototype, where I can collaborate with design as we ideate on new features or improvements. <br/><br/><i>This demos can be viewed using the link below or from the project listed in the Vrbo/EG prototypes section.</i>.',
         sizes: ['mobile', 'desktop'],
-        assets: [],
+        assets: [
+            {
+                label: '',
+                id: 'video-tripboards',
+                type: 'image',
+                uri: 'vrbo/video-tripboards.png',
+            },
+        ],
         videos: [
             {
                 url: 'https://www.youtube.com/watch?v=rjR34Ua8YT0',
@@ -588,7 +602,14 @@ export const vrbo = [
         role: '',
         descr: 'A vision demo for the  Homeaway Northstar experience, including Immersive Search, Search Results, Property Details, and Scratchpad (to become Trip Boards).  <br/><br/><i>This demos can be viewed using the link below or from the project listed in the Vrbo/EG prototypes section.</i>.',
         sizes: ['mobile', 'desktop'],
-        assets: [],
+        assets: [
+            {
+                label: '',
+                id: 'video-northstar',
+                type: 'image',
+                uri: 'vrbo/video-northstar.png',
+            },
+        ],
         videos: [
             {
                 url: 'https://www.youtube.com/watch?v=oUXfuAj7_cw',
@@ -604,30 +625,44 @@ export const vrbo = [
     },
     {
         tags: ['vrbo', 'video'],
-        id: 'egxpvideo',
-        title: 'EG Experience Platfrom',
+        id: 'egconsolevideo',
+        title: 'EG Console UX Transformation',
         role: '',
-        descr: 'A Walk-through of how to use the templates and layouts of the EG experience platform to create the different pages in the Supply Partner Unified Onboarding App (UFO).',
+        descr: 'Demo of how I transformed the UX for the EG console experience. Shows the old version of the EG Console, and then the version where I systematically applied UX updates, including the introduction of the Left Nav and updates to page layouts and styles.',
         sizes: ['desktop'],
-        assets: [],
+        assets: [
+            {
+                label: '',
+                id: 'video-eg-console',
+                type: 'image',
+                uri: 'vrbo/video-eg-console.png',
+            },
+        ],
         videos: [
             {
-                url: 'https://www.youtube.com/watch?v=79cAIdAb9Tc',
+                url: 'https://www.youtube.com/watch?v=ZN3KnsVjkBs',
             },
         ],
         links: [],
     },
     {
         tags: ['vrbo', 'video'],
-        id: 'egconsolevideo',
-        title: 'EG Console UX transformation',
+        id: 'egxpvideo',
+        title: 'EG XP - Templates and Layouts',
         role: '',
-        descr: 'Demo of how I transformed the UX for the EG console experience. Shows the old version of the EG Console, and then the version where I systematically applied UX updates, including the introduction of the Left Nav and updates to page layouts and styles.',
+        descr: 'A Walk-through of how to use the templates and layouts of the EG experience platform to create the different pages in the Supply Partner Unified Onboarding App (UFO).',
         sizes: ['desktop'],
-        assets: [],
+        assets: [
+            {
+                label: '',
+                id: 'video-templates',
+                type: 'image',
+                uri: 'vrbo/video-templates.png',
+            },
+        ],
         videos: [
             {
-                url: 'https://www.youtube.com/watch?v=ZN3KnsVjkBs',
+                url: 'https://www.youtube.com/watch?v=79cAIdAb9Tc',
             },
         ],
         links: [],

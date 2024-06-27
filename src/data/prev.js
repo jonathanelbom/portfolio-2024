@@ -39,14 +39,13 @@ export const prev = {
                     uri: 'sb_interactiverfp.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/springbox/interactiverfp/',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=-0aCfi3t5Qc',
+                },
+            ],
         },
         swagball: {
             tags: ['springbox'],
@@ -62,14 +61,13 @@ export const prev = {
                     uri: 'dell_swagball.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/dell/swagarcade/',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=0mqY8RiqM5M',
+                },
+            ],
         },
         nascar: {
             tags: ['springbox'],
@@ -85,19 +83,18 @@ export const prev = {
                     uri: 'nascar.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/nascar',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=V0eDOdHVz10',
+                },
+            ],
         },
         steameffect: {
             tags: ['springbox'],
             id: 'steameffect',
-            title: 'LG Steam Particle System Prototype',
+            title: 'LG Steam Particle System',
             role: 'Lead Developer and Motion Designer',
             descr: 'This was the prototype for the steam particle system developed for the LG microsite. In this prototype, I linked sliders to all the different control parameters for the steam particle system so that i could easily tweak the settings to create the most realistic steam possible.',
             assets: [
@@ -108,21 +105,20 @@ export const prev = {
                     uri: 'lg_steamparticles.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Prototype (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/lg/steameffect',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=j79LM-bu5-w',
+                },
+            ],
         },
-        scion: {
+        scion1: {
             tags: ['springbox'],
-            id: 'scion',
-            title: 'Springbox Scion Demo',
+            id: 'scion1',
+            title: 'Scion Configurator',
             role: 'Lead Developer',
-            descr: 'The two demos were created for a scion pitch to design their vehicle configurator. Demo 1 was more or less a reskinning of the existing functionality (with some new bells and whistles) while Demo 2 took a more figurative approach to the building of your custom scion vehicle.',
+            descr: 'The two demos were created for a scion pitch to design their vehicle configurator. This first demo was more or less a reskinning of the existing functionality (with some new bells and whistles).',
             assets: [
                 {
                     label: '',
@@ -131,24 +127,40 @@ export const prev = {
                     uri: 'sb_scion1.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Demo 1 (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/springbox/scion1',
-                // },
-                // {
-                //     label: 'View Demo 2 (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/springbox/scion2',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=HYhwouRQkL0',
+                },
+            ],
+        },
+        scion2: {
+            tags: ['springbox'],
+            id: 'scion2',
+            title: 'Scion Configurator (alt)',
+            role: 'Lead Developer',
+            descr: 'The two demos were created for a scion pitch to design their vehicle configurator. This second demo took a more figurative approach to the building of your custom scion vehicle.',
+            assets: [
+                {
+                    label: '',
+                    id: '',
+                    type: 'image',
+                    uri: 'sb_scion2.jpg',
+                },
+            ],
+            links: [],
+            sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=lPy8Qe0KgHo',
+                },
+            ],
         },
         screensaver: {
             tags: ['springbox'],
             id: 'screensaver',
-            title: 'Springbox 6th Anniversary Screensaver',
+            title: '6th Anniversary Screensaver',
             role: 'Lead Developer',
             descr: "For Springbox's 6th anniversary, I created a screensaver that pulls images from Flickr and transitions them them in a flipping, 3D manner. The final screensaver had options to let the user control the amount of image overlap, base piece size, flipping speed, and even allows users to customize the feed to their own Flickr account.",
             assets: [
@@ -159,13 +171,7 @@ export const prev = {
                     uri: 'sb_screensaver.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/springbox/screensaver',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         magicaldash: {
@@ -182,19 +188,13 @@ export const prev = {
                     uri: 'disney_magicaldash.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/disney',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         superview: {
             tags: ['springbox'],
             id: 'superview',
-            title: 'Springbox Superview Prototype',
+            title: 'Superview Prototype',
             role: 'Lead Developer',
             descr: 'This was a prototype created to be a reusable, waypoint-driven timeline navigator to showcase rich 3D photograhy of consumer goods in a lightweight, intuitive manner with fluid movement and transitions. This prototype showcases dell mini computers and is all but complete, except for one section.',
             assets: [
@@ -205,14 +205,13 @@ export const prev = {
                     uri: 'sb_superview.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Prototype (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/springbox/superview',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=y0nB7wIBLvo',
+                },
+            ],
         },
         imageviewer: {
             tags: ['springbox', 'exclude'],
@@ -228,13 +227,7 @@ export const prev = {
                     uri: 'laf_imageviewer.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/laf/imageviewer/',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         aor: {
@@ -251,13 +244,7 @@ export const prev = {
                     uri: 'paypal_aor.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/paypal/agencyofrecord',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         transposer: {
@@ -274,13 +261,7 @@ export const prev = {
                     uri: 'dell_transposer.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/dell/transposer',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         safetytraining: {
@@ -297,13 +278,7 @@ export const prev = {
                     uri: 'paypal_safety.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/paypal/safetytraining',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         homepagerotator: {
@@ -320,13 +295,7 @@ export const prev = {
                     uri: 'laf_homerotator.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/laf/homepagerotator/',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         experian: {
@@ -343,19 +312,13 @@ export const prev = {
                     uri: 'experian.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/experian',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         steamlaundry: {
             tags: ['springbox'],
             id: 'steamlaundry',
-            title: 'LG Steam Laundry Microsite',
+            title: 'LG Steam Microsite',
             role: 'Lead Developer',
             descr: 'LG needed a microsite to showcase their new steamwashers and steamdryers, so we made slick, modern site to meet their goala. For this site, i got to develop a steam particle system.',
             assets: [
@@ -366,13 +329,7 @@ export const prev = {
                     uri: 'lg_steamlaundry.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/lg/steamlaundrymicrosite',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         callaway: {
@@ -389,13 +346,7 @@ export const prev = {
                     uri: 'callaway_1.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/callaway',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
         hometabmap: {
@@ -412,13 +363,7 @@ export const prev = {
                     uri: 'dell_hometabmap.jpg',
                 },
             ],
-            links: [
-                // {
-                //     label: 'View Project (Flash Player required)',
-                //     id: '',
-                //     url: 'http://portfolio.jonnybomb.com/work/dell/hometabmap',
-                // },
-            ],
+            links: [],
             sizes: ['desktop'],
         },
     },

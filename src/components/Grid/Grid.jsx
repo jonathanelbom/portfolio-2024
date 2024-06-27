@@ -2,9 +2,9 @@ import { Box, Button, Typography } from '@mui/material';
 import { gridItemHoverTransDur, hit_area } from '../../constants/styles';
 import { useMemo } from 'react';
 import { Flex } from '../IFL/ifl';
-import { Launch /* ReadMoreOutlined, Slideshow */, ReadMoreOutlined, Slideshow } from '@mui/icons-material';
+import { Launch /* ReadMoreOutlined, Slideshow */, ReadMoreOutlined, YouTube } from '@mui/icons-material';
 import { ACTION_TYPE, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
-import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
+// import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
 import { GridMediaContainer } from './GridMediaContainer';
 
 const iconProps = {
@@ -17,12 +17,13 @@ const Details = ({ Icon }) => {
             justify="center"
             aling="center"
             sx={{
-                backgroundColor: 'grey.300',
+                backgroundColor: '#fff', //grey.300',
                 borderRadius: '100%',
                 padding: 0.5,
+                transform: 'scale(.8)',
             }}
         >
-            <Icon {...iconProps} sx={{ transform: 'scale(.8)' }} />
+            <Icon {...iconProps} />
         </Flex>
     );
 };
@@ -65,10 +66,11 @@ const DetailsModalActionOverlay = ({ item }) => {
                 sx={{
                     transition: `transform ${gridItemHoverTransDur} ease`,
                     transform: 'scale(.75)',
-                    boxShadow: 'none',
+                    // boxShadow: 'none !important',
+                    border: '1px solid #fff',
                 }}
             >
-                View Details
+                {'View Details'}
             </Button>
         </>
     );
@@ -113,7 +115,8 @@ const GridItem = ({ item }) => {
                 sx={{ padding: 1, gap: 1, position: 'absolute', top: 0, left: 0, right: 0, pointerEvents: 'none' }}
             >
                 {description && <Details Icon={ReadMoreOutlined} />}
-                {video && <Details Icon={Slideshow} />}
+                {/* {video && <Details Icon={Slideshow} />} */}
+                {video && <Details Icon={YouTube} />}
                 {link && <Details Icon={Launch} />}
             </Flex>
 
@@ -123,7 +126,49 @@ const GridItem = ({ item }) => {
             </Flex>
 
             <GridMediaContainer item={item}>
-                {video && <VideoPlayer url={video.url} />}
+                {/* {video && <VideoPlayer url={video.url} />} */}
+                {image && (
+                    <>
+                        <Box
+                            as="img"
+                            sx={{
+                                width: '100%',
+                                objectFit: 'cover',
+                                objectPosition: 'top left',
+                                display: 'block',
+                            }}
+                            src={`../images/${image?.uri}`}
+                        />
+                        {video && (
+                            <Flex
+                                justify="center"
+                                align="center"
+                                sx={{
+                                    position: 'absolute',
+                                    inset: 0,
+                                    '&::before': {
+                                        content: "''",
+                                        position: 'absolute',
+                                        inset: '45%',
+                                        backgroundColor: '#fff',
+                                    },
+                                }}
+                            >
+                                {/* <PlayCircleFilled */}
+                                <YouTube
+                                    sx={{
+                                        zIndex: 1,
+                                        color: '#ea3323',
+                                        display: 'block',
+                                        position: 'relative',
+                                        transform: 'scale(4)',
+                                    }}
+                                />
+                            </Flex>
+                        )}
+                    </>
+                )}
+                {/* {video && <VideoPlayer url={video.url} />}
                 {!video && image && (
                     <Box
                         as="img"
@@ -135,7 +180,7 @@ const GridItem = ({ item }) => {
                         }}
                         src={`../images/${image?.uri}`}
                     />
-                )}
+                )} */}
             </GridMediaContainer>
             {false && (
                 <Typography
@@ -181,10 +226,10 @@ const GridItem = ({ item }) => {
 
 export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 4, 5] }) => {
     const { condensed } = useAppState();
-    const hasVideos = useMemo(() => items.some(({ tags }) => tags.includes('video')), [items.length]);
-    if (hasVideos) {
-        sizing = [1, 2, 2, 3];
-    }
+    // const hasVideos = useMemo(() => items.some(({ tags }) => tags.includes('video')), [items.length]);
+    // if (hasVideos) {
+    //     sizing = [1, 2, 2, 3];
+    // }
     if (condensed) {
         sizing = [1, 2];
     }
@@ -199,7 +244,7 @@ export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 4, 5] 
                 margin: 0,
                 backgroundColor: '#fff',
                 ...(items.length > 0 && { borderBlockEnd: '1px solid #d5d3d2' }),
-                ...(topBorder && { borderBlockStart: '1px solid #d5d3d2' }),
+                ...((true || topBorder) && { borderBlockStart: '1px solid #d5d3d2' }),
                 gridTemplateColumns,
                 ...sx,
             }}

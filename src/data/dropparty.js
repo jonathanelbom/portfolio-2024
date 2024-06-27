@@ -23,6 +23,7 @@ export const _dropparty = [
                 url: 'https://portfolio.jonnybomb.com/work/drop-party/',
             },
         ],
+        imageBgColor: '#EFF4EB',
     },
     {
         images: [
@@ -46,6 +47,7 @@ export const _dropparty = [
                 url: 'https://portfolio.jonnybomb.com/work/drop-party/components.html',
             },
         ],
+        imageBgColor: '#EFF4EB',
     },
 ];
 

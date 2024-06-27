@@ -15,6 +15,7 @@ export const _jonnybomb_js = [
                 uri: 'dotz_with_bg.png',
             },
         ],
+        imageBgColor: '#F2E1F0',
         links: [
             {
                 label: '',

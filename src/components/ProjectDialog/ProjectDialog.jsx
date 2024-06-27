@@ -117,15 +117,13 @@ export const ProjectDialog = () => {
             <DialogContent>
                 <SentinelTop
                     sx={{
-                        // backgroundColor: 'green',
-                        // width: '50px',
                         height: ' 2px',
                         top: 'unset',
                         position: 'relative',
                     }}
                 />
                 <Flex direction="column" gap={3}>
-                    <GridMediaContainer item={selectedProject} inDialog={!video}>
+                    <GridMediaContainer item={selectedProject} inDialog>
                         {video && <VideoPlayer url={video.url} />}
                         {!video && image && (
                             <Box
@@ -152,50 +150,50 @@ export const ProjectDialog = () => {
                 </Flex>
                 <SentinelBottom
                     sx={{
-                        // backgroundColor: 'red',
-                        // width: '50px',
                         height: ' 2px',
                         top: 'unset',
                         position: 'relative',
                     }}
                 />
             </DialogContent>
-            <DialogActions
-                sx={{
-                    flexWrap: 'wrap',
-                    gap: 1,
-                    justifyContent: 'center',
-                    zIndex: 1,
-                    position: 'relative',
-                    ...(!isIntersectingBottom && { borderBlockStart: '1px solid #e5e3e2' }),
-                    '&::before': {
-                        ...dialog_footer_scroll_signifier,
-                        opacity: !isIntersectingBottom ? 1 : 0,
-                    },
-                }}
-            >
-                {links &&
-                    links.map((link, i) => {
-                        const _url = link.uri || link.url;
-                        const label = link.label || `Launch ${title}`;
-                        return (
-                            <Button
-                                variant="contained"
-                                sx={{
-                                    gap: 1,
-                                    textTransform: 'unset',
-                                    margin: '0 !important',
-                                }}
-                                key={`${_url}-${i}`}
-                                target="_blank"
-                                href={_url}
-                            >
-                                <Launch fontSize="small" />
-                                {label}
-                            </Button>
-                        );
-                    })}
-            </DialogActions>
+            {links?.length > 0 && (
+                <DialogActions
+                    sx={{
+                        flexWrap: 'wrap',
+                        gap: 1,
+                        justifyContent: 'center',
+                        zIndex: 1,
+                        position: 'relative',
+                        ...(!isIntersectingBottom && { borderBlockStart: '1px solid #e5e3e2' }),
+                        '&::before': {
+                            ...dialog_footer_scroll_signifier,
+                            opacity: !isIntersectingBottom ? 1 : 0,
+                        },
+                    }}
+                >
+                    {links &&
+                        links.map((link, i) => {
+                            const _url = link.uri || link.url;
+                            const label = link.label || `Launch ${title}`;
+                            return (
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        gap: 1,
+                                        textTransform: 'unset',
+                                        margin: '0 !important',
+                                    }}
+                                    key={`${_url}-${i}`}
+                                    target="_blank"
+                                    href={_url}
+                                >
+                                    <Launch fontSize="small" />
+                                    {label}
+                                </Button>
+                            );
+                        })}
+                </DialogActions>
+            )}
         </CustomizedDialog>
     );
 };

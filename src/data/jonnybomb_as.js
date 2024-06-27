@@ -15,13 +15,7 @@ export const _jonnybomb_as = [
                 uri: 'suddenlyalmostnearly.jpg',
             },
         ],
-        links: [
-            // {
-            //     label: 'View Project (Flash Player required)',
-            //     id: '',
-            //     url: 'http://lungbooks.com/suddenlyalmostnearly/',
-            // },
-        ],
+        links: [],
         sizes: ['desktop'],
     },
     {
@@ -38,13 +32,7 @@ export const _jonnybomb_as = [
                 uri: 'wayfinder.jpg',
             },
         ],
-        links: [
-            // {
-            //     label: 'View Project (Flash Player required)',
-            //     id: '',
-            //     url: 'http://wayfinder.jonnybomb.com/hub_flash.htm',
-            // },
-        ],
+        links: [],
         sizes: ['desktop'],
     },
     {
@@ -61,14 +49,13 @@ export const _jonnybomb_as = [
                 uri: 'jonnybomb_1.jpg',
             },
         ],
-        links: [
-            // {
-            //     label: 'View Site (Flash Player required)',
-            //     id: '',
-            //     url: 'http://www.jonnybomb.com',
-            // },
-        ],
+        links: [],
         sizes: ['desktop'],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=QU-z5PBcNtE',
+            },
+        ],
     },
     {
         tags: ['freelance'],
