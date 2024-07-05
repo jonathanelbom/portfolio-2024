@@ -1,5 +1,6 @@
+import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
-import { Box, Flex } from '@indeed/ifl-components';
+import { Flex } from '../IFL/ifl';
 
 function PaginationDots({ maxItems, itemIndex, transitionDuration }) {
     let paginationOffset = 0;

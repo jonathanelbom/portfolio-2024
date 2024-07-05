@@ -13,17 +13,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <GlobalStyles
-                styles={
-                    {
-                        // html: {
-                        //     '--max-content-width': '50rem',
-                        // },
-                        // '.router-link': {
-                        //     textDecoration: 'none',
-                        //     color: 'neutral.800',
-                        // },
-                    }
-                }
+                styles={{
+                    body: {
+                        boxSizing: 'border-box',
+                        '*': {
+                            boxSizing: 'border-box',
+                        },
+                    },
+                    // '.router-link': {
+                    //     textDecoration: 'none',
+                    //     color: 'neutral.800',
+                    // },
+                }}
             />
             <AppProvider>
                 <HashRouter>

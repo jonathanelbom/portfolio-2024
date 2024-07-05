@@ -1,7 +1,7 @@
-import { Flex } from '@indeed/ifl-components';
 import { useState } from 'react';
 import { SwipeableCarousel } from './SwipeableCarousel';
 import PaginationDots from '../PaginationDots/PaginationDots';
+import { Flex } from '../IFL/ifl';
 
 export const SwipeableCarouselStateful = ({
     index: initialIndex = 0,

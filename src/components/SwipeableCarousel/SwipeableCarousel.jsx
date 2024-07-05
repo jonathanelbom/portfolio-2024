@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Flex } from '@indeed/ifl-components';
 import { normalize, usePan } from './hooks/usePan';
+import { Box } from '@mui/material';
+import { Flex } from '../IFL/ifl';
 
 const getViewboxTransform = ({ panPct, index, moving, transitionDuration, cardCount }) => {
     return {
@@ -78,6 +79,7 @@ export const SwipeableCarousel = ({
             <Box
                 sx={{
                     width: '100%',
+                    // width: `calc(100% - ${leftGutter + rightGutter}px)`,
                     height: '100%',
                     position: 'relative',
                     overflowX: 'hidden',
@@ -90,8 +92,12 @@ export const SwipeableCarousel = ({
                 }}
             >
                 <Flex
+                    as="ul"
                     sx={{
                         height: '100%',
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0,
                         ...getViewboxTransform({
                             panPct: xPercent,
                             index,
@@ -103,11 +109,16 @@ export const SwipeableCarousel = ({
                 >
                     {children.map((child, i) => (
                         <Box
+                            as="li"
                             sx={{
+                                userSelect: 'none',
                                 flexShrink: 0,
                                 paddingInlineStart: `${cardMargin}px`,
                                 paddingInlineEnd: `${cardMargin}px`,
                                 width: `${100 / cardCount}%`,
+                                // '*': {
+                                //     pointerEvents: 'none',
+                                // },
                             }}
                             key={`item-${i}`}
                         >

@@ -9,7 +9,7 @@ import { ACTION_TYPE, useAppDispatch, useAppState } from '../../context/AppConte
 import { Box, IconButton, Slide, Typography, Zoom, styled, useMediaQuery, useTheme } from '@mui/material';
 import { Flex } from '../IFL/ifl';
 import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
-import { GridMediaContainer } from '../Grid';
+import { GridMediaContainer, ScrollGridMediaContainer } from '../Grid';
 import { Close, Launch } from '@mui/icons-material';
 import { dialog_footer_scroll_signifier, maxWidthContent, sticky_header_before } from '../../constants/styles';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
@@ -41,6 +41,10 @@ const CustomizedDialog = styled(Dialog)(({ theme }) => ({
     },
     '& .MuiDialogContent-root': {
         paddingBlockStart: 0,
+        paddingBlockEnd: theme.spacing(4),
+        '&.scrolling': {
+            paddingInline: 0,
+        },
     },
     '& .MuiDialog-paper': {
         // maxWidth: ['600px'],
@@ -48,9 +52,9 @@ const CustomizedDialog = styled(Dialog)(({ theme }) => ({
         maxWidth: ['600px', '1000px', '1000px'],
         width: ['600px', '1000px', '1000px'],
     },
-    '& .MuiDialogActions-root': {
-        padding: theme.spacing(2),
-    },
+    // '& .MuiDialogActions-root': {
+    //     padding: theme.spacing(2),
+    // },
 }));
 
 export const ProjectDialog = () => {
@@ -58,7 +62,7 @@ export const ProjectDialog = () => {
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const { modalOpen, selectedProject } = useAppState();
     const dispatch = useAppDispatch();
-    const { title, sizes, image, video, links, description } = selectedProject || {};
+    const { title, sizes, image, video, images, videos, links, description } = selectedProject || {};
 
     const handleClose = () => {
         dispatch({
@@ -69,6 +73,8 @@ export const ProjectDialog = () => {
 
     const { isIntersecting: isIntersectingTop, Sentinel: SentinelTop } = useIntersctionSentinel({ threshold: 1 });
     const { isIntersecting: isIntersectingBottom, Sentinel: SentinelBottom } = useIntersctionSentinel({ threshold: 1 });
+
+    const hasMultipleMediaItems = images?.length > 1 || videos?.length > 1;
 
     return (
         <CustomizedDialog
@@ -114,7 +120,7 @@ export const ProjectDialog = () => {
             >
                 <Close />
             </IconButton>
-            <DialogContent>
+            <DialogContent className={hasMultipleMediaItems ? 'scrolling' : ''}>
                 <SentinelTop
                     sx={{
                         height: ' 2px',
@@ -123,28 +129,33 @@ export const ProjectDialog = () => {
                     }}
                 />
                 <Flex direction="column" gap={3}>
-                    <GridMediaContainer item={selectedProject} inDialog>
-                        {video && <VideoPlayer url={video.url} />}
-                        {!video && image && (
-                            <Box
-                                as="img"
-                                sx={{
-                                    width: '100%',
-                                    height: '400px',
-                                    objectFit: 'contain',
-                                    objectPosition: 'center',
-                                    display: 'block',
-                                }}
-                                src={`../images/${image?.uri}`}
-                            />
-                        )}
-                    </GridMediaContainer>
+                    {hasMultipleMediaItems && (
+                        <ScrollGridMediaContainer item={selectedProject} inDialog></ScrollGridMediaContainer>
+                    )}
+                    {!hasMultipleMediaItems && (
+                        <GridMediaContainer item={selectedProject} inDialog>
+                            {video && <VideoPlayer url={video.url} />}
+                            {!video && image && (
+                                <Box
+                                    as="img"
+                                    sx={{
+                                        width: '100%',
+                                        height: '400px',
+                                        objectFit: 'contain',
+                                        objectPosition: 'center',
+                                        display: 'block',
+                                    }}
+                                    src={`../images/${image?.uri}`}
+                                />
+                            )}
+                        </GridMediaContainer>
+                    )}
                     {description && (
                         <Typography
                             as="span"
                             variant="body1"
                             dangerouslySetInnerHTML={{ __html: description }}
-                            sx={{ ...maxWidthContent }}
+                            sx={{ ...maxWidthContent, paddingInline: hasMultipleMediaItems ? 3 : 0 }}
                         />
                     )}
                 </Flex>
@@ -160,7 +171,8 @@ export const ProjectDialog = () => {
                 <DialogActions
                     sx={{
                         flexWrap: 'wrap',
-                        gap: 1,
+                        gap: 2,
+                        padding: 2,
                         justifyContent: 'center',
                         zIndex: 1,
                         position: 'relative',

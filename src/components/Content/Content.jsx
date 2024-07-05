@@ -181,8 +181,8 @@ export const Content = ({ children }) => {
                     >
                         <Box sx={{ paddingBlock: 3 }}>
                             <WorkInfo
-                                title="Videos: Case Studies and Demos"
-                                content="Videos I created to walk through demos and case studies of the work I did at Vrbo/Expedia Group"
+                                title="Case Studies and Demos: Videos and PDFs"
+                                content="Videos and presentations I created to walk through demos and case studies of the work I did at Vrbo/Expedia Group"
                             />
                             <Grid items={vrbo_videos} topBorder />
                         </Box>

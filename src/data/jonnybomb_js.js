@@ -14,6 +14,12 @@ export const _jonnybomb_js = [
                 type: 'image',
                 uri: 'dotz_with_bg.png',
             },
+            {
+                label: '',
+                id: 'dotz-start',
+                type: 'image',
+                uri: 'dotz_instructions.png',
+            },
         ],
         imageBgColor: '#F2E1F0',
         links: [

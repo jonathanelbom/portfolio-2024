@@ -1,3 +1,4 @@
+import { pdfjs } from 'react-pdf';
 import { template, transformProject, filterAndSort } from './util';
 
 const images = [
@@ -254,29 +255,29 @@ export const vrbo = [
         ],
         sizes: ['mobile', 'desktop'],
     },
-    {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'northstarexperience',
-        title: 'Northstar experience',
-        role: '',
-        descr: 'Though technically never used for production, I spent my first year at Vrbo building this prototype of the entire Traveler experience. This prototype did consume our production APIs, but for the sake of stability, it now just uses a scraped, static version of this data. It is a responsive experience that works for both desktop and mobile web. Try it out for a trip to "Chamonix".',
-        assets: [
-            {
-                label: '',
-                id: 'northstarexperience',
-                type: 'image',
-                uri: 'vrbo/northstar.png',
-            },
-        ],
-        links: [
-            {
-                label: '',
-                id: '',
-                url: 'https://portfolio.jonnybomb.com/work/vrbo/northstar/#init',
-            },
-        ],
-        sizes: ['mobile', 'desktop'],
-    },
+    // {
+    //     tags: ['vrbo', 'proto', 'ds'],
+    //     id: 'northstarexperience',
+    //     title: 'Northstar experience',
+    //     role: '',
+    //     descr: 'Though technically never used for production, I spent my first year at Vrbo building this prototype of the entire Traveler experience. This prototype did consume our production APIs, but for the sake of stability, it now just uses a scraped, static version of this data. It is a responsive experience that works for both desktop and mobile web. Try it out for a trip to "Chamonix".',
+    //     assets: [
+    //         {
+    //             label: '',
+    //             id: 'northstarexperience',
+    //             type: 'image',
+    //             uri: 'vrbo/northstar.png',
+    //         },
+    //     ],
+    //     links: [
+    //         {
+    //             label: '',
+    //             id: '',
+    //             url: 'https://portfolio.jonnybomb.com/work/vrbo/northstar/#init',
+    //         },
+    //     ],
+    //     sizes: ['mobile', 'desktop'],
+    // },
     {
         tags: ['vrbo', 'prod', 'ds'],
         id: 'personalizedhomepage',
@@ -323,75 +324,75 @@ export const vrbo = [
         ],
         sizes: ['mobile'],
     },
-    {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'tbpolling-iterations',
-        title: 'Polling - Iterations',
-        role: '',
-        descr: 'This prototype if a continuation of the Trip Boards polling work. With learnings for the UX study, the design team moved ahead and I iterated on the multiple different modes in which we could present this polling experience.',
-        assets: [
-            {
-                label: '',
-                id: 'tbpolling-iterations',
-                type: 'image',
-                uri: 'vrbo/polling-explore.png',
-            },
-        ],
-        links: [
-            {
-                label: '',
-                id: '',
-                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/all-flows/?brand=vrbo',
-            },
-        ],
-        sizes: ['mobile', 'desktop'],
-    },
-    {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'tbpolling-uxlab',
-        title: 'Polling - UX Lab',
-        role: '',
-        descr: 'The first polling prototype, this is a mobile viewport sized study (on desktop and mobile) used to gain insight around our evolving group polling feature for Trip Boards. This study contained a combination of invision prototypes as well as the high-fidelity prototype (featured here) which focuses on the nuances of the drag-and-drop interactions for ranking your top properties.',
-        assets: [
-            {
-                label: '',
-                id: 'tbpolling-uxlab',
-                type: 'image',
-                uri: 'vrbo/polling-lab.png',
-            },
-        ],
-        links: [
-            {
-                label: '',
-                id: '',
-                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-groupcollab-polling-study/',
-            },
-        ],
-        sizes: ['mobile', 'desktop'],
-    },
-    {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'tbpolling-prods',
-        title: 'Polling - Production Demo',
-        role: '',
-        descr: 'After deciding upon the best user flow from our polling explorations, I built a production demo prototyoe that covered both the poll creation and poll taking experiences. For this work, I adopted a modified drag and drop experience to better match our native experiences, which were concurrently being developed.',
-        assets: [
-            {
-                label: '',
-                id: 'tbpolling-prods',
-                type: 'image',
-                uri: 'vrbo/polling.png',
-            },
-        ],
-        links: [
-            {
-                label: '',
-                id: '',
-                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/?brand=vrbo',
-            },
-        ],
-        sizes: ['mobile', 'desktop'],
-    },
+    // {
+    //     tags: ['vrbo', 'proto', 'ds'],
+    //     id: 'tbpolling-iterations',
+    //     title: 'Polling - Iterations',
+    //     role: '',
+    //     descr: 'This prototype if a continuation of the Trip Boards polling work. With learnings for the UX study, the design team moved ahead and I iterated on the multiple different modes in which we could present this polling experience.',
+    //     assets: [
+    //         {
+    //             label: '',
+    //             id: 'tbpolling-iterations',
+    //             type: 'image',
+    //             uri: 'vrbo/polling-explore.png',
+    //         },
+    //     ],
+    //     links: [
+    //         {
+    //             label: '',
+    //             id: '',
+    //             url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/all-flows/?brand=vrbo',
+    //         },
+    //     ],
+    //     sizes: ['mobile', 'desktop'],
+    // },
+    // {
+    //     tags: ['vrbo', 'proto', 'ds'],
+    //     id: 'tbpolling-uxlab',
+    //     title: 'Polling - UX Lab',
+    //     role: '',
+    //     descr: 'The first polling prototype, this is a mobile viewport sized study (on desktop and mobile) used to gain insight around our evolving group polling feature for Trip Boards. This study contained a combination of invision prototypes as well as the high-fidelity prototype (featured here) which focuses on the nuances of the drag-and-drop interactions for ranking your top properties.',
+    //     assets: [
+    //         {
+    //             label: '',
+    //             id: 'tbpolling-uxlab',
+    //             type: 'image',
+    //             uri: 'vrbo/polling-lab.png',
+    //         },
+    //     ],
+    //     links: [
+    //         {
+    //             label: '',
+    //             id: '',
+    //             url: 'https://portfolio.jonnybomb.com/work/vrbo/react-groupcollab-polling-study/',
+    //         },
+    //     ],
+    //     sizes: ['mobile', 'desktop'],
+    // },
+    // {
+    //     tags: ['vrbo', 'proto', 'ds'],
+    //     id: 'tbpolling-prods',
+    //     title: 'Polling - Production Demo',
+    //     role: '',
+    //     descr: 'After deciding upon the best user flow from our polling explorations, I built a production demo prototyoe that covered both the poll creation and poll taking experiences. For this work, I adopted a modified drag and drop experience to better match our native experiences, which were concurrently being developed.',
+    //     assets: [
+    //         {
+    //             label: '',
+    //             id: 'tbpolling-prods',
+    //             type: 'image',
+    //             uri: 'vrbo/polling.png',
+    //         },
+    //     ],
+    //     links: [
+    //         {
+    //             label: '',
+    //             id: '',
+    //             url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab-polling/?brand=vrbo',
+    //         },
+    //     ],
+    //     sizes: ['mobile', 'desktop'],
+    // },
     {
         tags: ['vrbo', 'prod', 'ds'],
         id: 'proddemos',
@@ -485,29 +486,29 @@ export const vrbo = [
         ],
         sizes: ['mobile', 'desktop'],
     },
-    {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'tripboards',
-        title: 'Trip Boards',
-        role: '',
-        descr: "This is a responsive desktop and mobile web production prototype for the Vrbo Tripboards app, where users can create curated collections of properties and invite collaborators to comment and vote. Click on the user in top left for settings to add or remove people, change who you are, and change the owner of the board. Click the invite link to invite others to the board (emails in the settings control). Click on the 'Learn more' link to see a localizable css driven animation promoting the chat feature.",
-        assets: [
-            {
-                label: '',
-                id: 'tripboards',
-                type: 'image',
-                uri: 'vrbo/tripboards.png',
-            },
-        ],
-        links: [
-            {
-                label: '',
-                id: '',
-                url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab/',
-            },
-        ],
-        sizes: ['mobile', 'desktop'],
-    },
+    // {
+    //     tags: ['vrbo', 'proto', 'ds'],
+    //     id: 'tripboards',
+    //     title: 'Trip Boards',
+    //     role: '',
+    //     descr: "This is a responsive desktop and mobile web production prototype for the Vrbo Tripboards app, where users can create curated collections of properties and invite collaborators to comment and vote. Click on the user in top left for settings to add or remove people, change who you are, and change the owner of the board. Click the invite link to invite others to the board (emails in the settings control). Click on the 'Learn more' link to see a localizable css driven animation promoting the chat feature.",
+    //     assets: [
+    //         {
+    //             label: '',
+    //             id: 'tripboards',
+    //             type: 'image',
+    //             uri: 'vrbo/tripboards.png',
+    //         },
+    //     ],
+    //     links: [
+    //         {
+    //             label: '',
+    //             id: '',
+    //             url: 'https://portfolio.jonnybomb.com/work/vrbo/group-collab/',
+    //         },
+    //     ],
+    //     sizes: ['mobile', 'desktop'],
+    // },
     {
         tags: ['vrbo', 'prod', 'ds'],
         id: 'verticalimagecarousel',
@@ -533,18 +534,36 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'video'],
+        tags: ['vrbo', 'case-studies'],
         id: 'tripboardspollingvideo',
         title: 'Trip Boards Polling',
         role: '',
         descr: 'Highlights how my prototyping skills, specifically around mobile web touch interactions and motion design, aided in UX Lab tests, design iterations, and ultimately the final production build.<br/><br/><i>These demos can be viewed using the links below or from the projects listed in the Vrbo/EG prototypes section.</i>.',
         sizes: ['mobile', 'desktop'],
         assets: [
+            // {
+            //     label: '',
+            //     id: 'video-tripboards-polling',
+            //     type: 'image',
+            //     uri: 'vrbo/video-tripboards-polling.png',
+            // },
             {
                 label: '',
-                id: 'video-tripboards-polling',
+                id: 'tbpolling-uxlab',
                 type: 'image',
-                uri: 'vrbo/video-tripboards-polling.png',
+                uri: 'vrbo/polling-lab.png',
+            },
+            {
+                label: '',
+                id: 'tbpolling-iterations',
+                type: 'image',
+                uri: 'vrbo/polling-explore.png',
+            },
+            {
+                label: '',
+                id: 'tbpolling-prods',
+                type: 'image',
+                uri: 'vrbo/polling.png',
             },
         ],
         videos: [
@@ -568,19 +587,25 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'video'],
+        tags: ['vrbo', 'case-studies'],
         id: 'tripboardsvideo',
         title: 'Trip Boards Prototype',
         role: '',
-        descr: 'The Desktop and mobile Trip Boards experience evergreen prototype, where I can collaborate with design as we ideate on new features or improvements. <br/><br/><i>This demos can be viewed using the link below or from the project listed in the Vrbo/EG prototypes section.</i>.',
+        descr: "The responsive desktop and mobile web evergreen production prototype for the Vrbo Tripboards app, used to collaborate with design to ideate on new features or improvements and to guide production engineers on the frontend implementation. Users can create curated collections of properties and invite collaborators to comment and vote. Click on the user avatar in top left for settings to add or remove people, change who you are, and change the owner of the board. Click the invite link to invite others to the board (emails in the settings control). Click on the 'Learn more' link to see a localizable css driven animation promoting the chat feature.<br/><br/><i>This demos can be viewed using the link below</i>.",
         sizes: ['mobile', 'desktop'],
         assets: [
             {
                 label: '',
-                id: 'video-tripboards',
+                id: 'tripboards',
                 type: 'image',
-                uri: 'vrbo/video-tripboards.png',
+                uri: 'vrbo/tripboards.png',
             },
+            // {
+            //     label: '',
+            //     id: 'video-tripboards',
+            //     type: 'image',
+            //     uri: 'vrbo/video-tripboards.png',
+            // },
         ],
         videos: [
             {
@@ -596,11 +621,11 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'video'],
+        tags: ['vrbo', 'case-studies'],
         id: 'northstarexperiencevideo',
         title: 'Homeaway Northstar Experience',
         role: '',
-        descr: 'A vision demo for the  Homeaway Northstar experience, including Immersive Search, Search Results, Property Details, and Scratchpad (to become Trip Boards).  <br/><br/><i>This demos can be viewed using the link below or from the project listed in the Vrbo/EG prototypes section.</i>.',
+        descr: 'A responseive desktop and mobile vision demo for the  Homeaway Northstar experience, including Immersive Search, Search Results, Property Details, and Scratchpad (to become Trip Boards). This prototype did consume our production APIs, but for the sake of stability, it now just uses a static version of this data.<br/><br/>Try it out for a trip to "Chamonix".<br/><br/><i>This demos can be viewed using the link below.</i>.',
         sizes: ['mobile', 'desktop'],
         assets: [
             {
@@ -624,7 +649,7 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'video'],
+        tags: ['vrbo', 'case-studies'],
         id: 'egconsolevideo',
         title: 'EG Console UX Transformation',
         role: '',
@@ -646,7 +671,7 @@ export const vrbo = [
         links: [],
     },
     {
-        tags: ['vrbo', 'video'],
+        tags: ['vrbo', 'case-studies'],
         id: 'egxpvideo',
         title: 'EG XP - Templates and Layouts',
         role: '',
@@ -667,6 +692,72 @@ export const vrbo = [
         ],
         links: [],
     },
+    {
+        tags: ['vrbo', 'case-studies'],
+        id: 'portfolio review',
+        title: 'Processes and Outcomes',
+        role: '',
+        descr: '', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
+        sizes: ['pdf'],
+        assets: [
+            {
+                label: '',
+                id: 'proto-portfolio',
+                type: 'image',
+                uri: 'vrbo/Jonathan Elbom - Vrbo-EG - Prototype Portfolio.png',
+            },
+        ],
+        pdfs: [
+            {
+                url: 'pdf/Jonathan Elbom - Vrbo-EG - Prototype Portfolio.pdf',
+            },
+        ],
+        links: [],
+    },
+    {
+        tags: ['vrbo', 'case-studies'],
+        id: 'spxcollab',
+        title: 'SPX Collaboration',
+        role: '',
+        descr: '', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
+        sizes: ['pdf'],
+        assets: [
+            {
+                label: '',
+                id: 'spx-collab',
+                type: 'image',
+                uri: 'vrbo/Jonathan Elbom - EG Supply Partner Experience - XD Engineering.png',
+            },
+        ],
+        pdfs: [
+            {
+                url: 'pdf/Jonathan Elbom - EG Supply Partner Experience - XD Engineering.pdf',
+            },
+        ],
+        links: [],
+    },
+    {
+        tags: ['vrbo', 'case-studies'],
+        id: 'dsguestselector',
+        title: 'Vrbo DS: Guest Selector',
+        role: '',
+        descr: '', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
+        sizes: ['pdf'],
+        assets: [
+            {
+                label: '',
+                id: 'dsguestselector',
+                type: 'image',
+                uri: 'vrbo/Jonathan Elbom - Design System - Guest Selector.png',
+            },
+        ],
+        pdfs: [
+            {
+                url: 'pdf/Jonathan Elbom - Design System - Guest Selector.pdf',
+            },
+        ],
+        links: [],
+    },
 ];
 
 export const vrbo_proto = filterAndSort(
@@ -676,7 +767,7 @@ export const vrbo_prod = filterAndSort(
     vrbo.filter(({ tags }) => tags.includes('prod')).map((p) => transformProject(p)),
 );
 export const vrbo_videos = filterAndSort(
-    vrbo.filter(({ tags }) => tags.includes('video')).map((p) => transformProject(p)),
+    vrbo.filter(({ tags }) => tags.includes('case-studies')).map((p) => transformProject(p)),
     false,
 );
 

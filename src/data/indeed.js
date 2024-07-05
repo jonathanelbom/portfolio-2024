@@ -43,14 +43,20 @@ const _indeed = [
         title: 'BuildQuest',
         id: 'buildquest',
         description:
-            'BuildQuest is a screener question json authoring and edit tool created to help author screener questions for Indeed Apply',
+            'BuildQuest is a screener question json authoring and editing tool created to help author screener questions for Indeed Apply',
         tags: ['indeed'],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=nMf9z6TmZDo',
+            },
+        ],
         links: [
             {
                 url: 'https://portfolio.jonnybomb.com/work/indeed/build-quest/',
             },
         ],
         sizes: ['desktop'],
+        imageBgColor: '#f1f9fd',
     },
     {
         images: [
@@ -61,11 +67,21 @@ const _indeed = [
                 uri: 'indeed/modal-contributions-1.png',
             },
         ],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=yBvw5FTvF4w',
+            },
+            {
+                url: 'https://www.youtube.com/watch?v=_dmn0qdGAk0',
+            },
+        ],
         title: 'DS Modal Improvements',
-        description: '',
+        description:
+            'These are contributions I made to the Indeed Design System to improve the accessiblity and experience of the modal component, as well as a demostration of how to compose different layouts within the modal.',
         id: 'dsmodalimprovements',
         tags: ['indeed'],
         sizes: ['modal', 'desktop'],
+        imageBgColor: '#f1f9fd',
     },
     {
         images: [
@@ -86,6 +102,7 @@ const _indeed = [
                 url: 'https://portfolio.jonnybomb.com/work/indeed/my-jobs/',
             },
         ],
+        imageBgColor: '#f1f9fd',
     },
     {
         images: [
@@ -106,6 +123,7 @@ const _indeed = [
                 url: 'https://portfolio.jonnybomb.com/work/indeed/pathways/#/pathways',
             },
         ],
+        imageBgColor: '#f1f9fd',
     },
     {
         images: [
@@ -126,6 +144,7 @@ const _indeed = [
                 url: 'https://portfolio.jonnybomb.com/work/indeed/profile-vision/',
             },
         ],
+        imageBgColor: '#f1f9fd',
     },
     {
         images: [
@@ -135,12 +154,37 @@ const _indeed = [
                 type: 'image',
                 uri: 'indeed/smart-apply.png',
             },
+            {
+                label: '',
+                id: 'smartapply-eeo',
+                type: 'image',
+                uri: 'indeed/smart-apply-eeo.png',
+            },
+            {
+                label: '',
+                id: 'smartapply-knockout',
+                type: 'image',
+                uri: 'indeed/smart-apply-knockout.png',
+            },
+            {
+                label: '',
+                id: 'smartapply-mulit-res',
+                type: 'image',
+                uri: 'indeed/smart-apply-multi-res-storybook-landscape.png',
+            },
         ],
-        title: 'Smart Apply',
-        description: '',
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=UtedS90UmEw',
+            },
+        ],
+        title: 'Indeed Apply',
+        description:
+            "Indeed Apply is a feature on Indeed's job platform that simplifies the application process for job seekers. This feature is designed to save time and make the application process more efficient.I led the frontend work on several features for Indeed Apply: <i>EEO Questions, 3rd Party Knockout Questions, and Multiple Resumes</i>.",
         tags: ['indeed'],
         id: 'smartapply',
         sizes: ['mobile', 'desktop'],
+        imageBgColor: '#f1f9fd',
     },
 ];
 

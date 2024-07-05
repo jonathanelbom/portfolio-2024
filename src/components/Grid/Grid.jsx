@@ -2,13 +2,14 @@ import { Box, Button, Typography } from '@mui/material';
 import { gridItemHoverTransDur, hit_area } from '../../constants/styles';
 import { useMemo } from 'react';
 import { Flex } from '../IFL/ifl';
-import { Launch /* ReadMoreOutlined, Slideshow */, ReadMoreOutlined, YouTube } from '@mui/icons-material';
+import { Launch /* ReadMoreOutlined, Slideshow */, PictureAsPdf, YouTube } from '@mui/icons-material';
 import { ACTION_TYPE, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
 // import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
 import { GridMediaContainer } from './GridMediaContainer';
 
 const iconProps = {
     fontSize: 'small',
+    color: '#fff',
 };
 
 const Details = ({ Icon }) => {
@@ -17,10 +18,10 @@ const Details = ({ Icon }) => {
             justify="center"
             aling="center"
             sx={{
-                backgroundColor: '#fff', //grey.300',
+                backgroundColor: '#fff',
                 borderRadius: '100%',
                 padding: 0.5,
-                transform: 'scale(.8)',
+                // transform: 'scale(.8)',
             }}
         >
             <Icon {...iconProps} />
@@ -29,21 +30,22 @@ const Details = ({ Icon }) => {
 };
 
 const LinkActionOverlay = ({ item }) => {
-    const { link } = item;
-
+    const { link, pdf } = item;
+    const url = link ? link.uri || link.url : pdf.url;
     return (
         <>
-            <Box as="a" href={link.uri || link.url} target="_blank" sx={{ ...hit_area, zIndex: 1 }} />
+            <Box as="a" href={url} target="_blank" sx={{ ...hit_area, zIndex: 1 }} />
             <Button
                 role="presentation"
                 id={item.title}
                 variant="contained"
                 sx={{
                     transition: `transform ${gridItemHoverTransDur} ease`,
-                    transform: 'scale(.5)',
+                    transform: 'scale(.75)',
+                    border: '1px solid #fff',
                 }}
             >
-                Launch
+                {pdf?.url ? 'View PDF' : 'Launch demo'}
             </Button>
         </>
     );
@@ -66,7 +68,6 @@ const DetailsModalActionOverlay = ({ item }) => {
                 sx={{
                     transition: `transform ${gridItemHoverTransDur} ease`,
                     transform: 'scale(.75)',
-                    // boxShadow: 'none !important',
                     border: '1px solid #fff',
                 }}
             >
@@ -77,9 +78,12 @@ const DetailsModalActionOverlay = ({ item }) => {
 };
 
 const GridItem = ({ item }) => {
-    const { link, title, description, image, sizes, video } = item;
-    const hasAction = link || video || description;
-    const ActionOverlayComponent = video || description ? DetailsModalActionOverlay : LinkActionOverlay;
+    const { link, title, description, image, images, sizes, video, pdf } = item;
+    const hasAction = pdf || link || video || description || images?.length > 1;
+    const ActionOverlayComponent =
+        video || (description && images?.length > 0) || images?.length > 1
+            ? DetailsModalActionOverlay
+            : LinkActionOverlay;
     return (
         <Box
             as="li"
@@ -114,8 +118,8 @@ const GridItem = ({ item }) => {
                 justify="flex-end"
                 sx={{ padding: 1, gap: 1, position: 'absolute', top: 0, left: 0, right: 0, pointerEvents: 'none' }}
             >
-                {description && <Details Icon={ReadMoreOutlined} />}
-                {/* {video && <Details Icon={Slideshow} />} */}
+                {/* {description && <Details Icon={ReadMoreOutlined} />} */}
+                {pdf && <Details Icon={PictureAsPdf} />}
                 {video && <Details Icon={YouTube} />}
                 {link && <Details Icon={Launch} />}
             </Flex>
@@ -161,7 +165,7 @@ const GridItem = ({ item }) => {
                                         color: '#ea3323',
                                         display: 'block',
                                         position: 'relative',
-                                        transform: 'scale(4)',
+                                        transform: 'scale(2.5)',
                                     }}
                                 />
                             </Flex>

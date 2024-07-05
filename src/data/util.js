@@ -1,13 +1,15 @@
 export const transformProject = (value = {}) => {
     const images = value.assets || value.images || [];
-
     const links = value.links || [];
     const videos = value.videos || [];
+    const pdfs = value.pdfs || [];
     return {
+        pdf: pdfs[0] || '',
         image: images?.[0] || '',
         link: links?.[0] || '',
         video: videos?.[0] || '',
         images,
+        videos,
         title: value.title,
         description: value.descr || value.description,
         tags: value.tags,
