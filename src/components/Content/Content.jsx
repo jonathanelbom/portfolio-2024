@@ -12,18 +12,20 @@ import {
     CelebrationOutlined,
     Compress,
     Expand,
+    RecordVoiceOverOutlined,
     SupervisorAccountOutlined,
     WavingHandOutlined,
     WebOutlined,
     // BrokenImageOutlined,
 } from '@mui/icons-material';
 import { ProjectGrid } from '../ProjectGrid/ProjectGrid';
-import { Grid } from '../Grid/Grid';
+import { Grid, GridItem } from '../Grid/Grid';
 import { Flex } from '../IFL/ifl';
 import { ACTION_TYPE, SECTION, useAppDispatch, useAppState } from '../../context/AppContext/AppContext';
 import { jonnybomb_js } from '../../data/jonnybomb_js';
 import { jonnybomb_as } from '../../data/jonnybomb_as';
 import { WorkInfo } from '../WorkInfo/WorkInfo';
+import { feedback } from '../../data/feedback';
 
 const MinWidthSection = ({ children, sx = {} }) => (
     <Box
@@ -70,7 +72,7 @@ const ToggleExpandedButton = ({ section }) => {
     const allExpanded = state[`allExpanded${section}`];
     return (
         <Button
-            sx={{ marginInlineEnd: '0', position: 'sticky', top: 0 }}
+            sx={{ marginInlineEnd: '0', position: 'sticky', top: 0, flexShrink: 0 }}
             variant="text"
             onClick={(e) => {
                 e.preventDefault();
@@ -277,6 +279,37 @@ export const Content = ({ children }) => {
                         role="Designer | Developer"
                         section={SECTION.PERSONAL}
                     ></ProjectGrid>
+                </Section>
+                <Section
+                    title="What's That You Say"
+                    Icon={RecordVoiceOverOutlined}
+                    // altControl={<ToggleExpandedButton section={SECTION.FEEDBACK} />}
+                >
+                    <ProjectGrid
+                        items={feedback}
+                        company="Peer Feedback"
+                        dates="Jan 2021 - Dec 2023"
+                        role="Indeed | Expedia Group"
+                        section={SECTION.FEEDBACK}
+                        title=""
+                        content=""
+                    >
+                        <Box sx={{ paddingBlock: 3 }}>
+                            <WorkInfo
+                                title="Let's Hear It From My Peers"
+                                content="I've done enough talking. Here are some snippets that I received during peer feedback and evaluation cycles over the last few years."
+                            />
+                            <Grid topBorder sizing={condensed ? [1] : [1, 1, 2]}>
+                                {feedback.map((item) => (
+                                    <GridItem
+                                        key={item.id}
+                                        item={item}
+                                        sx={{ alignItems: 'stretch', justifyContent: 'flex-start' }}
+                                    />
+                                ))}
+                            </Grid>
+                        </Box>
+                    </ProjectGrid>
                 </Section>
             </Flex>
         </>

@@ -69,6 +69,7 @@ export const _jonnybomb_js = [
             },
         ],
         sizes: ['desktop'],
+        imageBgColor: '#dedcdb',
     },
     {
         tags: ['personal'],

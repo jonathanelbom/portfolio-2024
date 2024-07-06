@@ -106,7 +106,7 @@ export const theme = createTheme(_theme, {
                     style: {
                         borderRadius: '24px',
                         // color: 'blue',
-                        backgroundColor: '#e5e3e2',
+                        // backgroundColor: '#e5e3e2',
                         paddingBlock: '4px',
                         paddingInline: '8px',
                         minWidth: 'unset',

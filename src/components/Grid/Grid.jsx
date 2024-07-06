@@ -77,9 +77,10 @@ const DetailsModalActionOverlay = ({ item }) => {
     );
 };
 
-const GridItem = ({ item }) => {
-    const { link, title, description, image, images, sizes, video, pdf } = item;
-    const hasAction = pdf || link || video || description || images?.length > 1;
+export const GridItem = ({ item, sx = {} }) => {
+    const { link, title, description, image, images, sizes, video, pdf, tags } = item;
+    const isFeedback = tags.includes('feedback');
+    const hasAction = (pdf || link || video || description || images?.length > 1) && !isFeedback;
     const ActionOverlayComponent =
         video || (description && images?.length > 0) || images?.length > 1
             ? DetailsModalActionOverlay
@@ -91,7 +92,7 @@ const GridItem = ({ item }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
-                // justifyContent: 'space-between',
+                justifyContent: 'space-between',
                 gap: 3,
                 padding: 4,
                 position: 'relative',
@@ -112,13 +113,13 @@ const GridItem = ({ item }) => {
                         },
                     },
                 }),
+                ...sx,
             }}
         >
             <Flex
                 justify="flex-end"
                 sx={{ padding: 1, gap: 1, position: 'absolute', top: 0, left: 0, right: 0, pointerEvents: 'none' }}
             >
-                {/* {description && <Details Icon={ReadMoreOutlined} />} */}
                 {pdf && <Details Icon={PictureAsPdf} />}
                 {video && <Details Icon={YouTube} />}
                 {link && <Details Icon={Launch} />}
@@ -129,72 +130,62 @@ const GridItem = ({ item }) => {
                 {sizes && <Typography variant="projectSizes">{sizes.join('/')}</Typography>}
             </Flex>
 
-            <GridMediaContainer item={item}>
-                {/* {video && <VideoPlayer url={video.url} />} */}
-                {image && (
-                    <>
-                        <Box
-                            as="img"
-                            sx={{
-                                width: '100%',
-                                objectFit: 'cover',
-                                objectPosition: 'top left',
-                                display: 'block',
-                            }}
-                            src={`../images/${image?.uri}`}
-                        />
-                        {video && (
-                            <Flex
-                                justify="center"
-                                align="center"
+            {!isFeedback && (
+                <GridMediaContainer item={item}>
+                    {image && (
+                        <>
+                            <Box
+                                as="img"
                                 sx={{
-                                    position: 'absolute',
-                                    inset: 0,
-                                    '&::before': {
-                                        content: "''",
-                                        position: 'absolute',
-                                        inset: '45%',
-                                        backgroundColor: '#fff',
-                                    },
+                                    width: '100%',
+                                    objectFit: 'cover',
+                                    objectPosition: 'top left',
+                                    display: 'block',
                                 }}
-                            >
-                                {/* <PlayCircleFilled */}
-                                <YouTube
+                                src={`../images/${image?.uri}`}
+                            />
+                            {video && (
+                                <Flex
+                                    justify="center"
+                                    align="center"
                                     sx={{
-                                        zIndex: 1,
-                                        color: '#ea3323',
-                                        display: 'block',
-                                        position: 'relative',
-                                        transform: 'scale(2.5)',
+                                        position: 'absolute',
+                                        inset: 0,
+                                        '&::before': {
+                                            content: "''",
+                                            position: 'absolute',
+                                            inset: '45%',
+                                            backgroundColor: '#fff',
+                                        },
                                     }}
-                                />
-                            </Flex>
-                        )}
-                    </>
-                )}
-                {/* {video && <VideoPlayer url={video.url} />}
-                {!video && image && (
-                    <Box
-                        as="img"
-                        sx={{
-                            width: '100%',
-                            objectFit: 'cover',
-                            objectPosition: 'top left',
-                            display: 'block',
-                        }}
-                        src={`../images/${image?.uri}`}
-                    />
-                )} */}
-            </GridMediaContainer>
-            {false && (
+                                >
+                                    {/* <PlayCircleFilled */}
+                                    <YouTube
+                                        sx={{
+                                            zIndex: 1,
+                                            color: '#ea3323',
+                                            display: 'block',
+                                            position: 'relative',
+                                            transform: 'scale(2.5)',
+                                        }}
+                                    />
+                                </Flex>
+                            )}
+                        </>
+                    )}
+                </GridMediaContainer>
+            )}
+            {isFeedback && (
                 <Typography
-                    sx={{
-                        display: '-webkit-box',
-                        WebkitBoxOrient: 'vertical',
-                        WebkitLineClamp: 3,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                    }}
+                    sx={
+                        {
+                            // display: '-webkit-box',
+                            // WebkitBoxOrient: 'vertical',
+                            // WebkitLineClamp: 3,
+                            // overflow: 'hidden',
+                            // textOverflow: 'ellipsis',
+                        }
+                    }
                     dangerouslySetInnerHTML={{ __html: description }}
                 />
             )}
@@ -228,14 +219,14 @@ const GridItem = ({ item }) => {
     );
 };
 
-export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 4, 5] }) => {
+export const Grid = ({ items = [], topBorder, sx = {}, sizing, children }) => {
     const { condensed } = useAppState();
     // const hasVideos = useMemo(() => items.some(({ tags }) => tags.includes('video')), [items.length]);
     // if (hasVideos) {
     //     sizing = [1, 2, 2, 3];
     // }
-    if (condensed) {
-        sizing = [1, 2];
+    if (!sizing) {
+        sizing = condensed ? [1, 2] : [1, 2, 3, 4, 5];
     }
     const gridTemplateColumns = useMemo(() => sizing.map((size) => `repeat(${size}, 1fr)`), [sizing]);
     return (
@@ -247,15 +238,14 @@ export const Grid = ({ items = [], topBorder, sx = {}, sizing = [1, 2, 3, 4, 5] 
                 padding: 0,
                 margin: 0,
                 backgroundColor: '#fff',
-                ...(items.length > 0 && { borderBlockEnd: '1px solid #d5d3d2' }),
+                ...((!!children || items.length > 0) && { borderBlockEnd: '1px solid #d5d3d2' }),
                 ...((true || topBorder) && { borderBlockStart: '1px solid #d5d3d2' }),
                 gridTemplateColumns,
                 ...sx,
             }}
         >
-            {items.map((item, i) => (
-                <GridItem key={`${item.id || ''}-${i}`} item={item} i={i} />
-            ))}
+            {!!children && children}
+            {!children && items.map((item, i) => <GridItem key={`${item.id || ''}-${i}`} item={item} i={i} />)}
         </Box>
     );
 };

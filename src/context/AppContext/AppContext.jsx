@@ -15,6 +15,7 @@ export const SECTION = {
     WORK: 'Work',
     CONSULTING: 'Consulting',
     PERSONAL: 'Personal',
+    FEEDBACK: 'Feedback',
 };
 
 const appReducer = (state, action) => {

@@ -29,6 +29,7 @@ export const _mm = [
                 url: 'https://codepen.io/jonnybomb/details/JjEPPyE',
             },
         ],
+        imageBgColor: '#dedcdb',
     },
     {
         images: [
@@ -75,6 +76,7 @@ export const _mm = [
                 url: 'http://mentalmodeler.com',
             },
         ],
+        imageBgColor: '#dedcdb',
     },
     {
         images: [

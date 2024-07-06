@@ -29,6 +29,7 @@ export const _enspire = [
         ],
         links: [],
         sizes: ['desktop'],
+        imageBgColor: '#DDEAF0',
     },
     {
         tags: ['enspire'],
@@ -58,6 +59,7 @@ export const _enspire = [
         ],
         links: [],
         sizes: ['desktop'],
+        imageBgColor: '#E1F1F6',
     },
     {
         tags: ['enspire'],
