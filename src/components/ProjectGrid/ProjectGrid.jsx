@@ -62,7 +62,7 @@ export const ProjectGrid = ({
             <ExpandableTransition
                 isExpanded={isExpanded}
                 duration={125 + items.length * 20}
-                transitionProps={{ unmountOnExit: false }}
+                //      transitionProps={{ unmountOnExit: false }}
             >
                 <Box ref={ref}>
                     {/* childern */}

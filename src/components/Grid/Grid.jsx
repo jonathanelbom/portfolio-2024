@@ -34,8 +34,15 @@ const LinkActionOverlay = ({ item }) => {
     const url = link ? link.uri || link.url : pdf.url;
     return (
         <>
-            <Box as="a" href={url} target="_blank" sx={{ ...hit_area, zIndex: 1 }} />
+            <Box
+                // as="a"
+                // href={url}
+                // target="_blank"
+                sx={{ ...hit_area, zIndex: 1 }}
+            />
             <Button
+                href={url}
+                target="_blank"
                 role="presentation"
                 id={item.title}
                 variant="contained"
@@ -88,6 +95,7 @@ export const GridItem = ({ item, sx = {} }) => {
     return (
         <Box
             as="li"
+            // tabIndex={0}
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -100,14 +108,14 @@ export const GridItem = ({ item, sx = {} }) => {
                 boxShadow: '0 0 0 1px #d5d3d2',
                 ...(hasAction && {
                     '@media (hover:hover)': {
-                        '&:hover': {
+                        '&:hover, &:focus-within': {
                             '.project-link': {
                                 opacity: 1,
                             },
                             '.image-container': {
                                 transform: 'scale(.925)',
                             },
-                            button: {
+                            'button, a': {
                                 transform: 'scale(1)',
                             },
                         },

@@ -316,6 +316,10 @@ export const ScrollCarousel = ({
                                 cursor: 'pointer',
                             },
                         }),
+                        '&:focus-within': {
+                            outline: '1px solid #fff',
+                            boxShadow: '0px 0px 0px 3px #8a1b12',
+                        },
                         ...sx,
                         paddingInline: `${paddingInline}px`,
                         gap: `${itemGap}px`,

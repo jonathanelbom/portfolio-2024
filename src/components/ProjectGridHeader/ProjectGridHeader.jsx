@@ -59,8 +59,10 @@ export const ProjecGridHeader = ({ company, dates, role, expanded, toggleExpande
                             paddingBlock: 4,
                             background: '#fff',
                             '@media (hover:hover)': {
-                                '&:hover .work-title': {
-                                    transform: 'translateX(8px)',
+                                '&:hover, &:focus-within': {
+                                    '.work-title': {
+                                        transform: 'translateX(8px)',
+                                    },
                                 },
                             },
                         }}
