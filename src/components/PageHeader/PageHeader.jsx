@@ -5,7 +5,7 @@ import avatar from '../../assets/images/jonathan-avatar.png';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useResize } from '../../hooks/useResize';
-import { DescriptionOutlined } from '@mui/icons-material';
+import { DescriptionOutlined, LinkedIn } from '@mui/icons-material';
 
 export const PageHeader = () => {
     const headerRef = useRef(null);
@@ -54,31 +54,55 @@ export const PageHeader = () => {
                         marginInline: 'auto',
                         position: 'absolute',
                         top: 0,
+                        marginBlockStart: 2,
+                        paddingInlineEnd: 1,
                     }}
                 >
-                    <Button
-                        variant="resume"
-                        sx={{ marginBlockStart: 2 }}
-                        href="https://portfolio.jonnybomb.com/JonathanElbom_Resume.pdf"
-                        target="_blank"
-                    >
-                        <DescriptionOutlined fontSize="small" />
-                        <Box
-                            as="span"
-                            sx={{
-                                overflow: 'hidden',
-                                paddingInlineStart: 1,
-                                transition: 'max-width 300ms ease',
-                            }}
+                    <Flex gap={0.5}>
+                        <Button
+                            variant="resume"
+                            sx={{ margin: 0 }}
+                            href="https://www.linkedin.com/in/jonathanelbom/"
+                            target="_blank"
                         >
-                            Resume
-                        </Box>
-                    </Button>
+                            <LinkedIn fontSize="small" />
+                            <Box
+                                as="span"
+                                sx={{
+                                    overflow: 'hidden',
+                                    paddingInlineStart: 0.25,
+                                    transition: 'max-width 300ms ease',
+                                }}
+                            >
+                                LinkedIn
+                            </Box>
+                        </Button>
+                        <Button
+                            variant="resume"
+                            sx={{ margin: 0 }}
+                            // sx={{ marginBlockStart: 2 }}
+                            href="https://portfolio.jonnybomb.com/JonathanElbom_Resume.pdf"
+                            target="_blank"
+                        >
+                            <DescriptionOutlined fontSize="small" />
+                            <Box
+                                as="span"
+                                sx={{
+                                    overflow: 'hidden',
+                                    paddingInlineStart: 0.25,
+                                    transition: 'max-width 300ms ease',
+                                }}
+                            >
+                                Resume
+                            </Box>
+                        </Button>
+                    </Flex>
                 </Flex>
                 <Box
                     sx={{
                         ...max_width,
-                        paddingBlock: 8,
+                        paddingBlockStart: 9,
+                        paddingBlockEnd: 8,
                         ...(useScrollEffect && {
                             transform: `translateY(-${scrollTop * 0.35}px)`,
                             willChange: 'transform',

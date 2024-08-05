@@ -35,6 +35,12 @@ const _indeed = [
         images: [
             {
                 label: '',
+                id: 'buildquestintro',
+                type: 'image',
+                uri: 'indeed/build-quest.png',
+            },
+            {
+                label: '',
                 id: 'buildquest',
                 type: 'image',
                 uri: 'indeed/build-quest-4-3.png',
@@ -62,6 +68,12 @@ const _indeed = [
         images: [
             {
                 label: '',
+                id: 'jelbomsplayground',
+                type: 'image',
+                uri: 'indeed/jelboms-playground.png',
+            },
+            {
+                label: '',
                 id: 'dsmodalimprovements',
                 type: 'image',
                 uri: 'indeed/modal-contributions-1.png',
@@ -69,18 +81,29 @@ const _indeed = [
         ],
         videos: [
             {
+                url: 'https://www.youtube.com/watch?v=LO6o5xvByfs',
+            },
+            {
                 url: 'https://www.youtube.com/watch?v=yBvw5FTvF4w',
             },
             {
                 url: 'https://www.youtube.com/watch?v=_dmn0qdGAk0',
             },
+            {
+                url: 'https://youtube.com/shorts/GFj-idz8Fa4',
+            },
         ],
-        title: 'DS Modal Improvements',
+        links: [
+            {
+                url: 'https://portfolio.jonnybomb.com/work/indeed/jelbom-playground/',
+            },
+        ],
+        title: "Jelbom's Playground",
         description:
-            'These are contributions I made to the Indeed Design System to improve the accessiblity and experience of the modal component, as well as a demostration of how to compose different layouts within the modal.',
-        id: 'dsmodalimprovements',
+            "Jelbom's Playground is an area where I can quickly and iteratively explore new and better component patterns and enhancemnts to existing components. It also provides an easy way to share these demos as well as their source code. This playground includes contributions I made to the Indeed Design System to improve the accessiblity and experience of the modal component, as well as a demostration of how to compose different layouts within the modal. I also explore IntersectionObserver API powered sticky scroll experiences as well as accessible navigation for complex radio groups.",
+        id: 'jelbomsplayground',
         tags: ['indeed'],
-        sizes: ['modal', 'desktop'],
+        sizes: ['mobile', 'desktop'],
         imageBgColor: '#f1f9fd',
     },
     {
@@ -91,15 +114,44 @@ const _indeed = [
                 type: 'image',
                 uri: 'indeed/my-jobs.png',
             },
+            {
+                label: '',
+                id: 'myjobsplayground',
+                type: 'image',
+                uri: 'indeed/my-jobs-playground.png',
+            },
         ],
-        title: 'My Jobs',
-        description: '',
+        title: 'My Jobs Playground',
+        description:
+            'My Jobs Playground is a space to explore and experiment with the My Jobs Experience. It contains design-focused prototype, like the My Jobs Evergreen prototype, as well as POCs and production ready demos, like the 3rd Party Apply Starts and the transition components that power that experience.',
         tags: ['indeed'],
         id: 'myjobs',
         sizes: ['mobile', 'desktop'],
         links: [
             {
+                label: 'My Jobs Playground',
                 url: 'https://portfolio.jonnybomb.com/work/indeed/my-jobs/',
+            },
+            {
+                label: 'My Jobs Evergreen Prototype',
+                url: 'https://portfolio.jonnybomb.com/work/indeed/my-jobs/#/my-jobs-proto',
+            },
+        ],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=v3nrzJIqwfg',
+            },
+            {
+                url: 'https://youtube.com/shorts/uIQtsA5yvyg',
+            },
+            {
+                url: 'https://youtube.com/shorts/W2dbmI7kgKk',
+            },
+            {
+                url: 'https://www.youtube.com/watch?v=l7ipf1J6vOo',
+            },
+            {
+                url: 'https://www.youtube.com/watch?v=TKMfeE2Vgj8',
             },
         ],
         imageBgColor: '#f1f9fd',
@@ -113,8 +165,14 @@ const _indeed = [
                 uri: 'indeed/pathways.png',
             },
         ],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=PFlBVl-vK8w',
+            },
+        ],
         title: 'Pathways',
-        description: '',
+        description:
+            'A live-data prototype for a career trajectory, advancement, and discovery tool, being developed to help user map a path to evolve or change their career trajectory. This prototype was used for extensive user testing as well as a base for the production build of this experience.',
         tags: ['indeed'],
         id: 'pathways',
         sizes: ['mobile'],
@@ -133,9 +191,21 @@ const _indeed = [
                 type: 'image',
                 uri: 'indeed/profile-future-1.png',
             },
+            {
+                label: '',
+                id: 'profilevision',
+                type: 'image',
+                uri: 'indeed/profile-future-2.png',
+            },
+        ],
+        videos: [
+            {
+                url: 'https://www.youtube.com/watch?v=0_8i7SY4Gfg',
+            },
         ],
         title: 'Profile Vision',
-        description: '',
+        description:
+            'The Profile Vision prototype is a live-data, early development iteration of the new Profile northstar. It was built several months before the production engineering work began to run user testing to identify any areas where modifications should be made before starting the production build. This code provided a large head start for that production work.',
         tags: ['indeed'],
         id: 'profilevision',
         sizes: ['mobile'],

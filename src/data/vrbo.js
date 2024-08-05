@@ -1,4 +1,4 @@
-import { pdfjs } from 'react-pdf';
+// import { pdfjs } from 'react-pdf';
 import { template, transformProject, filterAndSort } from './util';
 
 const images = [
@@ -42,7 +42,7 @@ const titles = [
     'Prod demos',
     'Search Filters Study',
     'Single Image Carousel',
-    'Swiepable Carousel',
+    'Swipeable Carousel',
     'Trip Boards',
     'Vertical Image Carousel',
 ];
@@ -105,9 +105,14 @@ export const vrbo = [
         ],
         links: [
             {
-                label: '',
+                label: 'Docs',
                 id: '',
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-card-carousel/docs/',
+            },
+            {
+                label: 'Dev harness',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-card-carousel/harness/',
             },
         ],
         sizes: ['mobile', 'desktop'],
@@ -137,15 +142,15 @@ export const vrbo = [
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
-        id: 'guestpicker',
-        title: 'Guest Picker',
+        id: 'guestselector',
+        title: 'Guest Selector',
         role: '',
-        descr: 'During a multi-month project to improve the usability of our Guest Picker feature, I partnered with our Design Systems UX Lead to create an improved prodcution implementation of our Guest Picker component. I also created a sample implementation in our Properties Detail Page.',
+        descr: 'During a multi-month project to improve the usability of our Guest Selector feature, I partnered with our Design Systems UX Lead to create an improved prodcution implementation of our Guest Selector component. I also created a sample implementation in our Properties Detail Page.',
         format: [],
         assets: [
             {
                 label: '',
-                id: 'guestpicker',
+                id: 'guestselector',
                 type: 'image',
                 uri: 'vrbo/guest-picker.png',
             },
@@ -200,7 +205,7 @@ export const vrbo = [
         ],
         links: [
             {
-                label: '',
+                label: 'Dev harness',
                 id: '',
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-image-carousel/',
             },
@@ -216,7 +221,7 @@ export const vrbo = [
         format: [],
         assets: [
             {
-                label: 'https://portfolio.jonnybomb.com/work/vrbo/react-inline-message/docs/',
+                label: 'Image of inline message documentation site',
                 id: 'inlinemessage',
                 type: 'image',
                 uri: 'vrbo/inline-message.png',
@@ -224,9 +229,14 @@ export const vrbo = [
         ],
         links: [
             {
-                label: '',
+                label: 'Docs',
                 id: '',
-                url: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-inline-message/docs/',
+            },
+            {
+                label: 'Dev Harness',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-inline-message/harness/',
             },
         ],
         sizes: ['mobile', 'desktop'],
@@ -248,7 +258,7 @@ export const vrbo = [
         ],
         links: [
             {
-                label: '',
+                label: 'Docs',
                 id: '',
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-modal/docs/',
             },
@@ -456,23 +466,28 @@ export const vrbo = [
         ],
         links: [
             {
-                label: '',
+                label: 'Docs',
                 id: '',
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-single-image-carousel/docs/',
+            },
+            {
+                label: 'Dev harness',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-single-image-carousel/harness/',
             },
         ],
         sizes: ['mobile', 'desktop'],
     },
     {
         tags: ['vrbo', 'prod', 'ds'],
-        id: 'swiepablecarousel',
-        title: 'Swiepable Carousel',
+        id: 'swipeablecarousel',
+        title: 'Swipeable Carousel',
         descr: 'This is a native-like, touch-first swipable carousel with snap to and peaking functionality. It also supports pointer devices.',
         format: [],
         assets: [
             {
                 label: '',
-                id: 'swiepablecarousel',
+                id: 'swipeablecarousel',
                 type: 'image',
                 uri: 'vrbo/swipable.png',
             },
@@ -526,9 +541,14 @@ export const vrbo = [
         ],
         links: [
             {
-                label: '',
+                label: 'Docs',
                 id: '',
                 url: 'https://portfolio.jonnybomb.com/work/vrbo/react-vertical-image-carousel/docs/',
+            },
+            {
+                label: 'Dev harness',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-vertical-image-carousel/harness/',
             },
         ],
         sizes: ['mobile', 'desktop'],
@@ -668,7 +688,11 @@ export const vrbo = [
                 url: 'https://www.youtube.com/watch?v=ZN3KnsVjkBs',
             },
         ],
-        links: [],
+        links: [
+            {
+                url: 'https://portfolio.jonnybomb.com/work/eg/platform-playground/',
+            },
+        ],
     },
     {
         tags: ['vrbo', 'case-studies'],
@@ -697,7 +721,7 @@ export const vrbo = [
         id: 'portfolio review',
         title: 'Processes and Outcomes',
         role: '',
-        descr: '', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
+        descr: 'A detailed review of my prototyping portfolio at Vrbo/EG, using multiple case studies to explore my processes, workflows, and outcomes.',
         sizes: ['pdf'],
         assets: [
             {
@@ -707,20 +731,20 @@ export const vrbo = [
                 uri: 'vrbo/Jonathan Elbom - Vrbo-EG - Prototype Portfolio.png',
             },
         ],
-        pdfs: [
+        links: [
             {
+                type: 'pdf',
                 url: 'pdf/Jonathan Elbom - Vrbo-EG - Prototype Portfolio.pdf',
             },
         ],
-        links: [],
     },
     {
         tags: ['vrbo', 'case-studies'],
         id: 'spxcollab',
         title: 'SPX Collaboration',
         role: '',
-        descr: '', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
-        sizes: ['pdf'],
+        descr: 'This case study examines my impact while collaborating with the EG Partner Supply group. I detail the processes and workflows I championed, the contributions made, and the impact to both the products and the teams. I also provide a link to the Ferris Playground, where I explored and iterated on what is possible with the Ferris Design System.',
+        sizes: ['pdf', 'desktop', 'mobile'],
         assets: [
             {
                 label: '',
@@ -728,20 +752,32 @@ export const vrbo = [
                 type: 'image',
                 uri: 'vrbo/Jonathan Elbom - EG Supply Partner Experience - XD Engineering.png',
             },
-        ],
-        pdfs: [
             {
-                url: 'pdf/Jonathan Elbom - EG Supply Partner Experience - XD Engineering.pdf',
+                label: '',
+                id: 'ferris-playground',
+                type: 'image',
+                uri: 'vrbo/ferris-playground.png',
             },
         ],
-        links: [],
+        links: [
+            {
+                type: 'pdf',
+                label: 'Case Study - Design Engineering and SPX',
+                url: 'pdf/Jonathan Elbom - EG Supply Partner Experience - XD Engineering.pdf',
+            },
+            {
+                label: 'Ferris DS Playground',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/ferris/',
+            },
+        ],
+        imageBgColor: '#fff',
     },
     {
         tags: ['vrbo', 'case-studies'],
         id: 'dsguestselector',
         title: 'Vrbo DS: Guest Selector',
         role: '',
-        descr: '', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
+        descr: 'The Vrbo Design System documentation I co-authored concerning the current Guest Selector issues and the proposal to improve it.', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
         sizes: ['pdf'],
         assets: [
             {
@@ -751,12 +787,18 @@ export const vrbo = [
                 uri: 'vrbo/Jonathan Elbom - Design System - Guest Selector.png',
             },
         ],
-        pdfs: [
+        links: [
             {
+                label: 'DS Proposed improvements',
+                type: 'pdf',
                 url: 'pdf/Jonathan Elbom - Design System - Guest Selector.pdf',
             },
+            {
+                label: 'Demo',
+                id: '',
+                url: 'https://portfolio.jonnybomb.com/work/vrbo/react-guest-picker/',
+            },
         ],
-        links: [],
     },
 ];
 

@@ -183,8 +183,8 @@ export const Content = ({ children }) => {
                     >
                         <Box sx={{ paddingBlock: 3 }}>
                             <WorkInfo
-                                title="Case Studies and Demos: Videos and PDFs"
-                                content="Videos and presentations I created to walk through demos and case studies of the work I did at Vrbo/Expedia Group"
+                                title="Case Studies and Demos: Videos, PDFs, and Interactive Experiences"
+                                content="Videos, presentations, and interactive experiences I created to walk through the work I did at Vrbo/Expedia Group"
                             />
                             <Grid items={vrbo_videos} topBorder />
                         </Box>
@@ -216,8 +216,10 @@ export const Content = ({ children }) => {
                         dates="Nov 2010 - July 2016"
                         role="Sr. Frontend Developer | UX Lead"
                         section={SECTION.WORK}
-                        title="ABBI - Assessment Banking and Building for Interoperable solutions"
-                        content="ABBI is Pearson's flag-ship content authoring, banking, and form building tool used to create QTI compliant interoperable assessments."
+                        title="Improving Educational Assessments from every angle"
+                        content="Working on almost every aspect of educational assessments, I utilized my full gamet of skills - visual design, interaction design, ActionScript 3, Javascript, HTML, and CSS - to improve the flag-ship suite of testing products at Pearson, including assessment building, banking, and delivery"
+                        // title="ABBI - Assessment Banking and Building for Interoperable solutions"
+                        // content="ABBI is Pearson's flag-ship content authoring, banking, and form building tool used to create QTI compliant interoperable assessments."
                     ></ProjectGrid>
                     <ProjectGrid
                         items={springbox}

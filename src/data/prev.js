@@ -158,7 +158,7 @@ export const prev = {
             ],
         },
         screensaver: {
-            tags: ['springbox'],
+            tags: ['springbox', 'exclude'],
             id: 'screensaver',
             title: '6th Anniversary Screensaver',
             role: 'Lead Developer',
@@ -190,6 +190,11 @@ export const prev = {
             ],
             links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=U-5uK7aobJA',
+                },
+            ],
         },
         superview: {
             tags: ['springbox'],
@@ -231,7 +236,7 @@ export const prev = {
             sizes: ['desktop'],
         },
         aor: {
-            tags: ['springbox'],
+            tags: ['springbox', 'exclude'],
             id: 'aor',
             title: 'PayPal Agency of Record Demo',
             role: 'Lead Developer',
@@ -299,7 +304,7 @@ export const prev = {
             sizes: ['desktop'],
         },
         experian: {
-            tags: ['springbox'],
+            tags: ['springbox', 'exclude'],
             id: 'experian',
             title: 'Experian Product Demo',
             role: 'Lead Developer',
@@ -331,6 +336,11 @@ export const prev = {
             ],
             links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=JyKZGfOdiik',
+                },
+            ],
         },
         callaway: {
             tags: ['springbox'],
@@ -366,6 +376,11 @@ export const prev = {
             ],
             links: [],
             sizes: ['desktop'],
+            videos: [
+                {
+                    url: 'https://www.youtube.com/watch?v=hy_TsX7bC-Y',
+                },
+            ],
         },
         hometabmap: {
             tags: ['springbox', 'exclude'],

@@ -10,7 +10,7 @@ import { Box, IconButton, Slide, Typography, Zoom, styled, useMediaQuery, useThe
 import { Flex } from '../IFL/ifl';
 import { VideoPlayer } from '../VideoPlayer/VideoPlayer';
 import { GridMediaContainer, ScrollGridMediaContainer } from '../Grid';
-import { Close, Launch } from '@mui/icons-material';
+import { Close, Launch, PictureAsPdf } from '@mui/icons-material';
 import { dialog_footer_scroll_signifier, maxWidthContent, sticky_header_before } from '../../constants/styles';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
 
@@ -74,10 +74,12 @@ export const ProjectDialog = () => {
     const { isIntersecting: isIntersectingTop, Sentinel: SentinelTop } = useIntersctionSentinel({ threshold: 1 });
     const { isIntersecting: isIntersectingBottom, Sentinel: SentinelBottom } = useIntersctionSentinel({ threshold: 1 });
 
-    const hasMultipleMediaItems = images?.length > 1 || videos?.length > 1;
+    const hasMultipleMediaItems =
+        images?.length > 1 || videos?.length > 1 || (images?.length > 0 && videos?.length > 0);
 
     return (
         <CustomizedDialog
+            disableRestoreFocus
             open={modalOpen}
             TransitionComponent={Transition}
             fullScreen={fullScreen}
@@ -108,6 +110,7 @@ export const ProjectDialog = () => {
                 </Flex>
             </DialogTitle>
             <IconButton
+                autoFocus
                 aria-label="close"
                 onClick={handleClose}
                 sx={{
@@ -186,7 +189,7 @@ export const ProjectDialog = () => {
                     {links &&
                         links.map((link, i) => {
                             const _url = link.uri || link.url;
-                            const label = link.label || `Launch ${title}`;
+                            const label = link.label || `${title}`;
                             return (
                                 <Button
                                     variant="contained"
@@ -195,11 +198,13 @@ export const ProjectDialog = () => {
                                         textTransform: 'unset',
                                         margin: '0 !important',
                                     }}
+                                    aria-label={`Launch ${label}`}
                                     key={`${_url}-${i}`}
                                     target="_blank"
                                     href={_url}
                                 >
-                                    <Launch fontSize="small" />
+                                    {link?.type === 'pdf' && <PictureAsPdf fontSize="small" />}
+                                    {link?.type !== 'pdf' && <Launch fontSize="small" />}
                                     {label}
                                 </Button>
                             );

@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 // import { SwipeableCarouselStateful } from '../SwipeableCarousel';
 
 export const GridMediaContainer = ({ item, children, inDialog }) => {
-    const { link, video, image, imageBgColor, tags } = item || {};
+    const { link, video, image, imageBgColor } = item || {};
     // const isFeedback = tags?.includes('feedback');
     const aspectRatio = video && inDialog ? aspectRatio_16_9 : aspectRatio_4_3;
     return (

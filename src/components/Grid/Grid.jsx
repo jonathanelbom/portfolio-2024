@@ -9,14 +9,13 @@ import { GridMediaContainer } from './GridMediaContainer';
 
 const iconProps = {
     fontSize: 'small',
-    color: '#fff',
 };
 
-const Details = ({ Icon }) => {
+const Details = ({ Icon, moreIconProps = {}, iconSx = {} }) => {
     return (
         <Flex
             justify="center"
-            aling="center"
+            align="center"
             sx={{
                 backgroundColor: '#fff',
                 borderRadius: '100%',
@@ -24,7 +23,7 @@ const Details = ({ Icon }) => {
                 // transform: 'scale(.8)',
             }}
         >
-            <Icon {...iconProps} />
+            <Icon {...iconProps} {...moreIconProps} sx={iconSx} />
         </Flex>
     );
 };
@@ -32,24 +31,29 @@ const Details = ({ Icon }) => {
 const LinkActionOverlay = ({ item }) => {
     const { link, pdf } = item;
     const url = link ? link.uri || link.url : pdf.url;
+
     return (
         <>
-            <Box
+            {/* <Box
                 // as="a"
                 // href={url}
                 // target="_blank"
+                component="label"
+                htmlFor={item.title}
                 sx={{ ...hit_area, zIndex: 1 }}
-            />
+            /> */}
             <Button
                 href={url}
                 target="_blank"
-                role="presentation"
+                // role="presentation"
                 id={item.title}
                 variant="contained"
                 sx={{
                     transition: `transform ${gridItemHoverTransDur} ease`,
                     transform: 'scale(.75)',
                     border: '1px solid #fff',
+                    position: 'static',
+                    ...hit_area,
                 }}
             >
                 {pdf?.url ? 'View PDF' : 'Launch demo'}
@@ -57,6 +61,9 @@ const LinkActionOverlay = ({ item }) => {
         </>
     );
 };
+
+// const DetailsModalActionOverlay = ({ item }) => {
+// };
 
 const DetailsModalActionOverlay = ({ item }) => {
     const dispatch = useAppDispatch();
@@ -85,13 +92,17 @@ const DetailsModalActionOverlay = ({ item }) => {
 };
 
 export const GridItem = ({ item, sx = {} }) => {
-    const { link, title, description, image, images, sizes, video, pdf, tags } = item;
+    const { link, links, title, description, image, images, sizes, video, pdf, tags } = item;
     const isFeedback = tags.includes('feedback');
     const hasAction = (pdf || link || video || description || images?.length > 1) && !isFeedback;
+    const hasPdf = useMemo(() => links.some((link) => link?.type === 'pdf'), [links]);
+    const hasNonPdfLinks = useMemo(() => links.some((link) => link?.type !== 'pdf'), [links]);
+
     const ActionOverlayComponent =
         video || (description && images?.length > 0) || images?.length > 1
             ? DetailsModalActionOverlay
             : LinkActionOverlay;
+
     return (
         <Box
             as="li"
@@ -103,6 +114,7 @@ export const GridItem = ({ item, sx = {} }) => {
                 justifyContent: 'space-between',
                 gap: 3,
                 padding: 4,
+                paddingBlockStart: 5,
                 position: 'relative',
                 backgroundColor: 'grey.50',
                 boxShadow: '0 0 0 1px #d5d3d2',
@@ -116,7 +128,7 @@ export const GridItem = ({ item, sx = {} }) => {
                                 transform: 'scale(.925)',
                             },
                             'button, a': {
-                                transform: 'scale(1)',
+                                transform: 'none', // 'scale(1)',
                             },
                         },
                     },
@@ -126,11 +138,13 @@ export const GridItem = ({ item, sx = {} }) => {
         >
             <Flex
                 justify="flex-end"
-                sx={{ padding: 1, gap: 1, position: 'absolute', top: 0, left: 0, right: 0, pointerEvents: 'none' }}
+                sx={{ padding: 1, gap: 0.5, position: 'absolute', top: 0, left: 0, right: 0, pointerEvents: 'none' }}
             >
-                {pdf && <Details Icon={PictureAsPdf} />}
-                {video && <Details Icon={YouTube} />}
-                {link && <Details Icon={Launch} />}
+                {hasPdf && <Details Icon={PictureAsPdf} moreIconProps={{ fontSize: 'medium' }} />}
+                {video && (
+                    <Details Icon={YouTube} iconSx={{ color: '#ea3323' }} moreIconProps={{ fontSize: 'medium' }} />
+                )}
+                {hasNonPdfLinks && <Details Icon={Launch} />}
             </Flex>
 
             <Flex direction="column" gap={0.5}>
@@ -152,7 +166,7 @@ export const GridItem = ({ item, sx = {} }) => {
                                 }}
                                 src={`../images/${image?.uri}`}
                             />
-                            {video && (
+                            {/* video && (
                                 <Flex
                                     justify="center"
                                     align="center"
@@ -167,7 +181,6 @@ export const GridItem = ({ item, sx = {} }) => {
                                         },
                                     }}
                                 >
-                                    {/* <PlayCircleFilled */}
                                     <YouTube
                                         sx={{
                                             zIndex: 1,
@@ -178,7 +191,7 @@ export const GridItem = ({ item, sx = {} }) => {
                                         }}
                                     />
                                 </Flex>
-                            )}
+                            )*/}
                         </>
                     )}
                 </GridMediaContainer>
