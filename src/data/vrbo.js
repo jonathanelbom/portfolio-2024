@@ -1,4 +1,3 @@
-// import { pdfjs } from 'react-pdf';
 import { template, transformProject, filterAndSort } from './util';
 
 const images = [
