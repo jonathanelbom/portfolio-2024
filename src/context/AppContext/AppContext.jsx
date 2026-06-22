@@ -9,6 +9,8 @@ export const ACTION_TYPE = {
     TOGGLE_CONDENSED: 'TOGGLE_CONDENSED',
     TOGGLE_ALL_EXPANDED: 'TOGGLE_ALL_EXPANDED',
     TOGGLE_SECTION_ALL_EXPANDED: 'TOGGLE_SECTION_ALL_EXPANDED',
+    SET_ACTIVE_FILTER: 'SET_ACTIVE_FILTER',
+    SET_CURATED_VIEW: 'SET_CURATED_VIEW',
 };
 
 export const SECTION = {
@@ -37,6 +39,19 @@ const appReducer = (state, action) => {
         case ACTION_TYPE.TOGGLE_SECTION_ALL_EXPANDED: {
             return { ...state, [`allExpanded${value.section}`]: value.expanded };
         }
+        case ACTION_TYPE.SET_ACTIVE_FILTER: {
+            if (value === null) return { ...state, activeFilters: [] };
+            const already = state.activeFilters.includes(value);
+            return {
+                ...state,
+                activeFilters: already
+                    ? state.activeFilters.filter((t) => t !== value)
+                    : [...state.activeFilters, value],
+            };
+        }
+        case ACTION_TYPE.SET_CURATED_VIEW: {
+            return { ...state, curatedView: value };
+        }
         default: {
             return { ...state };
         }
@@ -51,6 +66,8 @@ const initialState = {
     allExpandedWork: false,
     allExpandedConsulting: false,
     allExpandedPersonal: false,
+    activeFilters: [],
+    curatedView: null,
 };
 
 const AppProvider = ({ children }) => {

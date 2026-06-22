@@ -4,6 +4,7 @@ export const transformProject = (value = {}) => {
     const videos = value.videos || [];
     const pdfs = value.pdfs || [];
     return {
+        id: value.id,
         pdf: pdfs[0] || '',
         image: images?.[0] || '',
         link: links?.[0] || '',

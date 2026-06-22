@@ -127,11 +127,11 @@ export const PageHeader = () => {
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'column',
-                                alignItems: 'center',
+                                alignItems: 'flex-start',
                             }}
                         >
                             <Typography variant="headlineTop">JONATHAN ELBOM</Typography>
-                            <Typography variant="headlineBottom">Crafted UX</Typography>
+                            <Typography variant="headlineBottom">Craft meets Code</Typography>
                         </Typography>
                     </Flex>
                     {/* <Typography

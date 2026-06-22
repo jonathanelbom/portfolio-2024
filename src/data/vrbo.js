@@ -66,8 +66,8 @@ export const _vrbo = images.map((image, i) => {
 
 export const vrbo = [
     {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'carouselmotionstudy',
+        tags: ['vrbo', 'prototype', 'design-system', 'motion'],
+        id: 'vrbo-carousel-motion-study',
         title: 'Carousel Motion Study',
         role: '',
         descr: 'A slide motion study with controls to explore the motion options around the single and paging transitions of the Card Carousel.',
@@ -89,8 +89,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'cardcarousel',
+        tags: ['vrbo', 'production', 'design-system', 'gesture', 'motion'],
+        id: 'vrbo-card-carousel',
         title: 'Card Carousel',
         role: '',
         descr: "A click and scrolling mode supporting single and multi-card paging carousel with an accompanying extensible aspect-ratio based child card component. This component is littered throughout our experience and I have done several exploration around the extension of it's child cards",
@@ -117,8 +117,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'drawer',
+        tags: ['vrbo', 'production', 'design-system', 'gesture'],
+        id: 'vrbo-drawer',
         title: 'Drawer',
         role: '',
         descr: 'A panel and modal drawer implementation with header controls and a native-like experience for stepping through screens.',
@@ -140,8 +140,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'guestselector',
+        tags: ['vrbo', 'production', 'design-system'],
+        id: 'vrbo-guest-selector',
         title: 'Guest Selector',
         role: '',
         descr: 'During a multi-month project to improve the usability of our Guest Selector feature, I partnered with our Design Systems UX Lead to create an improved prodcution implementation of our Guest Selector component. I also created a sample implementation in our Properties Detail Page.',
@@ -164,8 +164,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'hcompropertydetails',
+        tags: ['vrbo', 'prototype'],
+        id: 'vrbo-hcom-property-details',
         title: 'Hcom Property Details',
         role: '',
         descr: 'This is a UX Lab demo done for Hotels.com to explore user sentiment as they work to add vacation rental inventory to their site. After Figma was unable to provide the intended sticky behavior, I created this prototype, that is a combination of live production data that power the images and availability calendar as well as static images for section that do not require user interaction.',
@@ -188,8 +188,8 @@ export const vrbo = [
         sizes: ['desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'image-carousel.png',
+        tags: ['vrbo', 'production', 'design-system', 'gesture', 'motion'],
+        id: 'vrbo-image-carousel',
         title: 'Image Carousel',
         role: '',
         descr: "This component was built during my 6-month stint working on Property Details Page team as we worked to transition their code-base to React. The continually looping carousel supports stills, captions, and videos, has responsive touch gesture support, and supports inline and full-screen usage. Multiple carousel can be composed to create an inline experience that translate to full-screen. Use your phone or browser's mobile emulator to check out the swipe geture handling.",
@@ -212,8 +212,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'inlinemessage',
+        tags: ['vrbo', 'production', 'design-system'],
+        id: 'vrbo-inline-message',
         title: 'Inline Message',
         role: '',
         descr: 'An inline message component with baked-in transition for showing, hiding, changing icons, and changing messaging. The component was created during my work with the Design Systems team on improving the Traveler Guest Picker component.',
@@ -241,8 +241,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'modalenhancements',
+        tags: ['vrbo', 'production', 'design-system', 'gesture'],
+        id: 'vrbo-modal-enhancements',
         title: 'Modal Enhancements',
         role: '',
         descr: 'These enhancements involved adding a scrolling body modal, complete with built in scroll signifying shadows, and a swipe-dismissable bottom sheet modal, used to create a native-like experience on mobile web.',
@@ -288,8 +288,8 @@ export const vrbo = [
     //     sizes: ['mobile', 'desktop'],
     // },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'personalizedhomepage',
+        tags: ['vrbo', 'production', 'design-system'],
+        id: 'vrbo-personalized-homepage',
         title: 'Personalized Homepage',
         role: '',
         descr: 'This served as a UX Lab and production demo for an initiative to re-imagine what a personalized landing experience could be like. I built numerous configurable modules used to compose mobile, tablet, and desktop experiences.                                            ',
@@ -311,8 +311,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'photomanager',
+        tags: ['vrbo', 'prototype', 'gesture'],
+        id: 'vrbo-photo-manager',
         title: 'Partner Photo Manager',
         role: '',
         descr: 'A mobile study to explore the photo onboarding process for new partners. I used my extensive knowlege of mobile web gestures to build out the photo "re-arranging" portion of this prototype.',
@@ -403,8 +403,8 @@ export const vrbo = [
     //     sizes: ['mobile', 'desktop'],
     // },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'proddemos',
+        tags: ['vrbo', 'production', 'design-system', 'motion'],
+        id: 'vrbo-prod-demos',
         title: 'Production demos',
         role: '',
         descr: 'This is a collection of production demos created by composing and modifying the existing set of Vrbo Design System web components, focusing mainly on calendar implementations, web animations, and modal patterns. These demos serve to help UX designers understand what is possible in our tech stack, iterate and refine their ideas by seeing them come to life, accelerate our production engineering team by completing a chunk of the front-end work before it gets to them, and ensure our production experience has the craft and polish our users deserve.',
@@ -426,8 +426,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'proto', 'ds'],
-        id: 'searchfiltersstudy',
+        tags: ['vrbo', 'prototype', 'gesture'],
+        id: 'vrbo-search-filters-study',
         title: 'Search Filters Study',
         role: '',
         descr: "A mobile exploration around the filters options on our Search page. The most interesting part of this prototype is the iOS tumbler pattern I created for the price filters. Check it out on mobile, or at least in a your browser's mobile emulator, because the buttons relies on touch events in order to give a responsive feel.",
@@ -449,8 +449,8 @@ export const vrbo = [
         sizes: ['mobile'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'singleimagecarousel',
+        tags: ['vrbo', 'production', 'design-system', 'gesture'],
+        id: 'vrbo-single-image-carousel',
         title: 'Single Image Carousel',
         role: '',
         descr: "When the Search Results Page team needed a simplfied version of the Image Carousel for use in Google Maps, the Single Image Carousel was born. It supports showing only one still at a time, but has the same transition and responsive touch gesture support of its older sibling. Use your phone or browser's mobile emulator to check out the swipe geture handling.",
@@ -478,8 +478,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'swipeablecarousel',
+        tags: ['vrbo', 'production', 'design-system', 'gesture'],
+        id: 'vrbo-swipeable-carousel',
         title: 'Swipeable Carousel',
         descr: 'This is a native-like, touch-first swipable carousel with snap to and peaking functionality. It also supports pointer devices.',
         format: [],
@@ -524,8 +524,8 @@ export const vrbo = [
     //     sizes: ['mobile', 'desktop'],
     // },
     {
-        tags: ['vrbo', 'prod', 'ds'],
-        id: 'verticalimagecarousel',
+        tags: ['vrbo', 'production', 'design-system', 'gesture'],
+        id: 'vrbo-vertical-image-carousel',
         title: 'Vertical Image Carousel',
         role: '',
         descr: 'This vertically scrolling versions of the Image Carousel was created for a variant of the Property Details Page. It supports lazy loading images, captions, and video, and can be used in combinatino with a full-screen Image Carousel.',
@@ -553,8 +553,8 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'tripboardspollingvideo',
+        tags: ['vrbo', 'case-study', 'motion', 'gesture'],
+        id: 'vrbo-tripboards-polling',
         title: 'Trip Boards Polling',
         role: '',
         descr: 'Highlights how my prototyping skills, specifically around mobile web touch interactions and motion design, aided in UX Lab tests, design iterations, and ultimately the final production build.<br/><br/><i>These demos can be viewed using the links below or from the projects listed in the Vrbo/EG prototypes section.</i>.',
@@ -606,8 +606,8 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'tripboardsvideo',
+        tags: ['vrbo', 'case-study'],
+        id: 'vrbo-tripboards-proto',
         title: 'Trip Boards Prototype',
         role: '',
         descr: "The responsive desktop and mobile web evergreen production prototype for the Vrbo Tripboards app, used to collaborate with design to ideate on new features or improvements and to guide production engineers on the frontend implementation. Users can create curated collections of properties and invite collaborators to comment and vote. Click on the user avatar in top left for settings to add or remove people, change who you are, and change the owner of the board. Click the invite link to invite others to the board (emails in the settings control). Click on the 'Learn more' link to see a localizable css driven animation promoting the chat feature.<br/><br/><i>This demos can be viewed using the link below</i>.",
@@ -640,8 +640,8 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'northstarexperiencevideo',
+        tags: ['vrbo', 'case-study'],
+        id: 'vrbo-northstar-experience',
         title: 'Homeaway Northstar Experience',
         role: '',
         descr: 'A responseive desktop and mobile vision demo for the  Homeaway Northstar experience, including Immersive Search, Search Results, Property Details, and Scratchpad (to become Trip Boards). This prototype did consume our production APIs, but for the sake of stability, it now just uses a static version of this data.<br/><br/>Try it out for a trip to "Chamonix".<br/><br/><i>This demos can be viewed using the link below.</i>.',
@@ -668,8 +668,8 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'egconsolevideo',
+        tags: ['vrbo', 'case-study'],
+        id: 'vrbo-eg-console',
         title: 'EG Console UX Transformation',
         role: '',
         descr: 'Demo of how I transformed the UX for the EG console experience. Shows the old version of the EG Console, and then the version where I systematically applied UX updates, including the introduction of the Left Nav and updates to page layouts and styles.',
@@ -694,8 +694,8 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'egxpvideo',
+        tags: ['vrbo', 'case-study'],
+        id: 'vrbo-eg-xp',
         title: 'EG XP - Templates and Layouts',
         role: '',
         descr: 'A Walk-through of how to use the templates and layouts of the EG experience platform to create the different pages in the Supply Partner Unified Onboarding App (UFO).',
@@ -716,8 +716,8 @@ export const vrbo = [
         links: [],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'portfolio review',
+        tags: ['vrbo', 'case-study'],
+        id: 'vrbo-processes-outcomes',
         title: 'Processes and Outcomes',
         role: '',
         descr: 'A detailed review of my prototyping portfolio at Vrbo/EG, using multiple case studies to explore my processes, workflows, and outcomes.',
@@ -738,8 +738,8 @@ export const vrbo = [
         ],
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'spxcollab',
+        tags: ['vrbo', 'case-study', 'design-system'],
+        id: 'vrbo-spx-collab',
         title: 'SPX Collaboration',
         role: '',
         descr: 'This case study examines my impact while collaborating with the EG Partner Supply group. I detail the processes and workflows I championed, the contributions made, and the impact to both the products and the teams. I also provide a link to the Ferris Playground, where I explored and iterated on what is possible with the Ferris Design System.',
@@ -772,8 +772,8 @@ export const vrbo = [
         imageBgColor: '#fff',
     },
     {
-        tags: ['vrbo', 'case-studies'],
-        id: 'dsguestselector',
+        tags: ['vrbo', 'case-study', 'design-system'],
+        id: 'vrbo-ds-guest-selector',
         title: 'Vrbo DS: Guest Selector',
         role: '',
         descr: 'The Vrbo Design System documentation I co-authored concerning the current Guest Selector issues and the proposal to improve it.', // 'A detailed review of my prototype portfolio, walking through my processes, workflows, and outcomes',
@@ -802,13 +802,13 @@ export const vrbo = [
 ];
 
 export const vrbo_proto = filterAndSort(
-    vrbo.filter(({ tags }) => tags.includes('proto')).map((p) => transformProject(p)),
+    vrbo.filter(({ tags }) => tags.includes('prototype')).map((p) => transformProject(p)),
 );
 export const vrbo_prod = filterAndSort(
-    vrbo.filter(({ tags }) => tags.includes('prod')).map((p) => transformProject(p)),
+    vrbo.filter(({ tags }) => tags.includes('production')).map((p) => transformProject(p)),
 );
 export const vrbo_videos = filterAndSort(
-    vrbo.filter(({ tags }) => tags.includes('case-studies')).map((p) => transformProject(p)),
+    vrbo.filter(({ tags }) => tags.includes('case-study')).map((p) => transformProject(p)),
     false,
 );
 

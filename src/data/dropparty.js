@@ -14,7 +14,7 @@ export const _dropparty = [
         id: 'dropparty-homepage',
         description:
             'This is a mobile, touch-first experience composed of the different UI components I built. This expereince demonstates the user flow of landing on and registering for the initial instagram drop.',
-        tags: ['dropparty'],
+        tags: ['dropparty', 'production', 'gesture'],
         sizes: ['mobile'],
         links: [
             {
@@ -38,7 +38,7 @@ export const _dropparty = [
         title: 'Drop UI Components',
         description:
             'I worked with the Drop Party lead designer and lead engineer to build out these controlled React components. This work invovled building a custom swipable carousel, as well as a host of form elements.',
-        tags: ['dropparty'],
+        tags: ['dropparty', 'production', 'design-system', 'gesture'],
         sizes: ['mobile'],
         links: [
             {

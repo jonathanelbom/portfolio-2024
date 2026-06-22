@@ -61,7 +61,7 @@ export const max_width = {
 export const sticky_header = {
     backgroundColor: '#fff',
     position: 'sticky',
-    top: 0,
+    top: '53px',
     zIndex: 2,
     paddingBlock: 2,
 };

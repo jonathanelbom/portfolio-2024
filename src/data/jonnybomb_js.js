@@ -2,8 +2,8 @@ import { filterAndSort, transformProject } from './util';
 
 export const _jonnybomb_js = [
     {
-        tags: ['personal'],
-        id: 'dotz',
+        tags: ['personal', 'production', 'gesture'],
+        id: 'personal-dotz',
         title: 'Dotz',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
         descr: 'Rising to the challenge to make a vanilla javascript game from a static wireframe, I created this retro styled smash the dotz game. I built it with both pointer and touch input support, so get out your phone and start smashing!',
@@ -37,8 +37,8 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal'],
-        id: 'factorthat',
+        tags: ['personal', 'production'],
+        id: 'personal-factorthat',
         title: 'FactorTHAT',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
         descr: 'I once built a factoring game in ActionScript. Now I built a factoring game in JavaScript',
@@ -72,8 +72,8 @@ export const _jonnybomb_js = [
         imageBgColor: '#dedcdb',
     },
     {
-        tags: ['personal'],
-        id: 'fridaynightjamz',
+        tags: ['personal', 'production'],
+        id: 'personal-friday-night-jamz',
         title: 'Friday Night Jamz',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
         descr: "This is a desktop and mobile website to share my hobby friday night jams with my group of friends who participate. We began by hosting our jams on SoundCloud, but soon ran out of space, so i decided to cook up this site. Each 'jam' has a custom name and image, and each jam session has details listing the date and participants.",
@@ -95,8 +95,8 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal'],
-        id: 'countdown',
+        tags: ['personal', 'production', 'motion'],
+        id: 'personal-countdown',
         title: 'Countdown Timer',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
         descr: 'Tackling another UX and Engineering challenge to build a digital version of an analog countdown timer, I could not shy away from the challenge of sub-second precision',
@@ -123,8 +123,8 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal'],
-        id: 'mikeparsons',
+        tags: ['personal', 'production'],
+        id: 'personal-mike-parsons',
         title: 'Mike Parsons',
         role: 'Lead Designer and Developer',
         descr: "For this project, my goal was to design a clean and minimal site that would visually conform to the size of the browser window and let Mike's art work take front stage.  I also succeed in providing an easy way for Mike to configure the structure of the site and update his work by using Flickr to manage his content. This project was done in HTML/CSS/JavaScript to allow for viewing on mobile devices as well as desktops and laptops.",
@@ -146,8 +146,8 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal'],
-        id: 'doggiesearch',
+        tags: ['personal', 'production', 'motion'],
+        id: 'personal-doggie-search',
         title: 'Delightful Doggie Search',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
         descr: 'This demo is just a glimpse into my mastery of interaction and motion implementation in React, showcasing how I interweave my design skills in my engineering work.',
@@ -174,8 +174,8 @@ export const _jonnybomb_js = [
         sizes: ['desktop'],
     },
     {
-        tags: ['personal'],
-        id: 'beats',
+        tags: ['personal', 'production', 'motion'],
+        id: 'personal-beats',
         title: 'Beats Music Sentence Share',
         role: 'Front-End Developer (HTML/Javascript/CSS) ',
         descr: 'For a SXSW 2014 Hackday, my buddy at Beats got some friends together to riff off their "sentence player" and we made a sentence sharing twitter image posting mobile web app.  Unlike the sentence player, we added a "Write your own" option to solidify the MadLibs feel. I got to play a little with CSS3 3D and keyframe animations. After their acquisition by Apple, Beats took this site down.',

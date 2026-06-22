@@ -27,9 +27,9 @@ export const theme = createTheme(_theme, {
             // color: _theme.palette.primary.main,
         },
         headlineBottom: {
-            fontSize: '3.25rem',
-            lineHeight: '3.25rem',
-            fontWeight: '600',
+            fontSize: '2.1rem',
+            lineHeight: '2.1rem',
+            fontWeight: '700',
             fontFamily: 'Roboto Condensed',
             color: _theme.palette.primary.main,
         },
