@@ -1,0 +1,25 @@
+# Project Summary — Fusion Foundry
+
+---
+
+## Short Summary
+
+Fusion Foundry is a GitHub template repository that gives FactSet UX designers a working prototype environment out of the box — no engineering setup required. Designers clone it, open Claude Code, and build interactive prototypes using real Fusion DS components and mock data, guided by a conversational chat workflow. They can start from a Figma design or describe an interface in plain English. Both paths produce the same thing: correct, running Fusion code. It proves that a well-configured CLAUDE.md, a curated set of agent skills, and Fusion's own AI-ready documentation are enough to close the gap between a design idea and a working prototype.
+
+---
+
+## Detailed Description
+
+**What it is.** Fusion Foundry is a "Figma Make for FactSet" — a lightweight Vue 3 starter app pre-wired with the Fusion design system, a live settings panel for previewing themes and densities, and a purpose-built Claude Code configuration that gives designers two entry points into the same workflow. The first is Figma-anchored: paste a frame URL, run `/from-figma`, and Claude maps the design to real Fusion components and builds a running screen. The second is natural language: describe what you need ("a dashboard with a filter bar, a data table, and an export action") and Claude routes that intent to the right components and builds it. In both cases, a designer talks to Claude in chat, Claude runs commands and builds components, and they see results immediately at `localhost:5173`. The terminal is mostly invisible. Every piece of the configuration (CLAUDE.md, custom agent skills, enforcement hooks) exists to make that conversation produce correct, production-quality Fusion code without the designer needing to know what a `FusionDrawer2` prop looks like.
+
+**What it found.** Two hard problems emerged, and they were different enough that solving one didn't help with the other.
+
+The first was correctness: getting Claude to write *Fusion* Vue, not generic Vue. Fusion has strong opinions about typography classes, color tokens, component semantics (a `FusionMenu` is not a `FusionDropdownSelect`), and accessibility composition, and a model working without those constraints silently produces code that looks right visually but is semantically wrong. The solution was a layered knowledge architecture: `@fds/fusion` ships its own `docs/ai/` directory with per-component API docs that Claude reads on demand via a `fds-docs` skill, while CLAUDE.md encodes the higher-level conventions: styling rules, deprecated components, the right component for each semantic role, and hand-verified examples for the most common patterns. The settings panel (theme, density, font size, platform) doubles as both a usability aid and a design QA tool, letting designers instantly verify that their prototype holds together across Fusion's theming system.
+
+The second was intent routing: getting Claude to understand what a designer actually meant and reach for the right component, not improvise. Claude defaults to React and Tailwind; the internet has trained it well. Redirecting it toward Fusion patterns required deliberate, persistent work. Even when it reached for a Fusion component, it often picked the wrong one: four dropdown variants exist, and choosing the wrong one breaks keyboard navigation silently. The solution was a semantic component selection table in CLAUDE.md — nine explicit rules mapping common design intentions to the correct Fusion component ("navigate to a URL" goes to `RouterLink`, not `FusionButton`; "select a value from a list" goes to `FusionDropdownSelect` or `FusionCombobox`, not `FusionMenu`; and so on). A soft rule wasn't enough: a blocking hook intercepts direct lookups into `@fds` packages and forces the `fds-docs` skill instead, so Claude is always working from real component APIs rather than guessing. The core insight from this work is that routing accuracy improved not by making the model smarter at inference, but by giving it richer documented knowledge of *when to use what* — decision guides, not just API references.
+
+**So what.** This unlocks something that wasn't previously accessible to FactSet designers: the ability to build a fully interactive, design-system-accurate prototype without writing code or involving an engineer. A designer who has a Figma frame uses the Figma-anchored path; a designer who just has an idea uses natural language. Both arrive at the same place. The Figma path produces results that are easier to validate because they're anchored to a real design. The natural language path is faster for exploratory work where a Figma file doesn't exist yet. For product and engineering teams, the output from either path is a prototype built from the same components that ship to production — not a throwaway Tailwind mockup — which means stakeholder reviews, accessibility checks, and handoff conversations can happen on something that actually represents the target experience.
+
+---
+
+*Generated by `/summarize-repo` on 2026-06-07.*

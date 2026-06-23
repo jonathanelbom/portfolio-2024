@@ -47,10 +47,10 @@ const _indeed = [
             },
         ],
         title: 'BuildQuest',
-        id: 'buildquest',
+        id: 'indeed-buildquest',
         description:
             'BuildQuest is a screener question json authoring and editing tool created to help author screener questions for Indeed Apply',
-        tags: ['indeed'],
+        tags: ['indeed', 'production'],
         videos: [
             {
                 url: 'https://www.youtube.com/watch?v=nMf9z6TmZDo',
@@ -101,8 +101,8 @@ const _indeed = [
         title: "Jelbom's Playground",
         description:
             "Jelbom's Playground is an area where I can quickly and iteratively explore new and better component patterns and enhancemnts to existing components. It also provides an easy way to share these demos as well as their source code. This playground includes contributions I made to the Indeed Design System to improve the accessiblity and experience of the modal component, as well as a demostration of how to compose different layouts within the modal. I also explore IntersectionObserver API powered sticky scroll experiences as well as accessible navigation for complex radio groups.",
-        id: 'jelbomsplayground',
-        tags: ['indeed'],
+        id: 'indeed-jelboms-playground',
+        tags: ['indeed', 'prototype', 'playground', 'design-system'],
         sizes: ['mobile', 'desktop'],
         imageBgColor: '#f1f9fd',
     },
@@ -124,8 +124,8 @@ const _indeed = [
         title: 'My Jobs Playground',
         description:
             'My Jobs Playground is a space to explore and experiment with the My Jobs Experience. It contains design-focused prototype, like the My Jobs Evergreen prototype, as well as POCs and production ready demos, like the 3rd Party Apply Starts and the transition components that power that experience.',
-        tags: ['indeed'],
-        id: 'myjobs',
+        tags: ['indeed', 'prototype', 'playground'],
+        id: 'indeed-my-jobs-playground',
         sizes: ['mobile', 'desktop'],
         links: [
             {
@@ -173,8 +173,8 @@ const _indeed = [
         title: 'Pathways',
         description:
             'A live-data prototype for a career trajectory, advancement, and discovery tool, being developed to help user map a path to evolve or change their career trajectory. This prototype was used for extensive user testing as well as a base for the production build of this experience.',
-        tags: ['indeed'],
-        id: 'pathways',
+        tags: ['indeed', 'prototype'],
+        id: 'indeed-pathways',
         sizes: ['mobile'],
         links: [
             {
@@ -206,8 +206,8 @@ const _indeed = [
         title: 'Profile Vision',
         description:
             'The Profile Vision prototype is a live-data, early development iteration of the new Profile northstar. It was built several months before the production engineering work began to run user testing to identify any areas where modifications should be made before starting the production build. This code provided a large head start for that production work.',
-        tags: ['indeed'],
-        id: 'profilevision',
+        tags: ['indeed', 'prototype'],
+        id: 'indeed-profile-vision',
         sizes: ['mobile'],
         links: [
             {
@@ -251,8 +251,8 @@ const _indeed = [
         title: 'Indeed Apply',
         description:
             "Indeed Apply is a feature on Indeed's job platform that simplifies the application process for job seekers. This feature is designed to save time and make the application process more efficient.I led the frontend work on several features for Indeed Apply: <i>EEO Questions, 3rd Party Knockout Questions, and Multiple Resumes</i>.",
-        tags: ['indeed'],
-        id: 'smartapply',
+        tags: ['indeed', 'production'],
+        id: 'indeed-apply',
         sizes: ['mobile', 'desktop'],
         imageBgColor: '#f1f9fd',
     },

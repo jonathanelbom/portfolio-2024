@@ -6,12 +6,15 @@ import { useEffect, useState } from 'react';
 import { Flex } from '../IFL/ifl';
 
 export const ProjecGridHeader = ({ company, dates, role, expanded, toggleExpanded }) => {
-    const { isIntersecting, Sentinel, elementRef } = useIntersctionSentinel({ threshold: 1 });
+    const { isIntersecting, Sentinel, elementRef } = useIntersctionSentinel({
+        threshold: 1,
+        rootMarginValues: '-53px 0px 0px 0px',
+    });
     const [showScrollShadow, setShowScrollShadow] = useState(false);
     useEffect(() => {
         if (!isIntersecting && elementRef.current) {
             const { y } = elementRef.current.getBoundingClientRect();
-            if (y <= 0) {
+            if (y <= 53) {
                 setShowScrollShadow(true);
             }
         } else {
