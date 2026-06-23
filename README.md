@@ -2,6 +2,12 @@
 
 Personal portfolio site built with React 18 + Vite.
 
+## Deploy
+
+Pushing to `main` automatically builds and deploys to [portfolio.jonnybomb.com](https://portfolio.jonnybomb.com) via GitHub Actions (`.github/workflows/deploy.yml`). The workflow runs `npm run build` then rsyncs `index.html` and `assets/` to DreamHost over SSH — nothing else on the server is touched.
+
+Required GitHub Secrets: `DREAMHOST_HOST`, `DREAMHOST_USER`, `DREAMHOST_PATH`, `DREAMHOST_SSH_KEY`.
+
 ## Commands
 
 ```bash
