@@ -10,9 +10,10 @@ const chipSize = 'medium';
 export const FilterBar = () => {
     const { activeFilters } = useAppState();
     const dispatch = useAppDispatch();
-    const { isIntersecting, Sentinel } = useIntersctionSentinel({
+    const { isIntersecting, hasScrolledPast, Sentinel } = useIntersctionSentinel({
         threshold: 1,
         rootMarginValues: '-3px 0px 0px 0px',
+        topOffset: 3,
     });
     const toggleFilter = (tag) => dispatch({ type: ACTION_TYPE.SET_ACTIVE_FILTER, value: tag });
     const clearFilters = () => dispatch({ type: ACTION_TYPE.SET_ACTIVE_FILTER, value: null });
@@ -47,7 +48,7 @@ export const FilterBar = () => {
                         overflowX: 'auto',
                         paddingInline: '16px',
                         display: 'grid',
-                        gridTemplateColumns: `${isIntersecting ? 0 : 1}fr auto 1fr`,
+                        gridTemplateColumns: `${!hasScrolledPast ? 0 : 1}fr auto 1fr`,
                         transition: 'grid-template-columns 250ms ease',
                     }}
                 >

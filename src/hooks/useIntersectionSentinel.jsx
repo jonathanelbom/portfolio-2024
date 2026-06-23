@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
 
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useIntersection } from './useIntersection';
 import { Box } from '@mui/material';
 
@@ -10,6 +9,7 @@ export const getThreshold = (count) => new Array(count + 1).fill('').map((_, i) 
 export const useIntersctionSentinel = ({
     threshold = getThreshold(100),
     rootMarginValues = `0px 0px 0px 0px`,
+    topOffset = 0,
 } = {}) => {
     const _threshold = useMemo(() => threshold, [threshold.toString()]); //eslint-disable-line react-hooks/exhaustive-deps
     const rootMargin = useMemo(() => rootMarginValues, [rootMarginValues]);
@@ -17,6 +17,14 @@ export const useIntersctionSentinel = ({
         threshold: _threshold,
         rootMargin,
     });
+    const [hasScrolledPast, setHasScrolledPast] = useState(false);
+    useEffect(() => {
+        if (!entry?.isIntersecting && elementRef.current) {
+            setHasScrolledPast(elementRef.current.getBoundingClientRect().y <= topOffset);
+        } else {
+            setHasScrolledPast(false);
+        }
+    }, [entry?.isIntersecting, elementRef, topOffset]);
     const Sentinel = useMemo(
         () =>
             ({ sx = {} }) => (
@@ -41,6 +49,7 @@ export const useIntersctionSentinel = ({
         elementRef,
         scrollPct: entry?.intersectionRatio !== undefined ? 1 - entry.intersectionRatio : 0,
         isIntersecting: entry?.isIntersecting ?? true,
+        hasScrolledPast,
         Sentinel,
     };
 };
