@@ -21,59 +21,60 @@ const _theme = createTheme({
 
 export const theme = createTheme(_theme, {
     typography: {
+        fontFamily: '"Host Grotesk", sans-serif',
         headlineTop: {
-            fontSize: '1.6rem',
+            fontSize: '1.75rem',
             fontWeight: '300',
             // color: _theme.palette.primary.main,
         },
         headlineBottom: {
-            fontSize: '2.1rem',
-            lineHeight: '2.1rem',
+            fontSize: '1.85rem',
+            lineHeight: '1.85rem',
             fontWeight: '700',
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             color: _theme.palette.primary.main,
         },
         sectionHeadline: {
             fontSize: '2rem',
             fontWeight: '700',
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             color: _theme.palette.primary.main,
         },
         sectionItemHeadline: {
             fontSize: '3.25rem',
             fontWeight: '600',
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             color: _theme.palette.primary.main,
         },
         projectTitle: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             fontWeight: '600',
             fontSize: '1.25rem',
         },
         projectSizes: {
-            fontFamily: 'Roboto',
+            fontFamily: 'Host Grotesk',
             fontWeight: '300',
             fontSize: '1.125rem',
             textTransform: 'uppercase',
         },
         workTitle: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             fontWeight: '600',
             fontSize: '1.35rem',
             color: _theme.palette.primary.main,
         },
         workDate: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             fontWeight: '300',
             fontSize: '1.25rem',
         },
         workRole: {
-            fontFamily: 'Roboto',
+            fontFamily: 'Host Grotesk',
             fontWeight: '400',
             fontSize: '1.25rem',
         },
         subWorkTitle: {
-            fontFamily: 'Roboto Condensed',
+            fontFamily: 'Host Grotesk',
             fontWeight: '500',
             fontSize: '1.35rem',
         },
@@ -82,6 +83,13 @@ export const theme = createTheme(_theme, {
         // },
     },
     components: {
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    fontFamily: '"Host Grotesk", sans-serif',
+                },
+            },
+        },
         MuiButtonBase: {
             defaultProps: {
                 // The props to change the default for.
@@ -93,6 +101,7 @@ export const theme = createTheme(_theme, {
                 // Name of the slot
                 root: {
                     // Some CSS
+                    fontFamily: '"Host Grotesk", sans-serif',
                     borderRadius: '2rem',
                     // boxShadow: 'none',
                     // '&:focus': {
