@@ -5,7 +5,7 @@ import { Flex } from '../IFL/ifl';
 export const WorkInfo = ({ title, content }) => {
     return (
         <Box sx={{ ...maxWidthContent, marginBlockStart: 3, marginBlockEnd: 3 }}>
-            <Flex direction="column" gap={1}>
+            <Flex direction="column" gap={0.5}>
                 {title && (
                     <Typography
                         variant="subWorkTitle"

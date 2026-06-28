@@ -74,7 +74,7 @@ export const ProjecGridHeader = ({ company, dates, role, expanded, toggleExpande
                         <Flex
                             className="work-title"
                             direction="column"
-                            gap={0.5}
+                            gap={0}
                             sx={{
                                 paddingInlineStart: 2,
                                 position: 'relative',

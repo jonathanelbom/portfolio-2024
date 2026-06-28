@@ -194,6 +194,19 @@ const _factset = [
         ],
         sizes: ['desktop'],
     },
+    {
+        images: [{ label: '', id: '', type: 'image', uri: 'factset/everything-is-in-between-something.png' }],
+        title: 'Everything Is In Between Something',
+        id: 'factset-everything-is-in-between-something',
+        description: `Design and engineering have always felt like neighboring countries to me. For most of my career, I've worked somewhere along the river between them. Lately, I've realized I'm not alone there. Read my story.`,
+        tags: ['factset', 'case-study', 'ai'],
+        links: [
+            {
+                url: 'https://portfolio.jonnybomb.com/pdf/Jonathan%20Elbom%20-%20Everything%20is%20in%20between%20something.pdf',
+            },
+        ],
+        sizes: ['pdf'],
+    },
 ];
 
 const PROTOTYPE_IDS = [
@@ -205,7 +218,11 @@ const PROTOTYPE_IDS = [
     'factset-under-the-hood',
 ];
 const RECIPE_IDS = ['factset-mobile-components', 'factset-ux-labs'];
-const AI_IDS = ['factset-semantic-color-tokens', 'factset-fusion-foundry'];
+const AI_IDS = [
+    'factset-semantic-color-tokens',
+    'factset-fusion-foundry',
+    'factset-everything-is-in-between-something',
+];
 
 export const factset_prototypes = filterAndSort(
     _factset.filter((p) => PROTOTYPE_IDS.includes(p.id)).map(transformProject),
