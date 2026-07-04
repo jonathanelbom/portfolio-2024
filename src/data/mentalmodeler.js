@@ -15,7 +15,7 @@ export const _mm = [
         title: 'Concept Map / Node Graph',
         description:
             'The concept map / node graph interface that I designed and implemented which is the cornerstone of the success of Mental Modeler. This mapping tool is easily embeddable in other web applications and has a standardize API for loading and saving files',
-        tags: ['mentalmodeler', 'production'],
+        tags: ['mentalmodeler', 'production', 'visual-design'],
         sizes: ['desktop'],
         links: [
             {
@@ -43,7 +43,7 @@ export const _mm = [
         title: 'Scenario Suite',
         description:
             'The full Mental Modeler suite that includes the Scenario view, matrix view, and preferred state & metrics<br/><br/><i>Username: mentalmodeler, Password: mentalmodeler</i>',
-        tags: ['mentalmodeler', 'production'],
+        tags: ['mentalmodeler', 'production', 'visual-design'],
         id: 'mentalmodeler-scenario-suite',
         sizes: ['desktop'],
         links: [
@@ -66,7 +66,7 @@ export const _mm = [
         title: 'Mental Modeler Compare',
         description:
             'Another grant project to create an academic tool for comparing models to a designated reference model',
-        tags: ['mentalmodeler', 'production'],
+        tags: ['mentalmodeler', 'production', 'visual-design'],
         id: 'mentalmodeler-compare',
         sizes: ['desktop'],
         links: [
@@ -91,7 +91,7 @@ export const _mm = [
         id: 'mentalmodeler-instructional-site',
         description:
             'Instructional and promotion site built to introduce people to Mental Modeler. Users can provide their email to gain access to the Mental Modeler suite',
-        tags: ['mentalmodeler', 'production'],
+        tags: ['mentalmodeler', 'production', 'visual-design'],
         sizes: ['mobile', 'desktop'],
         links: [
             {
@@ -112,7 +112,7 @@ export const _mm = [
         ],
         title: 'UMass Lab',
         description: 'Human-Environment Interactins lab for academic team at UMass Boston',
-        tags: ['mentalmodeler', 'production'],
+        tags: ['mentalmodeler', 'production', 'visual-design'],
         id: 'mentalmodeler-umass-lab',
         sizes: ['mobile', 'desktop'],
         links: [
@@ -154,7 +154,7 @@ export const _mm = [
         title: 'FOCOS - Portland State University',
         description:
             'UX consulting and interface prototyping for Portland State University FOCOS project, that looks at using the scenario outcomes form Mental Modeler to improve business efficiency and safety.',
-        tags: ['mentalmodeler', 'prototype'],
+        tags: ['mentalmodeler', 'prototype', 'visual-design'],
         id: 'mentalmodeler-focos',
         sizes: ['desktop'],
         links: [

@@ -2,7 +2,7 @@ import { filterAndSort, transformProject } from './util';
 
 export const _jonnybomb_js = [
     {
-        tags: ['personal', 'production', 'ai'],
+        tags: ['personal', 'production', 'ai', 'visual-design'],
         id: 'personal-bedtime',
         title: 'Bedtime',
         role: 'Full Stack AI Product Developer',
@@ -36,7 +36,7 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal', 'prototype', 'motion', 'ai'],
+        tags: ['personal', 'prototype', 'motion', 'ai', 'visual-design'],
         id: 'personal-imprompt-frivolous',
         title: 'imPROMPT Frivolous Pieces',
         role: 'Lead Developer and Interaction Designer',
@@ -83,7 +83,7 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal', 'production', 'gesture'],
+        tags: ['personal', 'production', 'gesture', 'visual-design'],
         id: 'personal-dotz',
         title: 'Dotz',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
@@ -118,7 +118,7 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal', 'production'],
+        tags: ['personal', 'production', 'visual-design'],
         id: 'personal-factorthat',
         title: 'FactorTHAT',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
@@ -153,7 +153,7 @@ export const _jonnybomb_js = [
         imageBgColor: '#dedcdb',
     },
     {
-        tags: ['personal', 'production'],
+        tags: ['personal', 'production', 'visual-design'],
         id: 'personal-friday-night-jamz',
         title: 'Friday Night Jamz',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
@@ -176,7 +176,7 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal', 'production', 'motion'],
+        tags: ['personal', 'production', 'motion', 'visual-design'],
         id: 'personal-countdown',
         title: 'Countdown Timer',
         role: 'Lead Developer, Visual Designer, and Interaction Designer',
@@ -204,7 +204,7 @@ export const _jonnybomb_js = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['personal', 'production'],
+        tags: ['personal', 'production', 'visual-design'],
         id: 'personal-mike-parsons',
         title: 'Mike Parsons',
         role: 'Lead Designer and Developer',

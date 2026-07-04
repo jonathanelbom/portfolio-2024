@@ -50,7 +50,7 @@ const _indeed = [
         id: 'indeed-buildquest',
         description:
             'BuildQuest is a screener question json authoring and editing tool created to help author screener questions for Indeed Apply',
-        tags: ['indeed', 'production'],
+        tags: ['indeed', 'production', 'visual-design'],
         videos: [
             {
                 url: 'https://www.youtube.com/watch?v=nMf9z6TmZDo',

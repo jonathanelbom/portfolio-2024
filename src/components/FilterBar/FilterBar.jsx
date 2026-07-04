@@ -4,7 +4,7 @@ import { maxWidthContent } from '../../constants/styles';
 import { useIntersctionSentinel } from '../../hooks/useIntersectionSentinel';
 
 const TYPE_TAGS = ['prototype', 'production', 'case-study'];
-const CRAFT_TAGS = ['design-system', 'motion', 'gesture', 'ai'];
+const CRAFT_TAGS = ['design-system', 'visual-design', 'motion', 'gesture', 'ai'];
 const chipSize = 'medium';
 
 export const FilterBar = () => {

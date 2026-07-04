@@ -26,7 +26,7 @@ export const prev = {
     },
     projects: {
         interactiverfp: {
-            tags: ['springbox', 'prototype', 'motion'],
+            tags: ['springbox', 'prototype', 'motion', 'visual-design'],
             id: 'springbox-interactive-rfp',
             title: 'Springbox Interactive RFP',
             role: 'Lead Developer, Motion Designer',
