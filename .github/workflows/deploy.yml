@@ -31,3 +31,4 @@ jobs:
           DEST="${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}:${{ secrets.DREAMHOST_PATH }}"
           rsync -avz -e "$SSH" dist/index.html $DEST
           rsync -avz --delete -e "$SSH" dist/assets/ ${DEST}assets/
+          rsync -avz --delete -e "$SSH" dist/images/ ${DEST}images/
