@@ -51,7 +51,7 @@ const _pearson = [
             "ABBI (Assessment Banking and Building for Interoperable solutions) is Pearson's flag-ship content authoring, banking, and form building tool used to create QTI compliant interoperable assessments. The first pass of the tool is focused on creating authoring modules and the basic functionality for creating, editing, and reviewing assessment content authored in or imported into ABBI.<br/><br/>This is a RESTful single page web application that, on the client side, uses Backbone.js, Underscore.js, Require.js, SASS, Bootstap, JQuery/UI/jqGrid, Font Awesome, and the TinyMCE rich text editor. For build automation and management, we use Grunt and Bower.<br/><br/>I did all the product, UX and interaction design for ABBI, and was a principal contributor to the infomation architecture and user-flows. I also led the client-side UI development as well as the authoring module development.",
         // description:
         //     'ABBI (Assessment Banking and Building for Interoperable solutions) is the single source for all the tools needed for banking and building interoperable (QTI) and accessible assessments. The first pass of the tool is focused on creating authoring modules and the basic functionality for creating, editing, and reviewing assessment content authored in or imported into ABBI.<br/><br/>This is a RESTful single page web application that, on the client side, uses Backbone.js, Underscore.js, Require.js, SASS, Bootstap, JQuery/UI/jqGrid, Font Awesome, and the TinyMCE rich text editor. For build automation and management, we use Grunt and Bower.<br/><br/>I did all the product, UX and interaction design for ABBI, and was a principal contributor to the infomation architecture and user-flows. I also led the client-side UI development as well as the authoring module development.',
-        tags: ['pearson', 'abbi', 'production'],
+        tags: ['pearson', 'abbi', 'production', 'visual-design'],
         sizes: ['desktop'],
         links: [
             {
@@ -120,7 +120,7 @@ const _pearson = [
         title: 'Function Graphing TEI',
         description:
             'These are function graphing technology enhanced items created for TestNav 7.5. After collaborating with our Math SME, I created the interaction and visual design and then implemented this items type in TestNav 7.5 using ActionScript3 and Flex.',
-        tags: ['pearson', 'testnav', 'production'],
+        tags: ['pearson', 'testnav', 'production', 'visual-design'],
         sizes: ['desktop'],
     },
     {
@@ -172,7 +172,7 @@ const _pearson = [
         title: 'TestNav 7.5 - iOS Tablet Designs',
         description:
             'These are design I created for the porting the TestNav 7.5 Desktop app to iOS Tablet. These were created iteratively and collaboratively while working with a 3rd party vendor who would implement the iOS App.',
-        tags: ['pearson', 'testnav', 'production'],
+        tags: ['pearson', 'testnav', 'production', 'visual-design'],
         sizes: ['tablet'],
     },
     // {

@@ -2,7 +2,7 @@ import { filterAndSort, transformProject } from './util';
 
 export const _enspire = [
     {
-        tags: ['enspire', 'production', 'motion'],
+        tags: ['enspire', 'production', 'motion', 'visual-design'],
         id: 'enspire-k12-science',
         title: 'K-12 Science Demo',
         role: 'Lead Designer and Developer',
@@ -32,7 +32,7 @@ export const _enspire = [
         imageBgColor: '#DDEAF0',
     },
     {
-        tags: ['enspire', 'production'],
+        tags: ['enspire', 'production', 'visual-design'],
         id: 'enspire-pnc-trivia',
         title: 'PNC Trivia Game',
         role: 'Lead Designer and Developer',
@@ -62,7 +62,7 @@ export const _enspire = [
         imageBgColor: '#E1F1F6',
     },
     {
-        tags: ['enspire', 'production'],
+        tags: ['enspire', 'production', 'visual-design'],
         id: 'enspire-alms',
         title: 'ALMS',
         role: 'Lead Designer and Developer',
@@ -91,7 +91,7 @@ export const _enspire = [
         sizes: ['desktop'],
     },
     {
-        tags: ['enspire', 'production'],
+        tags: ['enspire', 'production', 'visual-design'],
         id: 'enspire-pearson-templates',
         title: 'Pearson',
         role: 'Lead Designer and Developer',
@@ -149,7 +149,7 @@ export const _enspire = [
         sizes: ['desktop'],
     },
     {
-        tags: ['enspire', 'production'],
+        tags: ['enspire', 'production', 'visual-design'],
         id: 'enspire-sap',
         title: 'SAP Virtual Team Management',
         role: 'Lead Designer and Developer',

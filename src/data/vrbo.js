@@ -212,7 +212,7 @@ export const vrbo = [
         sizes: ['mobile', 'desktop'],
     },
     {
-        tags: ['vrbo', 'production', 'design-system'],
+        tags: ['vrbo', 'production', 'design-system', 'visual-design'],
         id: 'vrbo-inline-message',
         title: 'Inline Message',
         role: '',
