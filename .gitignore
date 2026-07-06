@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 public/pdf/
+.claude/settings.json
 .claude/settings.local.json
