@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/jonathan/Workspace/jonathanelbom/portfolio-2024 add .claude/settings.json .gitignore)"
+    ]
+  }
+}
