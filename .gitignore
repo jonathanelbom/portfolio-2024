@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+public/pdf/
+.claude/settings.json
+.claude/settings.local.json
