@@ -98,12 +98,16 @@ const _factset = [
             { label: '', id: '', type: 'image', uri: 'factset/mobile-playground--figma-hand-off-4.png' },
             { label: '', id: '', type: 'image', uri: 'factset/mobile-playground--figma-hand-off-5.png' },
         ],
-        title: 'Fusion Mobile Playground',
+        title: 'FactSet Mobile App',
         id: 'factset-fusion-mobile-playground',
         description:
             "<b>What it is</b><br/>This prototype asks a straightforward but consequential question: can Fusion — a design system built for desktop financial software — support a genuine mobile app experience without a full parallel rebuild? The playground is a working Markets app with a real navigation structure: a home feed (watchlist, market indices, news, events), a markets drill-down (equities, FX, commodities, ETFs, bonds), a global search view, and a user profile with appearance settings and tab management. All data is mocked but structured to match what a production API would send. It runs against a pre-release <code>@fds/fusion-mobile</code> package that ships experimental mobile-specific variants of core Fusion components, installed alongside the stable <code>@fds/fusion</code> release.<br/><br/><b>What I found</b><br/>The prototype reveals three categories of work required to make Fusion feel mobile-native. First, <b>interaction patterns</b>: Fusion's components have no awareness of touch gestures, so custom layers handle swipe-to-reveal list actions (<code>SwipeableRow</code>), drag-and-drop tab reordering (<code>ProfileTabReorder</code> + <code>useDragReorder</code>), and iOS keyboard handling in the search view (using the <code>visualViewport</code> API to resize the scroll container when the software keyboard appears). Second, <b>navigation choreography</b>: route transitions — push, pop, drawer-up/down, fade — are entirely custom. A composable tracks each route's depth via a <code>meta.index</code> field and drives Vue's transition system to produce the iOS slide and sheet effects. Third, <b>typography</b>: Fusion's existing type scale was augmented with a parallel mobile scale, switchable via a <code>data-platform</code> attribute on the app root, so the same class names render at the correct sizes for both web and mobile contexts. All Fusion overrides are surgical and encapsulated in thin \"Enhancer\" wrapper components, avoiding direct library forks.<br/><br/><b>So what</b><br/>The practical takeaway is a prioritized gap list. Touch gestures, route transitions, and the dual-scale typography system are all implementable without forking Fusion — they're additive layers any team can adopt today. The pre-release <code>@fds/fusion-mobile</code> package already covers the component-level changes (button sizing, tab bar behavior). The Enhancer component pattern — thin wrappers applying targeted CSS overrides to Fusion internals — gives teams a low-risk path to ship mobile-adapted components without waiting for library releases. This prototype is a concrete artifact for design, product, and engineering to align on which interaction patterns are essential for a V1 mobile release, which are already solved here, and which remain open design problems.",
         tags: ['factset', 'prototype', 'playground', 'gesture'],
-        links: [],
+        links: [
+            {
+                url: 'https://portfolio.jonnybomb.com/work/factset/fusion-mobile-app/',
+            },
+        ],
         sizes: ['mobile'],
         imageBgColor: '#a2d0ef55',
     },
@@ -166,8 +170,8 @@ const _factset = [
     },
     {
         images: [{ label: '', id: '', type: 'image', uri: 'factset/factset-mobile-app-presentation.png' }],
-        title: 'FactSet Mobile App',
-        id: 'factset-mobile-app',
+        title: 'FactSet Mobile App (Project Story)',
+        id: 'factset-mobile-app-case-study',
         description:
             "<b>What it is</b><br/>Nine months of design-to-code work, starting from a clunky existing app users didn't like and ending with a live, design-system-accurate mobile experience. My role was sole design technologist — I designed in code rather than Figma, stress-testing the production stack against the design intent and building the infrastructure that let other teams build on top of what I'd proven out. Three criteria held throughout: preserved design intent, modern touch-first interaction, and implementable by any team without degrading the first two.<br/><br/><b>What I found</b><br/><b>Chapter 1 — Can we actually build this?</b> I stress-tested the stack against Figma designs before anyone wrote a line of product code. Some things worked with composition — I extended DS components for tables and tabs rather than replacing them, adding mobile-specific behavior without touching what already worked. I also defined the \"From Figma to Code\" handoff standard: a typography annotation table that started with hard-coded pixel values and Figma swatch names and became a spec with Fusion token names and CSS variables engineers could actually implement against.<br/><br/><b>Chapter 2 — The DS Ripple Effect.</b> Product teams started pulling my demo code directly into production. That mandated the DS team to officially support what I'd built. Two systems came out of this directly: the Unified Type System (one semantic class name, two rendering targets — web or mobile — determined by a platform flag; I built the CSS prototype, the DS team built the production version) and the <code>@fds/mobile-components</code> recipe repo — a shared layer between Fusion DS and the apps. It shipped BottomSheet, ScrollUpStickyReveal, and TagNav. I also hit a hard iframe constraint and responded with three design variants, letting design and engineering make an intentional choice rather than just accepting a limitation.<br/><br/><b>Chapter 3 — Details that make it feel right.</b> SwipeableRow, Drag-to-Reorder (mouse and touch, with smooth space-making animations and button controls for manual dexterity), and Mobile Frame Structure documentation — I inspected the native app's DOM, mapped the iframe layers, verified with the frame engineers, and documented the structure so design could build what was actually possible.<br/><br/><b>So what</b><br/>Demo code adopted directly into production by multiple teams. The DS team building Fusion canary releases from my prototype work. Recipe repos available to any team at FactSet. But the line I'm most proud of: designers opening Chrome DevTools to do QA. When designers are inspecting computed styles and checking token names against the spec, the gap between design intent and implementation closes in a way no process change can produce.",
         tags: ['factset', 'case-study'],
@@ -175,6 +179,21 @@ const _factset = [
             {
                 type: 'pdf',
                 url: 'https://portfolio.jonnybomb.com/pdf/factset/factset-mobile-app--from-prototype-to-production.pdf',
+            },
+        ],
+        sizes: ['mobile'],
+    },
+    {
+        images: [{ label: '', id: '', type: 'image', uri: 'factset/dosc-search-filters-case-study.png' }],
+        title: 'Doc Search Filters (Project Story)',
+        id: 'doc-search-filters-case-study',
+        description:
+            "<b>What it is</b><br/>Doc Search Filters is a multi-level mobile filter system for FactSet's research corpus — letting users narrow results by document type (Broker Research, Filings, Transcripts, Street Account), subtype, contributor, source, and form, surfaced as a bottom sheet with searchable drill-down overlays. On a small screen, this is the primary way to find relevant research. Broken iOS behavior isn't a minor annoyance — it means users stop filtering and miss content entirely. The project ran from blue-sky vision to production-ready handoff, with designers building the north star prototype in Fusion Foundry and me owning the constraint discovery, focus mode engineering, and ForDev delivery.<br/><br/><b>What I found</b><br/>The central constraint arrived early: the FactSet mobile app renders inside an iframe with <code>overflow: hidden</code>, which means no element can break out of the content area to overlap the native app header or footer. The north star design assumed a full-screen overlay — the constraint made that impossible. Rather than just documenting the limitation, I designed a response: apply CSS opacity to the native header and footer when the sheet opens. They recede visually while staying in the DOM, and the user's focus shifts to the filter task without the chrome actively fighting the UI. I then built three iframe variants with live stakeholder toggles — north star vs. realistic — so product could feel the difference rather than just hear about it. One designer who didn't know the constraint going in ended up explaining it to the PM by the end of the review. Designing the north star and hitting the wall was a more effective briefing than anything upfront would have been.<br/><br/>The second hard problem was the soft keyboard. When the contributor/analyst search field receives focus, iOS Safari fires a scroll event — not a resize — collapsing the visible viewport and breaking any overlay sized against <code>100vh</code>. The solution required three coordinated pieces: <code>useVisualViewport.js</code> listens to both resize and scroll on <code>window.visualViewport</code> and exposes a <code>--vvh</code> CSS custom property that reflects the true visible height; <code>useDocumentTouchMove.js</code> adds a non-passive touchmove listener that blocks scroll and bounce on non-scrollable overlay areas while leaving listbox content scrollable; and <code>fixed-for-viewport-overlay.scss</code> sizes overlays using <code>var(--vvh)</code> and <code>100dvw</code> instead of <code>100vh</code> and <code>100vw</code>. The result is a full-screen focus mode — search box, results, keyboard — the same pattern iOS uses natively for Search and Spotlight.<br/><br/>The last piece was maintenance. BottomSheet, which this feature depends on, was living in <code>@fds/mobile-components</code> — a canary-dependent package that became risky to take on once the canary changes rolled into Fusion main. I migrated it to <code>@fds/ux-labs</code> before DocSearchFilters shipped, reimplementing it against <code>usePointerMove</code> — the same touch primitive I'd built for SwipeableRow — and removing the canary dependency entirely.<br/><br/><b>So what</b><br/>Product signed off on the listbox variant with header/footer dimming. The ForDev build shipped with linting, a documented props contract, and a developer-facing README. BottomSheet is now in ux-labs — no canary dep, shared touch foundation with SwipeableRow, available to any team without the risk. The iOS keyboard problem, which breaks most web overlays silently, is solved in reusable composables that any feature running in the mobile webview can drop in.",
+        tags: ['factset', 'case-study'],
+        links: [
+            {
+                type: 'pdf',
+                url: 'https://portfolio.jonnybomb.com/pdf/factset/doc-search-filters--from-blue-sky-to-production',
             },
         ],
         sizes: ['mobile'],
@@ -192,7 +211,7 @@ const _factset = [
                 url: 'https://portfolio.jonnybomb.com/pdf/factset/under-the-hood--from-figma-to-code.pdf',
             },
         ],
-        sizes: ['desktop'],
+        sizes: ['mobile/desktop'],
     },
     {
         images: [{ label: '', id: '', type: 'image', uri: 'factset/everything-is-in-between-something.png' }],
@@ -202,10 +221,11 @@ const _factset = [
         tags: ['factset', 'case-study', 'ai'],
         links: [
             {
+                type: 'pdf',
                 url: 'https://portfolio.jonnybomb.com/pdf/Jonathan%20Elbom%20-%20Everything%20is%20in%20between%20something.pdf',
             },
         ],
-        sizes: ['pdf'],
+        sizes: ['essay'],
     },
 ];
 
@@ -214,7 +234,8 @@ const PROTOTYPE_IDS = [
     'factset-fusion-mobile-playground',
     'factset-dashboard-layouts',
     'factset-doc-search-filters',
-    'factset-mobile-app',
+    'doc-search-filters-case-study',
+    'factset-mobile-app-case-study',
     'factset-under-the-hood',
 ];
 const RECIPE_IDS = ['factset-mobile-components', 'factset-ux-labs'];
