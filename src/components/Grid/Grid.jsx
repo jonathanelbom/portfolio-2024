@@ -247,7 +247,7 @@ export const Grid = ({ items = [], topBorder, sx = {}, sizing, children }) => {
     //     sizing = [1, 2, 2, 3];
     // }
     if (!sizing) {
-        sizing = condensed ? [1, 2] : [1, 2, 3, 4, 5];
+        sizing = condensed ? [1, 2, 3] : [1, 2, 3, 4, 5];
     }
     const gridTemplateColumns = useMemo(() => sizing.map((size) => `repeat(${size}, 1fr)`), [sizing]);
     return (

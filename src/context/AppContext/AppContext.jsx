@@ -61,7 +61,7 @@ const appReducer = (state, action) => {
 const initialState = {
     modalOpen: false,
     selectedProject: null,
-    condensed: false,
+    condensed: true,
     allExpanded: false,
     allExpandedWork: false,
     allExpandedConsulting: false,
