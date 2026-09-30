@@ -106,7 +106,8 @@ const ToggleExpandedButton = ({ section }) => {
 
 export const Content = ({ children }) => {
     const { isIntersecting, Sentinel } = useIntersctionSentinel({ threshold: 1 });
-    const { condensed, activeFilters, curatedView } = useAppState();
+    const { condensed, activeFilters, curatedView, allExpandedWork, allExpandedConsulting, allExpandedPersonal } =
+        useAppState();
     const dispatch = useAppDispatch();
     const showExpandContract = useMediaQuery(`(min-width: calc(${contentMaxWidth} + 32px))`);
     const ExpandIcon = condensed ? Expand : Compress;
@@ -127,6 +128,19 @@ export const Content = ({ children }) => {
             dispatch({ type: ACTION_TYPE.SET_CURATED_VIEW, value: { blurb: null, ids } });
         }
     }, [dispatch]);
+
+    useEffect(() => {
+        if (!(activeFilters.length > 0 || curatedView)) return;
+        [
+            [SECTION.WORK, allExpandedWork],
+            [SECTION.CONSULTING, allExpandedConsulting],
+            [SECTION.PERSONAL, allExpandedPersonal],
+        ].forEach(([section, expanded]) => {
+            if (!expanded) {
+                dispatch({ type: ACTION_TYPE.TOGGLE_SECTION_ALL_EXPANDED, value: { section, expanded: true } });
+            }
+        });
+    }, [activeFilters, curatedView, allExpandedWork, allExpandedConsulting, allExpandedPersonal, dispatch]);
 
     const curatedIds = curatedView?.ids ?? null;
 
